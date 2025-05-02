@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@source "../views";
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../**/*.vue";
+
+@layer components {
+  .btn-primary {
+    @apply flex items-center justify-center bg-gradient-to-r from-orange-100 to-orange-300 px-8 py-2 text-lg font-medium text-white rounded-lg hover:from-orange-300 hover:to-orange-100 transition-colors duration-200 ease-linear sm:px-4 cursor-pointer sm:py-2 lg:py-2 sm:text-sm;
+  }
+
+  .btn-outline {
+    @apply flex items-center justify-center bg-transparent px-8 py-2 text-lg font-medium rounded-lg border-2 border-shark-700 hover:border-orange-200 hover:text-orange-200 transition-all duration-200 ease-linear sm:px-4 sm:py-1.5 lg:py-1.5 sm:text-sm cursor-pointer;
+  }
+
+  .btn-subscribe {
+    @apply lg:absolute lg:right-1 lg:top-1/2 lg:-translate-y-1/2 lg:px-8 lg:py-2 lg:text-lg lg:rounded-xl lg:bg-gradient-to-r lg:from-orange-300 lg:to-orange-100 lg:hover:from-orange-100 lg:hover:to-orange-300 lg:transition-all lg:duration-300 lg:ease-in-out;
+  }
+  /* Article */
+  .badge {
+    @apply bg-gradient-to-l from-orange-100 to-orange-300 text-white py-1 px-4 font-medium rounded-lg sm:text-lg lg:text-base sm:py-2 lg:py-1;
+  }
+
+  .title {
+    @apply font-bold text-4xl mt-4 leading-tight sm:w-[90%] mx-auto sm:mt-6 lg:mt-4 lg:w-[70%];
+  }
+
+  .subtitle{
+    @apply text-xl sm:text-2xl lg:text-xl font-semibold;
+  }
+
+  .paragraph {
+    @apply text-shark-950/90 mt-2 text-base sm:w-[70%] sm:text-lg lg:text-base mx-auto sm:mt-3 lg:w-[50%];
+  }
+
+  .active-menu {
+    color: var(--color-orange-200);
+  }
+
+  .active-menu .active-menu-translate {
+    transform: translateY(-100%);
+  }
+
+  .active-menu .active-menu-underline {
+    width: 100%;
+  }
+
+  .active-menu .active-menu-show {
+    transform: translateY(0);
+  }
+
+
+}
+
+
+@theme {
+  /* Font Family */
+  --font-poppins: 'Poppins', sans-serif;
+  --font-mono: var(--font-mono), monospace;
+
+  /* Color */
+  --color-shark-50: #f6f8f9;
+  --color-shark-100: #eceff2;
+  --color-shark-200: #d4dbe3;
+  --color-shark-300: #aebccb;
+  --color-shark-400: #8297ae;
+  --color-shark-500: #637b94;
+  --color-shark-600: #4e637b;
+  --color-shark-700: #405064;
+  --color-shark-800: #384454;
+  --color-shark-900: #323c48;
+  --color-shark-950: #222831;
+  --color-orange-100: #fa812f;
+  --color-orange-200: #f86917;
+  --color-orange-300: #e94e0d;
+
+
+}
+
+
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+
+  @media (width >=theme(--breakpoint-sm)) {
+    padding-inline: 2rem;
+    /* Padding untuk sm */
+    max-width: none;
+  }
+
+  @media (width >=theme(--breakpoint-md)) {
+    padding-inline: 4rem;
+    /* Padding untuk md */
+  }
+
+  @media (width >=1400px) {
+    padding-inline: 2rem;
+    /* Padding untuk lg */
+    max-width: 1400px;
+  }
+}

@@ -1,0 +1,63 @@
+Fitur" Rental Mobil
+
+1. Pencarian
+2. Simpan dan Berbagi
+3. Komentar dan Rating
+4. Fitur Dark Mode
+5. Fitur Booking
+6. filter di ambil dari kategori mobil dan transmisi 
+7. Riwayat Booking
+8. Profile
+9. Export PDF
+10. Fitur translate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const salinButtons = document.querySelectorAll("button[id='salinRekening']");
+
+    salinButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            // Temukan elemen rekening terkait dengan tombol yang diklik
+            const rekeningDiv = button.closest(".p-4").querySelector("#rekening");
+            
+            // Ambil teks nomor rekening
+            const rekeningText = Array.from(rekeningDiv.children)
+                .map((span) => span.textContent)
+                .join("");
+
+            // Salin teks ke clipboard
+            navigator.clipboard.writeText(rekeningText).then(() => {
+                // Berikan umpan balik ke tombol yang diklik
+                button.textContent = "Disalin!";
+                button.classList.add("bg-green-200");
+
+                // Reset teks setelah 2 detik
+                setTimeout(() => {
+                    button.textContent = "Salin";
+                    button.classList.remove("bg-green-200");
+                }, 2000);
+            }).catch(err => console.error("Gagal menyalin", err));
+        });
+    });
+});
