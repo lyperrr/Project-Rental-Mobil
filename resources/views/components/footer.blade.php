@@ -1,6 +1,6 @@
 <footer class="bg-gradient-to-b from-orange-100 to-orange-300">
     <div class="container">
-        <div class="grid lg:grid-cols-12 py-10">
+        <div class="grid lg:grid-cols-12 py-10 lg:gap-5 xl:gap-10">
             <aside class="lg:col-span-5">
                 <div class="">
                     <a href="" class="title text-white">
@@ -23,7 +23,7 @@
             </aside>
 
             <aside class="lg:col-span-7 mt-10 lg:m-0">
-                <div class="grid lg:grid-cols-3 gap-4 lg:gap-2 text-white">
+                <div class="grid lg:grid-cols-3 gap-4 lg:gap-0 text-white">
                     
                     <div class="">
                         <h4 class="subtitle border-b-[3px] w-fit">{{ __('messages.footer.title_footer.quicklinks') }}</h4>
