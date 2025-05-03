@@ -259,5 +259,9 @@
     <x-reviews />
     {{-- End Reviews --}}
 
+    {{-- Start Questions --}}
+    <x-any-questions />
+    {{-- End Questions --}}
+
 
 </x-layout>

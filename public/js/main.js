@@ -88,5 +88,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
 // End Dropdown Language Js
+
+// Start Dropdown Any Questions
+function toggleDropdown(button) {
+    const article = button.nextElementSibling;
+    const icon = button.querySelector('i');
+
+    if (article.style.maxHeight && article.style.maxHeight !== '0px') {
+        article.style.maxHeight = '0px';
+        icon.classList.remove('rotate-180');
+    } else {
+        article.style.maxHeight = article.scrollHeight + 'px';
+        icon.classList.add('rotate-180');
+    }
+}
+// End Dropdown Any Questions
+

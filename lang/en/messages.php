@@ -74,6 +74,20 @@ return [
         ],
     ],
 
+    'any_questions_section' => [
+        'title' => 'We Are Ready To Help You',
+        'badge' => 'Any Questions?',
+        'paragraph' => 'Have questions about renting a car? Our team is always ready to answer your questions and help you find the perfect vehicle for your needs.',
+        'dropdown' => [
+            'title' => [
+                'question' => '',
+            ],
+            'description' => [
+
+            ],
+        ],
+    ],
+
     'footer' => [
         'title_footer' => [
             'navigation' => 'Navigation',

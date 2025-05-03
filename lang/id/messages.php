@@ -74,6 +74,23 @@ return [
         ],
     ],
 
+    'any_questions_section' => [
+        'title' => 'Kami Siap Membantu Anda',
+        'badge' => 'Ada Pertanyaan?',
+        'paragraph' => 'Jika Anda memiliki pertanyaan seputar layanan, jadwal, atau ingin konsultasi langsung, jangan ragu untuk menghubungi kami.',
+        'dropdown' => [
+            'title' => [
+                'question-1' => 'Bagaimana cara melakukan pemesanan?',
+                'question-2' => 'Bagaimana',
+                'question-3' => 'Bagaimana',
+                'question-4' => 'Bagaimana',
+                'question-5' => 'Bagaimana',
+            ],
+            'questions' => [
+                'question-1' => 'Langkah-langkah untuk melakukan pemesanan mobil:',
+            ],
+        ],
+    ],
 
     'footer' => [
         'title_footer' => [
