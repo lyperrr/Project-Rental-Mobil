@@ -8,50 +8,147 @@ return [
         'contact' => 'Kontak'
     ],
 
-    'badge' => [
-        'home_page_badge' => [
-            'start_with_us' => 'Mulailah Bersama Kami',
-            'built_on_trust' => 'Dibangun atas Kepercayaan',
-            'about_us' => 'Tentang Kami',
-            '200_+_sports_&_luxury_vehicles' => '200 + kendaraan sport & mewah',
-            'feedback' => 'Masukan'
+    'sections' => [
+        'components' => [
+            'feedback_section' => [
+                'badge' => 'Masukan',
+                'title' => 'Ulasan Pelanggan Kami',
+                // 'paragraph' => '',
+            ],
+            'any_questions_section' => [
+                'title' => 'Kami Siap Membantu Anda',
+                'badge' => 'Ada Pertanyaan?',
+                'paragraph' => 'Punya pertanyaan tentang penyewaan mobil? Tim kami selalu siap menjawab pertanyaan Anda dan membantu menemukan kendaraan yang tepat untuk kebutuhan Anda.',
+                'dropdown' => [
+                    [
+                        'title' => 'Apa saja syarat untuk menyewa mobil?',
+                        'description' => 'Anda perlu memiliki SIM yang masih berlaku dan kartu kredit yang aktif.'
+                    ],
+                    [
+                        'title' => 'Bisakah saya menyewa mobil tanpa kartu kredit?',
+                        'description' => 'Sebagian besar perusahaan rental memerlukan kartu kredit, tetapi beberapa mungkin menerima kartu debit dengan syarat tertentu.'
+                    ],
+                    [
+                        'title' => 'Apakah saya bisa menyewa mobil untuk perjalanan antar kota?',
+                        'description' => 'Ya, Anda bisa menggunakan mobil rental untuk perjalanan antar kota sesuai dengan kebijakan penyedia layanan.'
+                    ],
+                    [
+                        'title' => 'Berapa usia minimal untuk menyewa mobil?',
+                        'description' => 'Usia minimal untuk menyewa mobil biasanya 21 tahun, tergantung pada kebijakan perusahaan rental.'
+                    ],
+                    [
+                        'title' => 'Apakah harga sudah termasuk asuransi?',
+                        'description' => 'Beberapa paket sudah termasuk asuransi dasar. Anda juga dapat menambah perlindungan tambahan dengan biaya ekstra.'
+                    ],
+                    [
+                        'title' => 'Apa yang harus saya lakukan jika mobil mogok di jalan?',
+                        'description' => 'Segera hubungi layanan darurat penyedia rental. Nomor layanan biasanya tersedia di dalam mobil atau kontrak sewa.'
+                    ],
+                ],
+            ],
+            'footer' => [
+                'title_footer' => [
+                    'navigation' => 'Navigasi',
+                    'quicklinks' => 'Tautan Cepat',
+                    'contact_with_us' => 'Hubungi Kami',
+                    'subscribe' => 'Langganan',
+                ],
+                'privacy_policy' => 'Kebijakan Privasi',
+                'terms_and_conditions' => 'Syarat dan Ketentuan',
+                'refund_policy' => 'Kebijakan Refund',
+                'description' => 'Sewa mobil dengan proses cepat, harga terbaik, dan tanpa repot. Pilih mobil favorit Anda sekarang!',
+                'description_subs' => 'Berlangganan milis kami untuk memperoleh berita terkini!'
+            ],
         ],
-    ],
-
-    'title' => [
-        'home_page_title' => [
-            'endless_journeys' => 'Perjalanan Tanpa Akhir,',
-            'span' => 'Mobil Siap Setiap Saat.',
-            'why_choose_us_section' => 'Mengapa Pilih Kami?',
-            'wide_selection_section' => 'Beragam Pilihan Mobil Sewaan',
-            'drive_your_dream_section' => 'Jelajahi Mobil Impian Anda Sekarang',
-            'customer_reviews' => 'Ulasan Pelanggan',
+        'home_page' => [
+            'hero_section' => [
+                'badge' => 'Mulailah Bersama Kami',
+                'title' => [
+                    'span_1' => 'Perjalanan Tanpa Akhir,',
+                    'span_2' => 'Mobil Siap Setiap Saat.'
+                ],
+                'paragraph' => 'Rental mobil dengan proses cepat, harga terbaik, dan tanpa repot. Pilih mobil favorit Anda sekarang!',
+            ],
+            'filter_section' => [
+                ['filter_item' => 'jenis mobil'],
+                ['filter_item' => 'harga'],
+                ['filter_item' => 'penumpang'],
+                ['filter_item' => 'transmisi'],
+            ],
+            'whychooseus_section' => [
+                'article' => [
+                    'badge' => 'Dibangun atas Kepercayaan',
+                    'title' => 'Mengapa Pilih Kami?',
+                    'paragraph' => 'Rental mobil dengan proses cepat, harga terbaik, dan tanpa repot. Pilih mobil favorit Anda sekarang!',
+                ],
+                'card' => [
+                    [
+                        'title' => 'Berbagai Pilihan Kendaraan',
+                        'description' => 'Beragam pilihan mobil, dari mobil kota hingga SUV mewah, siap menemani perjalanan Anda.',
+                    ],
+                    [
+                        'title' => 'Harga Terjangkau',
+                        'description' => 'Harga terbaik tanpa biaya tersembunyi, sewa mobil menjadi lebih ekonomis dan transparan.',
+                    ],
+                    [
+                        'title' => 'Durasi Sewa Fleksibel',
+                        'description' => 'Ingin menyewa per jam, harian, mingguan, atau bulanan? Pilih sesuai kebutuhan Anda tanpa repot!.',
+                    ],
+                    [
+                        'title' => 'Pemesanan Online Mudah',
+                        'description' => 'Pesan mobil kapan saja dengan sistem pemesanan online yang cepat dan praktis.',
+                    ],
+                ],
+            ],
+            'wideselection_section' => [
+                'badge' => 'Tentang Kami',
+                'title' => 'Beragam Pilihan Mobil Sewaan',
+                'paragraph' => 'Temukan mobil yang sempurna untuk perjalanan Anda dengan layanan sewa kami yang mudah. ​​Baik untuk perjalanan bisnis atau liburan akhir pekan, kami menawarkan opsi sewa yang fleksibel dengan harga terbaik. Rasakan kenyamanan, keandalan, dan keterjangkauan bersama kami',
+            ],
+            'sports_&_luxury_section' => [
+                'badge' => '200 + kendaraan sport & mewah',
+                'title' => 'Jelajahi Mobil Impian Anda Sekarang',
+                'paragraph' => 'Temukan mobil yang sempurna untuk perjalanan Anda dengan layanan sewa kami yang mudah. ​​Baik untuk perjalanan bisnis atau liburan akhir pekan, kami menawarkan opsi sewa yang fleksibel dengan harga terbaik. Rasakan kenyamanan, keandalan, dan keterjangkauan bersama kami.',
+            ],
+            '' => [
+                'badge' => '',
+                'title' => '',
+                'paragraph' => '',
+            ],
+            '' => [
+                'badge' => '',
+                'title' => '',
+                'paragraph' => '',
+            ],
         ],
-        'register_now' => 'Daftar Sekarang',
-    ],
-
-    'paragraph' => [
-        'home_page_paragraph' => [
-            'hero_section' => 'Rental mobil dengan proses cepat, harga terbaik, dan tanpa repot. Pilih mobil favorit Anda sekarang!',
-            'why_choose_us_section' => 'Rental mobil dengan proses cepat, harga terbaik, dan tanpa repot. Pilih mobil favorit Anda sekarang!',
-            'wide_selection_section' => 'Temukan mobil yang sempurna untuk perjalanan Anda dengan layanan sewa kami yang mudah. ​​Baik untuk perjalanan bisnis atau liburan akhir pekan, kami menawarkan opsi sewa yang fleksibel dengan harga terbaik. Rasakan kenyamanan, keandalan, dan keterjangkauan bersama kami.',
-            'drive_your_dream_section' => 'Temukan mobil yang sempurna untuk perjalanan Anda dengan layanan sewa kami yang mudah. ​​Baik untuk perjalanan bisnis atau liburan akhir pekan, kami menawarkan opsi sewa yang fleksibel dengan harga terbaik. Rasakan kenyamanan, keandalan, dan keterjangkauan bersama kami.',
-        ],
-    ],
-
-    'card' => [
-        'card_title' => [
-            'wide_selection' => 'Berbagai Pilihan Kendaraan',
-            'affordable_pricing' => 'Harga Terjangkau',
-            'flexible_rental' => 'Durasi Sewa Fleksibel',
-            'easy_online' => 'Pemesanan Online Mudah',
-        ],
-
-        'card_paragraph' => [
-            'wide_selection' => 'Beragam pilihan mobil, dari mobil kota hingga SUV mewah, siap menemani perjalanan Anda.',
-            'affordable_pricing' => 'Harga terbaik tanpa biaya tersembunyi, sewa mobil menjadi lebih ekonomis dan transparan.',
-            'flexsible_rental' => 'Ingin menyewa per jam, harian, mingguan, atau bulanan? Pilih sesuai kebutuhan Anda tanpa repot!.',
-            'easy_online' => 'Pesan mobil kapan saja dengan sistem pemesanan online yang cepat dan praktis.',
+        'signup_page' => [
+            'name' => [
+                'first_name' => 'Nama Depan',
+                'last_name' => 'Nama Belakang',
+            ],
+            'placeholder' => [
+                'first_name' => 'Masukan nama depan',
+                'last_name' => 'Masukan nama belakang',
+                'email' => 'contoh@gmail.com',
+                'password' => 'Masukan password',
+                'confirm_password' => 'Masukan konfirmasi password',
+                'phone_number' => 'Masukan nomor telepon',
+                'address' => 'Masukan alamat',
+                'resident_identity_card' => 'Masukan KTP',
+                'driver_license' => 'Masukan SIM',
+            ],
+            'email' => 'Email',
+            'password' => 'Password',
+            'confirm_password' => 'Konfirmasi Password',
+            'phone_number' => 'Nomor Telepon',
+            'address' => 'Alamat',
+            'already_have_account' => 'Sudah punya akun?',
+            'card' => [
+                'resident_identity_card' => 'KTP',
+                'driver_license' => 'SIM',
+                'photo_of_resident_identity_card' => 'Foto KTP',
+                'photo_of_driver_license' => 'Foto SIM',
+            ],
         ],
     ],
 
@@ -63,76 +160,5 @@ return [
         'search' => 'Cari',
         'browse_cars' => 'Jelajahi Mobil',
         'book_now' => 'Pesan Sekarang',
-    ],
-
-    'filter' => [
-        'home_page_filter' => [
-            'car type' => 'jenis mobil',
-            'price' => 'harga',
-            'passenger' => 'penumpang',
-            'transmission' => 'transmisi',
-        ],
-    ],
-
-    'any_questions_section' => [
-        'title' => 'Kami Siap Membantu Anda',
-        'badge' => 'Ada Pertanyaan?',
-        'paragraph' => 'Jika Anda memiliki pertanyaan seputar layanan, jadwal, atau ingin konsultasi langsung, jangan ragu untuk menghubungi kami.',
-        'dropdown' => [
-            'title' => [
-                'question-1' => 'Bagaimana cara melakukan pemesanan?',
-                'question-2' => 'Bagaimana',
-                'question-3' => 'Bagaimana',
-                'question-4' => 'Bagaimana',
-                'question-5' => 'Bagaimana',
-            ],
-            'questions' => [
-                'question-1' => 'Langkah-langkah untuk melakukan pemesanan mobil:',
-            ],
-        ],
-    ],
-
-    'footer' => [
-        'title_footer' => [
-            'navigation' => 'Navigasi',
-            'quicklinks' => 'Tautan Cepat',
-            'contact_with_us' => 'Hubungi Kami',
-            'subscribe' => 'Langganan',
-        ],
-        'privacy_policy' => 'Kebijakan Privasi',
-        'terms_and_conditions' => 'Syarat dan Ketentuan',
-        'refund_policy' => 'Kebijakan Refund',
-        'description' => 'Sewa mobil dengan proses cepat, harga terbaik, dan tanpa repot. Pilih mobil favorit Anda sekarang!',
-        'description_subs' => 'Berlangganan milis kami untuk memperoleh berita terkini!'
-    ],
-
-    'form' => [
-        'name' => [
-            'first_name' => 'Nama Depan',
-            'last_name' => 'Nama Belakang',
-        ],
-        'placeholder' => [
-            'first_name' => 'Masukan nama depan',
-            'last_name' => 'Masukan nama belakang',
-            'email' => 'contoh@gmail.com',
-            'password' => 'Masukan password',
-            'confirm_password' => 'Masukan konfirmasi password',
-            'phone_number' => 'Masukan nomor telepon',
-            'address' => 'Masukan alamat',
-            'resident_identity_card' => 'Masukan KTP',
-            'driver_license' => 'Masukan SIM',
-        ],
-        'email' => 'Email',
-        'password' => 'Password',
-        'confirm_password' => 'Konfirmasi Password',
-        'phone_number' => 'Nomor Telepon',
-        'address' => 'Alamat',
-        'already_have_account' => 'Sudah punya akun?',
-        'card' => [
-            'resident_identity_card' => 'KTP',
-            'driver_license' => 'SIM',
-            'photo_of_resident_identity_card' => 'Foto KTP',
-            'photo_of_driver_license' => 'Foto SIM',
-        ],
     ],
 ];

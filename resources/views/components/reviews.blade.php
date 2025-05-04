@@ -2,8 +2,8 @@
     <div class="container">
         <div class="">
             <article class="text-left sm:text-center">
-                <span class="badge">{{ __('messages.badge.home_page_badge.feedback') }}</span>
-                <h1 class="title">{{ __('messages.title.home_page_title.customer_reviews') }}</span></h1>
+                <span class="badge">{{ __('messages.sections.components.feedback_section.badge') }}</span>
+                <h1 class="title">{{ __('messages.sections.components.feedback_section.title') }}</span></h1>
 
             </article>
         </div>

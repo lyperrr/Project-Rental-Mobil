@@ -76,7 +76,7 @@
                             class="btn-primary flex justify-center items-center w-full lg:w-auto sm:py-4 sm:text-xl">
                             {{ __('messages.button.login') }}
                         </a>
-                        <a href=""
+                        <a href="/signup"
                             class="btn-outline flex justify-center text-shark-950 items-center w-full lg:w-auto sm:py-4 sm:text-xl">
                             {{ __('messages.button.signup') }}
                         </a>
