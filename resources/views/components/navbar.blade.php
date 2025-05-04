@@ -13,7 +13,7 @@
                         {{-- Ganti Bahasa  --}}
                         <div class="relative language-dropdown text-shark-950">
                             <button id="langButton"
-                                class="lang-button rounded-full border border-orange-200 focus:outline-none cursor-pointer w-8 h-8 sm:w-10 sm:h-1 flex items-center justify-center bg-white shadow">
+                                class="lang-button rounded-full border border-orange-200 focus:outline-none cursor-pointer w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center bg-white shadow">
                                 <img id="selectedFlag"
                                     src="{{ App::getLocale() == 'id' ? 'img/flag/indonesia.png' : 'img/flag/britain.png' }}"
                                     alt="{{ App::getLocale() == 'id' ? 'Indonesia' : 'English' }}"

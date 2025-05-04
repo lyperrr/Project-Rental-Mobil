@@ -51,8 +51,6 @@
   .active-menu .active-menu-show {
     transform: translateY(0);
   }
-
-
 }
 
 
@@ -60,6 +58,9 @@
   /* Font Family */
   --font-poppins: 'Poppins', sans-serif;
   --font-mono: var(--font-mono), monospace;
+
+  --background-image-sports_luxury_section: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/img/your-dream.jpg');
+  --background-image-hero: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/img/hero-section.png');
 
   /* Color */
   --color-shark-50: #f6f8f9;

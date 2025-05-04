@@ -3,8 +3,7 @@
     <x-slot:title>{{ $title }}</x-slot:title>
 
     {{-- Container Content --}}
-    <main class="h-screen sm:h-[110vh] bg-no-repeat bg-cover bg-left sm:bg-center"
-        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/hero-section.png');">
+    <main class="h-screen sm:h-[110vh] bg-no-repeat bg-cover bg-left sm:bg-center bg-hero">
         {{-- Navbar --}}
         <x-navbar />
 
@@ -47,24 +46,26 @@
 
     {{-- Start Filter Section --}}
     <section class="sm:relative pt-10 sm:pt-0">
-        <div class="sm:absolute container sm:-bottom-10">
-            <div class=" p-4 w-full bg-white border-2 border-orange-200 shadow-lg rounded-xl">
-                <div class="flex items-center gap-2 flex-wrap">
-                    @foreach (__('messages.sections.home_page.filter_section') as $filter)
-                        <div class="relative w-full sm:grow sm:w-auto flex">
-                            <button
-                                class="btn-outline grow justify-between px-4 capitalize focus:border-orange-200 border-2 focus:text-orange-200 lg:text-base">
-                                {{ $filter['filter_item'] }}
-                                <i class='bx bx-chevron-down text-3xl'></i>
-                            </button>
-                        </div>
-                    @endforeach
-                    <button class="btn-primary gap-1.5 lg:py-3 px-4 grow text-xl lg:text-base lg:grow-0 capitalize">
-                        <span class="lg:hidden">{{ __('messages.button.search') }}</span>
-                        <span class="hidden lg:block">
-                            <i class='bx bx-search text-2xl'></i>
-                        </span>
-                    </button>
+        <div class="sm:absolute sm:inset-x-0 sm:-bottom-10">
+            <div class="container">
+                <div class="p-4 w-full bg-white border-2 border-orange-200 shadow-lg rounded-xl">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        @foreach (__('messages.sections.home_page.filter_section') as $filter)
+                            <div class="relative w-full sm:grow sm:w-auto flex">
+                                <button
+                                    class="btn-outline grow justify-between px-4 capitalize focus:border-orange-200 border-2 focus:text-orange-200 lg:text-base">
+                                    {{ $filter['filter_item'] }}
+                                    <i class='bx bx-chevron-down text-3xl'></i>
+                                </button>
+                            </div>
+                        @endforeach
+                        <button class="btn-primary gap-1.5 lg:py-3 px-4 grow text-xl lg:text-base lg:grow-0 capitalize">
+                            <span class="lg:hidden">{{ __('messages.button.search') }}</span>
+                            <span class="hidden lg:block">
+                                <i class='bx bx-search text-2xl'></i>
+                            </span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -154,7 +155,8 @@
 
                     <div class="">
                         <article class="mt-4 lg:m-0">
-                            <span class="badge">{{ __('messages.sections.home_page.wideselection_section.badge') }}</span>
+                            <span
+                                class="badge">{{ __('messages.sections.home_page.wideselection_section.badge') }}</span>
                             <h1 class="title mx-0 w-auto">
                                 {{ __('messages.sections.home_page.wideselection_section.title') }}</span></h1>
                             <p class="paragraph mx-0 w-auto">
@@ -174,14 +176,14 @@
     {{-- End Why Choose Us --}}
 
     {{-- Your Dream --}}
-    <section class="py-10">
+    <section class="py-10 sm:p-0 bg-sports_luxury_section lg:bg-none bg-center bg-no-repeat">
         <div class="container">
-            <div class="h-[70vh] bg-hero bg-cover bg-center flex justify-center items-center rounded-xl"
-                style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/your-dream.jpg');">
+            <div
+                class="h-[70vh] sm:h-[60vh] lg:h-[70vh] bg-cover bg-center bg-no-repeat flex justify-center items-center rounded-xl lg:bg-sports_luxury_section">
                 <article class="text-center text-white">
                     <span
                         class="badge mx-auto">{{ __('messages.sections.home_page.sports_&_luxury_section.badge') }}</span>
-                    <h1 class="title uppercase w-auto">
+                    <h1 class="title capitalize w-auto">
                         {{ __('messages.sections.home_page.sports_&_luxury_section.title') }}</span></h1>
                     <p class="paragraph text-white">
                         {{ __('messages.sections.home_page.sports_&_luxury_section.paragraph') }}
