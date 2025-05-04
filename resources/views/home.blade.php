@@ -50,14 +50,14 @@
                 <div class="flex items-center gap-2 flex-wrap">
                     <div class="relative w-full sm:grow sm:w-auto flex">
                         <button
-                            class="btn-outline grow justify-between px-2 capitalize focus:border-orange-200 border-2 focus:text-orange-200">
+                            class="btn-outline grow justify-between px-4 capitalize focus:border-orange-200 border-2 focus:text-orange-200 lg:text-base">
                             {{ __('messages.filter.home_page_filter.car type') }}
                             <i class='bx bx-chevron-down text-3xl'></i>
                         </button>
                     </div>
                     <div class="relative w-full sm:grow sm:w-auto flex">
                         <button
-                            class="btn-outline grow justify-between px-2 capitalize focus:border-orange-200 border-2 focus:text-orange-200">
+                            class="btn-outline grow justify-between px-4 capitalize focus:border-orange-200 border-2 focus:text-orange-200 lg:text-base">
                             {{ __('messages.filter.home_page_filter.price') }}
 
                             <i class='bx bx-chevron-down text-3xl'></i>
@@ -65,7 +65,7 @@
                     </div>
                     <div class="relative w-full sm:grow sm:w-auto flex">
                         <button
-                            class="btn-outline grow justify-between px-2 capitalize focus:border-orange-200 border-2 focus:text-orange-200">
+                            class="btn-outline grow justify-between px-4 capitalize focus:border-orange-200 border-2 focus:text-orange-200 lg:text-base">
                             {{ __('messages.filter.home_page_filter.passenger') }}
 
                             <i class='bx bx-chevron-down text-3xl'></i>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="relative w-full sm:grow sm:w-auto flex">
                         <button
-                            class="btn-outline grow justify-between px-2 capitalize focus:border-orange-200 border-2 focus:text-orange-200">
+                            class="btn-outline grow justify-between px-4 capitalize focus:border-orange-200 border-2 focus:text-orange-200 lg:text-base">
                             {{ __('messages.filter.home_page_filter.transmission') }}
 
                             <i class='bx bx-chevron-down text-3xl'></i>
