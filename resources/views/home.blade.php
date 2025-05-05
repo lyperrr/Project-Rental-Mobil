@@ -49,7 +49,7 @@
         <div class="sm:absolute sm:inset-x-0 sm:-bottom-10">
             <div class="container">
                 <div class="p-4 w-full bg-white border-2 border-orange-200 shadow-lg rounded-xl">
-                    <div class="flex items-center gap-2 flex-wrap">
+                    <div class="flex items-center gap-2 lg:gap-4 flex-wrap">
                         @foreach (__('messages.sections.home_page.filter_section') as $filter)
                             <div class="relative w-full sm:grow sm:w-auto flex">
                                 <button
@@ -59,7 +59,7 @@
                                 </button>
                             </div>
                         @endforeach
-                        <button class="btn-primary gap-1.5 lg:py-3 px-4 grow text-xl lg:text-base lg:grow-0 capitalize">
+                        <button class="btn-primary gap-1.5 lg:p-auto grow text-xl lg:text-base lg:grow-0 capitalize">
                             <span class="lg:hidden">{{ __('messages.button.search') }}</span>
                             <span class="hidden lg:block">
                                 <i class='bx bx-search text-2xl'></i>

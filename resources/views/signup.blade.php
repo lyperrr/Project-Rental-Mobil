@@ -13,7 +13,7 @@
     </main>
 
     <div class="container py-10 ">
-        <div class="bg-white shadow-lg rounded-xl lg:w-[70%] mx-auto border-2 border-shark-950/40">
+        <div class="bg-white shadow-lg rounded-xl lg:max-w-4xl mx-auto border-2 border-shark-950/40">
             <form accept="" class="p-4 sm:p-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-4 lg:gap-8">
                     {{-- First Column --}}
@@ -169,7 +169,7 @@
                 {{-- Submit Button --}}
                 <button type="submit"
                     class="btn-primary w-full sm:w-1/2 mx-auto lg:text-xl mt-4">{{ __('messages.button.signup') }}</button>
-                <p class="text-center mt-4">{{ __('messages.sections.signup_page.already_have_account') }}
+                <p class="text-center mt-4">{{ __('messages.sections.signup_page.label.already_have_account') }}
                     <a href="{{ route('login') }}"
                         class="text-purple-600 underline">{{ __('messages.button.login') }}?</a>
                 </p>
