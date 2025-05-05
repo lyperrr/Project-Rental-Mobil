@@ -9,7 +9,7 @@
 
 @layer components {
   .btn-primary {
-    @apply flex items-center justify-center bg-gradient-to-r from-orange-100 to-orange-300 px-8 py-2 text-lg font-medium text-white rounded-lg hover:from-orange-300 hover:to-orange-100 transition-colors duration-200 ease-linear sm:px-4 cursor-pointer sm:py-2 lg:py-2 sm:text-sm;
+    @apply flex items-center justify-center bg-gradient-to-r from-orange-100 to-orange-300 px-8 py-2 text-lg font-medium text-white rounded-lg hover:from-orange-300 hover:to-orange-100 transition-colors duration-200 ease-linear sm:px-4 cursor-pointer sm:py-2 lg:py-2 sm:text-sm lg:text-base;
   }
 
   .btn-outline {
