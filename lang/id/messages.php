@@ -84,18 +84,22 @@ return [
                 'card' => [
                     [
                         'title' => 'Berbagai Pilihan Kendaraan',
+                        'url_image' => 'svg/cars.svg',
                         'description' => 'Beragam pilihan mobil, dari mobil kota hingga SUV mewah, siap menemani perjalanan Anda.',
                     ],
                     [
                         'title' => 'Harga Terjangkau',
+                        'url_image' => 'svg/money.svg',
                         'description' => 'Harga terbaik tanpa biaya tersembunyi, sewa mobil menjadi lebih ekonomis dan transparan.',
                     ],
                     [
                         'title' => 'Durasi Sewa Fleksibel',
+                        'url_image' => 'svg/time.svg',
                         'description' => 'Ingin menyewa per jam, harian, mingguan, atau bulanan? Pilih sesuai kebutuhan Anda tanpa repot!.',
                     ],
                     [
                         'title' => 'Pemesanan Online Mudah',
+                        'url_image' => 'svg/flash.svg',
                         'description' => 'Pesan mobil kapan saja dengan sistem pemesanan online yang cepat dan praktis.',
                     ],
                 ],

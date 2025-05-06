@@ -117,23 +117,23 @@
                         </p>
                     </article>
 
-                    <div class="grid mt-10 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="grid mt-10 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         @foreach (__('messages.sections.home_page.whychooseus_section.card') as $whychooseus)
                             <div
-                                class="border p-4 sm:p-4 lg:pt-8 xl:pt-4 rounded-2xl bg-white hover:shadow-md border-shark-950/40">
-                                <div class="items-center gap-3.5 flex lg:flex-col relative xl:flex-row">
-                                    <div
-                                        class="bg-radial from-orange-100 lg:absolute lg:-top-16 xl:top-auto xl:static via-orange-200 to-orange-300 rounded-full overflow-hidden flex-shrink-0">
-                                        <div class="p-2 ">
-                                            <img class="w-full" src="{{ 'svg/cars.svg' }}" alt="">
-                                        </div>
-                                    </div>
-                                    <h4 class="subtitle lg:text-center xl:text-left">
-                                        {{ $whychooseus['title'] }}</h4>
+                                class="border-l-4 p-4 sm:p-4 group lg:pt-8 flex items-center gap-4 sm:gap-0 sm:flex-col xl:pt-4 sm:border-t-4 sm:border-l-0 rounded-2xl bg-white hover:shadow-lg shadow-lg hover:shadow-orange-100/70 border-orange-200 lg:border-t-4 lg:border-l-0 transition-all duration-200 ease-linear ">
+                                <div
+                                    class="bg-radial flex group-hover:shadow-md group-hover:shadow-orange-100 group-hover:scale-105 items-center mx-auto shadow-md justify-center p-1 size-18 from-orange-100 via-orange-200 to-orange-300 rounded-full overflow-hidden flex-shrink-0 transition-all duration-200 ease-linear">
+                                    <img class="w-[70%] lg:w-[80%] xl:w-[70%]"
+                                        src="{{ __($whychooseus['url_image']) }}" alt="">
                                 </div>
-                                <p class="paragraph w-auto lg:text-center xl:text-left">
-                                    {{ $whychooseus['description'] }}
-                                </p>
+                                <article class="pt-4">
+                                    <h4 class="subtitle sm:text-center text-2xl lg:text-xl lg:mt-2 xl:mt-0">
+                                        {{ $whychooseus['title'] }}
+                                    </h4>
+                                    <p class="paragraph w-auto sm:text-center">
+                                        {{ $whychooseus['description'] }}
+                                    </p>
+                                </article>
                             </div>
                         @endforeach
                     </div>

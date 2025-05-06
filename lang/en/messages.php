@@ -83,18 +83,22 @@ return [
                 'card' => [
                     [
                         'title' => 'Various Vehicle Options',
+                        'url_image' => 'svg/cars.svg',
                         'description' => 'A wide selection of cars, from city cars to luxury SUVs, ready to accompany your journey.',
                     ],
                     [
                         'title' => 'Affordable Prices',
+                        'url_image' => 'svg/money.svg',
                         'description' => 'Best prices with no hidden fees, making car rental more economical and transparent.',
                     ],
                     [
                         'title' => 'Flexible Rental Duration',
+                        'url_image' => 'svg/time.svg',
                         'description' => 'Want to rent by the hour, day, week, or month? Choose according to your needs hassle-free!',
                     ],
                     [
                         'title' => 'Easy Online Booking',
+                        'url_image' => 'svg/flash.svg',
                         'description' => 'Book a car anytime with a fast and practical online booking system.',
                     ],
                 ],
