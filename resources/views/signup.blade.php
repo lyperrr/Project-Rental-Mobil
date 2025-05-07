@@ -92,7 +92,7 @@
                             <label for=""
                                 class="font-medium text-base mb-1">{{ __('messages.sections.signup_page.label.phone_number') }}</label>
                             <div class="relative group">
-                                <input type="number" name="" id="" required pattern="[0-9]+"
+                                <input type="tel" name="" id="" required pattern="[0-9]+"
                                     minlength="10" maxlength="15"
                                     placeholder="{{ __('messages.sections.signup_page.placeholder.phone_number') }}"
                                     class="border border-shark-950/80 p-2 px-4 rounded-lg focus:border-orange-300 w-full focus:outline-none appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none [&-moz-appearance:textfield]">

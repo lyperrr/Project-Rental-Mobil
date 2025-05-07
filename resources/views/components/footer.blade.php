@@ -3,8 +3,8 @@
         <div class="grid lg:grid-cols-12 py-10 lg:gap-5 xl:gap-10">
             <aside class="lg:col-span-5">
                 <div class="">
-                    <a href="" class="title text-white">
-                        AutoRent.
+                    <a href="/" class="title text-white w-fit">
+                        <img class="w-20 sm:w-25 object-contain xl:w-35" src="{{ asset('img/logo.png') }}" alt="">
                     </a>
                     <p class="paragraph mx-0 w-auto sm:text-lg text-white">
                         {{ __('messages.sections.components.footer.description') }}

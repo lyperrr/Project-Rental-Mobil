@@ -1,12 +1,10 @@
     <header class="w-full fixed transition-all duration-500 ease-linear text-white z-50">
-        <div class="relative py-5 lg:py-4">
+        <div class="relative py-4 sm:py-2">
             <div class="container flex items-center justify-between">
                 <div class="flex items-center justify-between w-full relative z-50 lg:w-auto">
                     {{-- Logo --}}
-                    <a href="" class="w-fit flex items-center">
-                        <p
-                            class="font-bold text-3xl m-0 sm:text-4xl lg:text-3xl transition-colors ease-linear duration-200 logo">
-                            Auto<span class="text-orange-200">Rent.</span></p>
+                    <a href="/" class="w-fit flex items-center">
+                            <img class="w-20 sm:w-25 object-contain xl:w-35" src="{{ asset('img/logo.png') }}" alt="">
                     </a>
 
                     <div class="flex items-center gap-2 lg:hidden">
