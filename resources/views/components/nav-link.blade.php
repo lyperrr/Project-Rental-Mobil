@@ -9,7 +9,7 @@
         <span
             class="inline-block transition-transform duration-300 lg:group-hover:-translate-y-full">{{ $slot }}</span>
         <span
-            class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-100 transition-all duration-300 group-hover:w-full hidden lg:block"></span>
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-100 transition-all duration-700 group-hover:w-full hidden lg:block"></span>
         <span
             class="absolute top-0 left-0 transition-transform duration-300 lg:translate-y-full group-hover:translate-y-0 hidden lg:block text-orange-100">{{ $slot }}</span>
     </a>

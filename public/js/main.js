@@ -24,7 +24,7 @@
                     // Menambahkan kelas fixed dan efek transisi pada header saat di-scrol l
                     header.classList.add(
                         'shadow-lg',
-                        'bg-shark-950/30',
+                        'bg-shark-950/50',
                         'backdrop-blur-md',
                         'transition-background-color'
                     );
@@ -32,7 +32,7 @@
                     // Menghapus kelas fixed saat scroll ke atas
                     header.classList.remove(
                         'shadow-lg', 
-                        'bg-shark-950/30', 
+                        'bg-shark-950/50', 
                         'backdrop-blur-md',
                         'transition-background-color'
                     );
