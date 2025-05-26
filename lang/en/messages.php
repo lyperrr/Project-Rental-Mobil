@@ -124,37 +124,64 @@ return [
                 'paragraph' => '',
             ],
         ],
-        'signup_page' => [
-            'title' => 'Sign Up Now',
-            'label' => [
-                'name' => [
-                    'first_name' => 'First Name',
-                    'last_name' => 'Last Name',
+        'login_page' => [
+            'left_desktop' => [
+                'badge' => 'Car Rental',
+                'title' => 'Ready to hit the ',
+                'subtitle' => 'road again?',
+                'paragraph' => 'Log in to manage your rentals easily and drive with confidence.',
+                'list' => [
+                    'list1' => 'Instant booking confirmation',
+                    'list2' => '24/7 customer support',
+                    'list3' => 'Premium vehicle selection',
                 ],
+            ],
+            'title' => 'Welcome Back',
+            'subtitle' => 'Log in to your account',
+            'or_login_with' => 'Or continue with',
+            'remember' => 'Remember me',
+            'label' => [
                 'email' => 'Email',
                 'password' => 'Password',
-                'confirm_password' => 'Confirm Password',
-                'phone_number' => 'Phone Number',
-                'address' => 'Address',
-                'already_have_account' => 'Already have an account?',
-                'card' => [
-                    'resident_identity_card' => 'Resident Identity Card',
-                    'driver_license' => 'Driver’s License',
-                    'photo_of_resident_identity_card' => 'Photo of Resident Identity Card',
-                    'photo_of_driver_license' => 'Photo of Driver’s License',
-                ],
+                'dont_have_account' => 'Don\'t have an account?',
             ],
             'placeholder' => [
-                'first_name' => 'Enter your first name',
-                'last_name' => 'Enter your last name',
                 'email' => 'example@gmail.com',
                 'password' => 'Enter your password',
-                'confirm_password' => 'Enter your confirm password',
-                'phone_number' => 'Enter your phone number',
-                'address' => 'Enter your complete address',
-                'resident_identity_card' => 'Enter your resident identity card',
-                'driver_license' => 'Enter your driver license',
             ],
+        ],
+        'signup_page' => [
+            'left_desktop' => [
+                'badge' => 'Car Rental',
+                'title' => 'Join Our',
+                'subtitle' => 'Amazing Community',
+                'paragraph' => 'Start your journey with us and experience unforgettable moments with advanced features we have prepared for you.',
+                'list' => [
+                    'list1' => 'Unlimited access to all premium features',
+                    'list2' => 'Responsive 24/7 customer support',
+                    'list3' => 'Enterprise-grade data security'
+                ]
+            ],
+            'title' => 'Create New Account',
+            'subtitle' => 'Fill in the information below to get started',
+            'label' => [
+                'username' => 'Username',
+                'email' => 'Email Address',
+                'password' => 'Password',
+                'confirm_password' => 'Confirm Password',
+                'already_have_account' => 'Already have an account?'
+            ],
+            'placeholder' => [
+                'username' => 'Enter your username',
+                'email' => 'Enter your email address',
+                'password' => 'Create a strong password',
+                'confirm_password' => 'Repeat your password'
+            ],
+            'agree_to' => 'I agree to the',
+            'terms_and_conditions' => 'Terms and Conditions',
+            'and' => 'and',
+            'privacy_policy' => 'Privacy Policy',
+            'or_signup_with' => 'Or sign up with'
         ],
     ],
 
@@ -167,5 +194,8 @@ return [
         'registration' => 'Registration',
         'browse_cars' => 'Browse Cars',
         'book_now' => 'Book Now',
+        'forgot_password' => 'Forgot Password?',
+        'login_with_google' => 'Login with Google',
+        'signup_with_google' => 'Sign Up with Google',
     ],
 ];

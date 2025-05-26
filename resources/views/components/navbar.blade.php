@@ -70,11 +70,11 @@
                         </x-nav-link>
                     </ul>
                     <div class="mt-4 flex items-center gap-4 lg:hidden w-full sm:w-[70%] sm:mx-auto sm:gap-5">
-                        <a href="/login"
+                        <a href="{{ route('login') }}"
                             class="btn-primary flex justify-center items-center w-full lg:w-auto sm:py-4 sm:text-xl">
                             {{ __('messages.button.login') }}
                         </a>
-                        <a href="/signup"
+                        <a href="{{ route('signup') }}"
                             class="btn-outline flex justify-center text-shark-950 items-center w-full lg:w-auto sm:py-4 sm:text-xl">
                             {{ __('messages.button.signup') }}
                         </a>

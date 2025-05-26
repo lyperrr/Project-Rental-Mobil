@@ -125,36 +125,65 @@ return [
                 'paragraph' => '',
             ],
         ],
-        'signup_page' => [
+        'login_page' => [
+            'left_desktop' => [
+                'badge' => 'Sewa Mobil',
+                'title' => 'Siap untuk kembali ',
+                'subtitle' => 'menjelajahi jalan?',
+
+                'paragraph' => 'Masuk untuk mengelola penyewaan Anda dengan mudah dan berkendara dengan percaya diri.',
+                'list' => [
+                    'list1' => 'Konfirmasi pemesanan instan',
+                    'list2' => 'Layanan pelanggan 24/7',
+                    'list3' => 'Pilihan kendaraan premium',
+                ],
+            ],
+            'title' => 'Selamat Datang Kembali',
+            'subtitle' => 'Masuk ke akun Anda',
+            'or_login_with' => 'Atau lanjutkan dengan',
+            'remember' => 'Ingat saya',
             'label' => [
-                'name' => [
-                    'first_name' => 'Nama Depan',
-                    'last_name' => 'Nama Belakang',
-                ],
-                'email' => 'E-mail',
+                'email' => 'Email',
                 'password' => 'Kata Sandi',
-                'confirm_password' => 'Konfirmasi Kata Sandi',
-                'phone_number' => 'Nomor Telepon',
-                'address' => 'Alamat',
-                'already_have_account' => 'Sudah punya akun?',
-                'card' => [
-                    'resident_identity_card' => 'KTP',
-                    'driver_license' => 'SIM',
-                    'photo_of_resident_identity_card' => 'Foto KTP',
-                    'photo_of_driver_license' => 'Foto SIM',
-                ],
+                'dont_have_account' => 'Belum punya akun?',
             ],
             'placeholder' => [
-                'first_name' => 'Masukan nama depan',
-                'last_name' => 'Masukan nama belakang',
                 'email' => 'contoh@gmail.com',
-                'password' => 'Masukan password',
-                'confirm_password' => 'Masukan konfirmasi password',
-                'phone_number' => 'Masukan nomor telepon',
-                'address' => 'Masukan alamat lengkap anda',
-                'resident_identity_card' => 'Masukan KTP',
-                'driver_license' => 'Masukan SIM',
+                'password' => 'Masukkan kata sandi Anda',
             ],
+        ],
+        'signup_page' => [
+            'left_desktop' => [
+                'badge' => 'Sewa Mobil',
+                'title' => 'Bergabung dengan',
+                'subtitle' => 'Komunitas Terbaik',
+                'paragraph' => 'Mulai perjalanan Anda bersama kami dan rasakan pengalaman yang tak terlupakan dengan fitur-fitur canggih yang telah kami persiapkan.',
+                'list' => [
+                    'list1' => 'Akses tanpa batas ke semua fitur premium',
+                    'list2' => 'Dukungan pelanggan 24/7 yang responsif',
+                    'list3' => 'Keamanan data tingkat enterprise'
+                ]
+            ],
+            'title' => 'Buat Akun Baru',
+            'subtitle' => 'Isi informasi di bawah untuk memulai',
+            'label' => [
+                'username' => 'Nama Pengguna',
+                'email' => 'Alamat Email',
+                'password' => 'Kata Sandi',
+                'confirm_password' => 'Konfirmasi Kata Sandi',
+                'already_have_account' => 'Sudah memiliki akun?'
+            ],
+            'placeholder' => [
+                'username' => 'Masukkan nama pengguna Anda',
+                'email' => 'Masukkan alamat email Anda',
+                'password' => 'Buat kata sandi yang kuat',
+                'confirm_password' => 'Ulangi kata sandi Anda'
+            ],
+            'agree_to' => 'Saya setuju dengan',
+            'terms_and_conditions' => 'Syarat dan Ketentuan',
+            'and' => 'dan',
+            'privacy_policy' => 'Kebijakan Privasi',
+            'or_signup_with' => 'Atau daftar dengan'
         ],
     ],
 
@@ -166,5 +195,8 @@ return [
         'search' => 'Cari',
         'browse_cars' => 'Jelajahi Mobil',
         'book_now' => 'Pesan Sekarang',
+        'forgot_password' => 'Lupa Kata Sandi?',
+        'login_with_google' => 'Masuk Dengan Google',
+        'signup_with_google' => 'Daftar Dengan Google',
     ],
 ];

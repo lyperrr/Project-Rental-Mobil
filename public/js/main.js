@@ -105,3 +105,19 @@ function toggleDropdown(button) {
 }
 // End Dropdown Any Questions
 
+// Start Button Hide & Visible Password
+function togglePassword(fieldId) {
+const passwordField = document.getElementById(fieldId);
+const iconElement = document.getElementById(fieldId + '-icon');
+
+if (passwordField.type === 'password') {
+    passwordField.type = 'text';
+    iconElement.classList.remove('bx-hide');
+    iconElement.classList.add('bx-show');
+} else {
+    passwordField.type = 'password';
+    iconElement.classList.remove('bx-show');
+    iconElement.classList.add('bx-hide');
+}
+}
+// End Button Hide & Visible Password
