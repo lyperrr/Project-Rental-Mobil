@@ -121,3 +121,37 @@ if (passwordField.type === 'password') {
 }
 }
 // End Button Hide & Visible Password
+
+// Start Slider Reviews
+const slider = document.getElementById('slider');
+const nextBtn = document.getElementById('nextBtn');
+const prevBtn = document.getElementById('prevBtn');
+
+nextBtn.addEventListener('click', () => {
+    slider.scrollBy({
+        left: 320,
+        behavior: 'smooth'
+    });
+});
+
+prevBtn.addEventListener('click', () => {
+    slider.scrollBy({
+        left: -320,
+        behavior: 'smooth'
+    });
+});
+
+// Center the first item on load
+window.addEventListener('', () => {
+    const firstCard = slider.querySelector('.snap-center');
+    if (firstCard) {
+        firstCard.scrollIntoView({
+            behavior: 'smooth',
+            block: 'nearest',
+            inline: 'center'
+        });
+    }
+});
+// End Slider Reviews
+
+

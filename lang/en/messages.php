@@ -12,7 +12,7 @@ return [
         'components' => [
             'feedback_section' => [
                 'badge' => 'Feedback',
-                'title' => 'Our Customer Reviews',
+                'title' => 'Customer Reviews',
             ],
             'any_questions_section' => [
                 'title' => 'We Are Ready To Help You',
@@ -113,10 +113,10 @@ return [
                 'title' => 'Explore Your Dream Car Now',
                 'paragraph' => 'Find the perfect car for your trip with our easy car rental service. Whether for business trips or weekend getaways, we offer flexible rental options at the best prices. Experience comfort, reliability, and affordability with us.',
             ],
-            '' => [
-                'badge' => '',
-                'title' => '',
-                'paragraph' => '',
+            'our_collection_section' => [
+                'badge' => 'Best Picks',
+                'title' => 'Our Collection Cars',
+                'paragraph' => 'Discover a wide range of well-maintained vehicles, from compact city cars to premium SUVs — all ready to match your travel needs with comfort and style.',
             ],
             '' => [
                 'badge' => '',
@@ -182,6 +182,144 @@ return [
             'and' => 'and',
             'privacy_policy' => 'Privacy Policy',
             'or_signup_with' => 'Or sign up with'
+        ],
+        'rent_page' => [
+            
+        ],
+        'rentPage' => [
+            'cars' => [
+                [
+                    'image' => 'https://img.freepik.com/free-psd/red-isolated-car_23-2151852884.jpg?ga=GA1.1.1193633351.1743924281&semt=ais_hybrid&w=740',
+                    'title' => 'Acura Sport Version',
+                    'price' => '35k',
+                    'duration' => 'Day',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/free-psd/blue-car_23-2151852886.jpg?ga=GA1.1.1234567890&semt=ais_hybrid&w=740',
+                    'title' => 'BMW X5',
+                    'price' => '45k',
+                    'duration' => 'Day',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/free-psd/white-suv-car_23-2151852890.jpg?ga=GA1.1.0987654321&semt=ais_hybrid&w=740',
+                    'title' => 'Toyota RAV4',
+                    'price' => '40k',
+                    'duration' => 'Day',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/free-psd/blue-car_23-2151852886.jpg?ga=GA1.1.1234567890&semt=ais_hybrid&w=740',
+                    'title' => 'Mercedes-Benz C-Class',
+                    'price' => '50k',
+                    'duration' => 'Day',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/free-psd/silver-sports-car_23-2151852892.jpg?ga=GA1.1.9876543210&semt=ais_hybrid&w=740',
+                    'title' => 'Porsche 911',
+                    'price' => '90k',
+                    'duration' => 'Day',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/free-psd/red-isolated-car_23-2151852884.jpg?ga=GA1.1.1193633351.1743924281&semt=ais_hybrid&w=740',
+                    'title' => 'Tesla Model S',
+                    'price' => '80k',
+                    'duration' => 'Day',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/free-psd/red-sports-car_23-2151852894.jpg?ga=GA1.1.2222222222&semt=ais_hybrid&w=740',
+                    'title' => 'Ferrari F8',
+                    'price' => '150k',
+                    'duration' => 'Day',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/free-psd/blue-car_23-2151852886.jpg?ga=GA1.1.1234567890&semt=ais_hybrid&w=740',
+                    'title' => 'Ferrari F8',
+                    'price' => '150k',
+                    'duration' => 'Day',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/free-psd/red-sports-car_23-2151852894.jpg?ga=GA1.1.2222222222&semt=ais_hybrid&w=740',
+                    'title' => 'Ferrari F8',
+                    'price' => '150k',
+                    'duration' => 'Day',
+                ],
+                    [
+        'image' => 'https://img.freepik.com/free-photo/blue-jeep-photo-shooting-sunset_181624-13696.jpg',
+        'title' => 'Range Rover Evoque',
+        'price' => '70k',
+        'duration' => 'Day',
+    ],
+    [
+        'image' => 'https://img.freepik.com/free-photo/side-view-electric-car_144627-13397.jpg',
+        'title' => 'Hyundai Ioniq 5',
+        'price' => '55k',
+        'duration' => 'Day',
+    ],
+    [
+        'image' => 'https://img.freepik.com/free-photo/luxury-sedan-car-front_181624-13704.jpg',
+        'title' => 'Lexus ES 350',
+        'price' => '60k',
+        'duration' => 'Day',
+    ],
+            ],
+
+            'reviews' => [
+                [
+                    'image' => 'https://img.freepik.com/free-photo/brunette-businesswoman-inside-car_23-2148142465.jpg?ga=GA1.1.1193633351.1743924281&semt=ais_hybrid&w=740',
+                    'title' => 'Great Experience!',
+                    'description' => 'The car was in excellent condition and the process was smooth.',
+                    'username' => 'Jovii_Dewilisa',
+                    'rating' => 3.75,
+                    'profile_image' => 'https://img.freepik.com/free-photo/horizontal-portrait-smiling-happy-young-pleasant-looking-female-wears-denim-shirt-stylish-glasses-with-straight-blonde-hair-expresses-positiveness-poses_176420-13176.jpg',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/premium-photo/two-asian-friends-travel-by-car-clear-day-beautiful-blue-sky-they-was-happy-along-way-trip_208349-496.jpg?ga=GA1.1.1193633351.1743924281&semt=ais_hybrid&w=740',
+                    'title' => 'Awesome Ride!',
+                    'description' => 'Loved the ride. Very comfortable and easy to handle.',
+                    'username' => 'Andi_Saputra',
+                    'rating' => 4.75,
+                    'profile_image' => 'https://img.freepik.com/free-photo/medium-shot-man-sticking-out-tongue_23-2150171206.jpg',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/free-photo/brunette-businesswoman-inside-car_23-2148142465.jpg?ga=GA1.1.1193633351.1743924281&semt=ais_hybrid&w=740',
+                    'title' => 'Great Experience!',
+                    'description' => 'The car was in excellent condition and the process was smooth.',
+                    'username' => 'Jovii_Dewilisa',
+                    'rating' => 3.75,
+                    'profile_image' => 'https://img.freepik.com/free-photo/horizontal-portrait-smiling-happy-young-pleasant-looking-female-wears-denim-shirt-stylish-glasses-with-straight-blonde-hair-expresses-positiveness-poses_176420-13176.jpg',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/premium-photo/two-asian-friends-travel-by-car-clear-day-beautiful-blue-sky-they-was-happy-along-way-trip_208349-496.jpg?ga=GA1.1.1193633351.1743924281&semt=ais_hybrid&w=740',
+                    'title' => 'Awesome Ride!',
+                    'description' => 'Loved the ride. Very comfortable and easy to handle.',
+                    'username' => 'Andi_Saputra',
+                    'rating' => 4.75,
+                    'profile_image' => 'https://img.freepik.com/free-photo/medium-shot-man-sticking-out-tongue_23-2150171206.jpg',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/free-photo/brunette-businesswoman-inside-car_23-2148142465.jpg?ga=GA1.1.1193633351.1743924281&semt=ais_hybrid&w=740',
+                    'title' => 'Great Experience!',
+                    'description' => 'The car was in excellent condition and the process was smooth.',
+                    'username' => 'Jovii_Dewilisa',
+                    'rating' => 3.75,
+                    'profile_image' => 'https://img.freepik.com/free-photo/horizontal-portrait-smiling-happy-young-pleasant-looking-female-wears-denim-shirt-stylish-glasses-with-straight-blonde-hair-expresses-positiveness-poses_176420-13176.jpg',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/premium-photo/two-asian-friends-travel-by-car-clear-day-beautiful-blue-sky-they-was-happy-along-way-trip_208349-496.jpg?ga=GA1.1.1193633351.1743924281&semt=ais_hybrid&w=740',
+                    'title' => 'Awesome Ride!',
+                    'description' => 'Loved the ride. Very comfortable and easy to handle.',
+                    'username' => 'Andi_Saputra',
+                    'rating' => 4.75,
+                    'profile_image' => 'https://img.freepik.com/free-photo/medium-shot-man-sticking-out-tongue_23-2150171206.jpg',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/premium-photo/image-young-asian-family-travel_296537-11071.jpg?ga=GA1.1.1193633351.1743924281&semt=ais_hybrid&w=740',
+                    'title' => 'Highly Recommend',
+                    'description' => 'Great service and reliable cars. Will rent again!',
+                    'username' => 'Sinta_Ardiani',
+                    'rating' => 5.0,
+                    'profile_image' => 'https://img.freepik.com/free-psd/portrait-girl-teenager_23-2151717388.jpg?ga=GA1.1.1193633351.1743924281&semt=ais_hybrid&w=740',
+                ],
+            ],
         ],
     ],
 

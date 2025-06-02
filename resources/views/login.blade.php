@@ -57,7 +57,11 @@
             </div>
 
             <!-- Right Side - Login Form -->
-            <div class="w-full lg:w-1/2 p-8 lg:p-12 flex items-center justify-center">
+            <div class="w-full lg:w-1/2 p-8 lg:p-12 flex items-center justify-center relative">
+                {{-- Globe --}}
+                <div class="absolute opacity-50 -z-10">
+                    <img src="{{ asset('svg/globe.svg') }}" alt="">
+                </div>
                 <div class="w-full max-w-md space-y-8">
                     <!-- Form Header -->
                     <div class="text-center space-y-2">
@@ -123,7 +127,7 @@
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
                                 <input id="remember_me" name="remember" type="checkbox"
-                                    class="h-4 w-4 cursor-pointer text-orange-600 focus:ring-orange-300 border-white/30 rounded bg-white/10 backdrop-blur-sm">
+                                    class="h-4 w-4 cursor-pointer text-orange-600 focus:ring-orange-300 border-white/30 rounded bg-white/10 backdrop-blur-sm accent-orange-300">
                                 <label for="remember_me"
                                     class="ml-3 text-sm sm:text-base cursor-pointer">{{ __('messages.sections.login_page.remember') }}
                                 </label>

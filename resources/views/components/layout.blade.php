@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="font-poppins">
+<html lang="en" class="font-poppins scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,6 @@
 <body class="text-shark-950 bg-shark-50">
     {{ $slot }}
 
-    <x-footer />
     {{-- Scripts --}}
     <script src="{{ asset('js/main.js') }}"></script>
 </body>

@@ -12,8 +12,7 @@ return [
         'components' => [
             'feedback_section' => [
                 'badge' => 'Masukan',
-                'title' => 'Ulasan Pelanggan Kami',
-                // 'paragraph' => '',
+                'title' => 'Ulasan Pelanggan',
             ],
             'any_questions_section' => [
                 'title' => 'Kami Siap Membantu Anda',
@@ -114,10 +113,10 @@ return [
                 'title' => 'Jelajahi Mobil Impian Anda Sekarang',
                 'paragraph' => 'Temukan mobil yang sempurna untuk perjalanan Anda dengan layanan sewa kami yang mudah. ​​Baik untuk perjalanan bisnis atau liburan akhir pekan, kami menawarkan opsi sewa yang fleksibel dengan harga terbaik. Rasakan kenyamanan, keandalan, dan keterjangkauan bersama kami.',
             ],
-            '' => [
-                'badge' => '',
-                'title' => '',
-                'paragraph' => '',
+            'our_collection_section' => [
+                'badge' => 'Pilihan Terbaik',
+                'title' => 'Koleksi Mobil Kami',
+                'paragraph' => 'Temukan berbagai pilihan kendaraan terbaik, mulai mobil kota hingga SUV mewah, siap menemani perjalanan Anda.',
             ],
             '' => [
                 'badge' => '',
@@ -190,7 +189,7 @@ return [
     'button' => [
         'login' => 'Masuk',
         'signup' => 'Daftar',
-        'rent_now' => 'Sewa Sekarang',
+        'rent_now' => 'Sewa',
         'explore_our_cars' => 'Jelajahi Mobil Kami',
         'search' => 'Cari',
         'browse_cars' => 'Jelajahi Mobil',

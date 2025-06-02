@@ -26,7 +26,7 @@
                 <div class="grid lg:grid-cols-3 gap-4 lg:gap-0 text-white">
 
                     <div class="">
-                        <h4 class="subtitle border-b-[3px] w-fit">
+                        <h4 class="subtitle border-b-2 w-fit">
                             {{ __('messages.sections.components.footer.title_footer.quicklinks') }}</h4>
                         <ul class="space-y-1 mt-2">
                             <li>
@@ -46,7 +46,7 @@
 
                     {{-- Start Quicklinks --}}
                     <div class="">
-                        <h4 class="subtitle border-b-[3px] w-fit">
+                        <h4 class="subtitle border-b-2 w-fit">
                             {{ __('messages.sections.components.footer.title_footer.navigation') }}</h4>
                         <ul class="space-y-1 mt-2">
                             <li>
@@ -70,7 +70,7 @@
 
                     {{-- Start Contact With Us --}}
                     <div class="">
-                        <h4 class="subtitle border-b-[3px] w-fit">
+                        <h4 class="subtitle border-b-2 w-fit">
                             {{ __('messages.sections.components.footer.title_footer.contact_with_us') }}
                         </h4>
                         <div

@@ -1,12 +1,11 @@
 <x-layout>
     {{-- Title --}}
     <x-slot:title>{{ $title }}</x-slot:title>
+    {{-- Navbar --}}
+    <x-navbar />
 
     {{-- Container Content --}}
     <main class="h-screen sm:h-[110vh] bg-no-repeat bg-cover bg-left sm:bg-center bg-hero">
-        {{-- Navbar --}}
-        <x-navbar />
-
         {{-- Content --}}
         {{-- Start Hero Section --}}
         <section id="hero" class=" ">
@@ -26,11 +25,11 @@
 
                         <div
                             class="mt-4 sm:w-[70%] sm:mt-5 mx-auto lg:mt-4 lg:flex lg:gap-4 lg:items-center lg:justify-center">
-                            <a href="" class="btn-primary gap-2 sm:py-2.5 sm:text-2xl lg:px-6 lg:text-base">
+                            <a href="rent" class="btn-primary gap-2 sm:py-2.5 sm:text-2xl lg:px-6 lg:text-base">
                                 {{ __('messages.button.rent_now') }}
                                 <i class='bx bx-car text-2xl'></i>
                             </a>
-                            <a href="{{ url('/rent') }}"
+                            <a href="{{ url('/rent#rent') }}"
                                 class="btn-outline gap-2 mt-2 group sm:mt-3 sm:py-2 sm:text-2xl lg:text-base lg:m-0 border-white text-white hover:border-orange-100 hover:text-orange-100 ">
                                 {{ __('messages.button.explore_our_cars') }}
                                 <i
@@ -107,7 +106,7 @@
         <div class="container">
             <div class="">
                 <div class="">
-                    <article class="text-center">
+                    <article class="sm:text-center">
                         <span
                             class="badge">{{ __('messages.sections.home_page.whychooseus_section.article.badge') }}</span>
                         <h1 class="title">
@@ -175,6 +174,54 @@
     </section>
     {{-- End Why Choose Us --}}
 
+    {{-- Start Our Collection --}}
+    <section id="rent" class="py-10 sm:py-10">
+        <div class="container">
+            <div class="">
+                <div class="">
+                    <article class="sm:text-center">
+                        <span
+                            class="badge">{{ __('messages.sections.home_page.our_collection_section.badge') }}</span>
+                        <h1 class="title">
+                            {{ __('messages.sections.home_page.our_collection_section.title') }}</span></h1>
+                        <p class="paragraph">
+                            {{ __('messages.sections.home_page.our_collection_section.paragraph') }}
+                        </p>
+                    </article>
+
+                    <div class="">
+                        <div
+                            class="py-10 pb-5 hide-scrollbar flex mx-auto *:cursor-pointer *:font-medium overflow-x-auto whitespace-nowrap gap-3 *:border *:px-4 *:py-1.5 *:lg:text-sm *:rounded-full *:hover:bg-shark-100 *:bg-shark-50 *:*:transition-all *:*:duration-200 *:*:ease-linear">
+                            <button class="">
+                                City Cars
+                            </button>
+                            <button class="">
+                                Luxury Cars
+                            </button>
+                            <button class="">
+                                Sports Cars
+                            </button>
+                            <button class="">
+                                SUV Cars
+                            </button>
+                            <button class="">
+                                Electric Cars
+                            </button>
+                        </div>
+                        <x-rent />
+
+                        <a href="{{ url('/rent#rent') }}" class="btn-primary gap-2 group w-fit mt-4 mx-auto">
+                            {{ __('messages.button.browse_cars') }}
+                            <i
+                                class='bx bx-right-arrow-alt text-2xl group-hover:translate-x-2 transition-all duration-200 ease-linear'></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- End Why Choose Us --}}
+
     {{-- Your Dream --}}
     <section class="py-10 sm:p-0 bg-sports_luxury_section lg:bg-none bg-center bg-no-repeat">
         <div class="container">
@@ -206,5 +253,6 @@
     <x-any-questions />
     {{-- End Questions --}}
 
-
+    {{-- Footer --}}
+    <x-footer />
 </x-layout>

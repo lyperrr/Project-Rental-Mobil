@@ -19,6 +19,7 @@
   .btn-subscribe {
     @apply lg:absolute lg:right-1 lg:top-1/2 lg:-translate-y-1/2 lg:px-8 lg:py-2 lg:text-lg lg:rounded-xl lg:bg-gradient-to-r lg:from-orange-300 lg:to-orange-100 lg:hover:from-orange-100 lg:hover:to-orange-300 lg:transition-all lg:duration-300 lg:ease-in-out;
   }
+
   /* Article */
   .badge {
     @apply bg-gradient-to-l from-orange-100 to-orange-300 text-white py-1 px-4 font-medium rounded-lg sm:text-lg lg:text-base sm:py-2 lg:py-1;
@@ -28,13 +29,27 @@
     @apply font-bold text-4xl mt-4 leading-tight sm:w-[90%] mx-auto sm:mt-6 lg:mt-4 lg:w-[70%];
   }
 
-  .subtitle{
+  .subtitle {
     @apply text-xl sm:text-2xl lg:text-xl font-semibold;
   }
 
   .paragraph {
     @apply text-shark-950/90 mt-2 text-base sm:w-[70%] sm:text-lg lg:text-base mx-auto sm:mt-3 lg:w-[50%];
   }
+
+  /* sembunyikan scrollbar di semua browser */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+  }
+
 
   .active-menu {
     color: var(--color-orange-200);
@@ -61,6 +76,7 @@
 
   --background-image-sports_luxury_section: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/img/your-dream.jpg');
   --background-image-hero: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/img/hero-section.png');
+  --background-image-hero-rent: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/img/hero-section-rent.png');
 
   /* Color */
   --color-shark-50: #f6f8f9;
