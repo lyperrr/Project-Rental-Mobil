@@ -124,6 +124,17 @@ return [
                 'paragraph' => '',
             ],
         ],
+        'rent_page' => [
+            'hero_section' => [
+                'badge' => 'Mulai Perjalananmu Bersama Kami',
+                'title' => [
+                    'span_1' => 'Petualangan Tanpa Batas,',
+                    'span_2' => 'Mobil Siap Menemani Kapan Saja.'
+                ],
+                'paragraph' => 'Langsung berkendara dengan layanan sewa mobil yang mudah dan terjangkau. Temukan mobil yang cocok untuk perjalananmu hari ini!',
+            ],
+
+        ],
         'login_page' => [
             'left_desktop' => [
                 'badge' => 'Sewa Mobil',
@@ -141,6 +152,12 @@ return [
             'subtitle' => 'Masuk ke akun Anda',
             'or_login_with' => 'Atau lanjutkan dengan',
             'remember' => 'Ingat saya',
+            'errors' => [
+                'email_required' => 'Kolom email wajib diisi.',
+                'email_invalid' => 'Email harus berupa alamat email yang valid.',
+                'password_required' => 'Kolom kata sandi wajib diisi.',
+                'invalid_credentials' => 'Kredensial yang diberikan tidak cocok dengan catatan kami.',
+            ],
             'label' => [
                 'email' => 'Email',
                 'password' => 'Kata Sandi',
@@ -189,13 +206,14 @@ return [
     'button' => [
         'login' => 'Masuk',
         'signup' => 'Daftar',
-        'rent_now' => 'Sewa',
-        'explore_our_cars' => 'Jelajahi Mobil Kami',
+        'rent_now' => 'Sewa Sekarang',
+        'explore_our_cars' => 'Lihat Mobil Kami',
         'search' => 'Cari',
         'browse_cars' => 'Jelajahi Mobil',
         'book_now' => 'Pesan Sekarang',
         'forgot_password' => 'Lupa Kata Sandi?',
         'login_with_google' => 'Masuk Dengan Google',
         'signup_with_google' => 'Daftar Dengan Google',
+        'profile' => 'Profile',
     ],
 ];

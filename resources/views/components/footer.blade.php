@@ -4,7 +4,7 @@
             <aside class="lg:col-span-5">
                 <div class="">
                     <a href="/" class="title text-white w-fit">
-                        <img class="w-20 sm:w-25 object-contain xl:w-35" src="{{ asset('img/logo.png') }}" alt="">
+                        <img class="w-20 sm:w-25 object-contain lg:w-25 xl:w-30" src="{{ asset('img/logo.png') }}" alt="">
                     </a>
                     <p class="paragraph mx-0 w-auto sm:text-lg text-white">
                         {{ __('messages.sections.components.footer.description') }}

@@ -154,4 +154,24 @@ window.addEventListener('', () => {
 });
 // End Slider Reviews
 
+// Profile Dropdown
+const profileButton = document.getElementById('profileButton');
+const profileDropdown = document.getElementById('profileDropdown');
 
+if (profileButton && profileDropdown) {
+    profileButton.addEventListener('click', () => {
+        profileDropdown.classList.toggle('hidden');
+        profileDropdown.classList.toggle('scale-95');
+        profileDropdown.classList.toggle('opacity-0');
+        profileDropdown.classList.toggle('scale-100');
+        profileDropdown.classList.toggle('opacity-100');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!profileButton.contains(e.target) && !profileDropdown.contains(e.target)) {
+            profileDropdown.classList.add('hidden');
+            profileDropdown.classList.remove('scale-100', 'opacity-100');
+            profileDropdown.classList.add('scale-95', 'opacity-0');
+        }
+    });
+}

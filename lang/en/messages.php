@@ -124,6 +124,17 @@ return [
                 'paragraph' => '',
             ],
         ],
+        'rent_page' => [
+            'hero_section' => [
+                'badge' => 'Begin Your Trip With Us',
+                'title' => [
+                    'span_1' => 'Unlimited Adventures,',
+                    'span_2' => 'Your Ride Awaits Anytime.'
+                ],
+                'paragraph' => 'Get behind the wheel quickly with our easy and affordable car rentals. Pick the perfect car for your journey today!',
+            ],
+
+        ],
         'login_page' => [
             'left_desktop' => [
                 'badge' => 'Car Rental',
@@ -140,6 +151,12 @@ return [
             'subtitle' => 'Log in to your account',
             'or_login_with' => 'Or continue with',
             'remember' => 'Remember me',
+            'errors' => [
+                'email_required' => 'The email field is required.',
+                'email_invalid' => 'The email must be a valid email address.',
+                'password_required' => 'The password field is required.',
+                'invalid_credentials' => 'The provided credentials do not match our records.',
+            ],
             'label' => [
                 'email' => 'Email',
                 'password' => 'Password',
@@ -182,9 +199,6 @@ return [
             'and' => 'and',
             'privacy_policy' => 'Privacy Policy',
             'or_signup_with' => 'Or sign up with'
-        ],
-        'rent_page' => [
-            
         ],
         'rentPage' => [
             'cars' => [
@@ -242,24 +256,24 @@ return [
                     'price' => '150k',
                     'duration' => 'Day',
                 ],
-                    [
-        'image' => 'https://img.freepik.com/free-photo/blue-jeep-photo-shooting-sunset_181624-13696.jpg',
-        'title' => 'Range Rover Evoque',
-        'price' => '70k',
-        'duration' => 'Day',
-    ],
-    [
-        'image' => 'https://img.freepik.com/free-photo/side-view-electric-car_144627-13397.jpg',
-        'title' => 'Hyundai Ioniq 5',
-        'price' => '55k',
-        'duration' => 'Day',
-    ],
-    [
-        'image' => 'https://img.freepik.com/free-photo/luxury-sedan-car-front_181624-13704.jpg',
-        'title' => 'Lexus ES 350',
-        'price' => '60k',
-        'duration' => 'Day',
-    ],
+                [
+                    'image' => 'https://img.freepik.com/free-photo/blue-jeep-photo-shooting-sunset_181624-13696.jpg',
+                    'title' => 'Range Rover Evoque',
+                    'price' => '70k',
+                    'duration' => 'Day',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/free-photo/side-view-electric-car_144627-13397.jpg',
+                    'title' => 'Hyundai Ioniq 5',
+                    'price' => '55k',
+                    'duration' => 'Day',
+                ],
+                [
+                    'image' => 'https://img.freepik.com/free-photo/luxury-sedan-car-front_181624-13704.jpg',
+                    'title' => 'Lexus ES 350',
+                    'price' => '60k',
+                    'duration' => 'Day',
+                ],
             ],
 
             'reviews' => [
@@ -335,5 +349,6 @@ return [
         'forgot_password' => 'Forgot Password?',
         'login_with_google' => 'Login with Google',
         'signup_with_google' => 'Sign Up with Google',
+        'profile' => 'Profile',
     ],
 ];

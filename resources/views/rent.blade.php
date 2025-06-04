@@ -13,13 +13,13 @@
                 <div class="flex items-center justify-center h-screen">
                     <div class="">
                         <article class="text-center text-white">
-                            <span class="badge">{{ __('messages.sections.home_page.hero_section.badge') }}</span>
-                            <h1 class="title text-5xl">{{ __('messages.sections.home_page.hero_section.title.span_1') }}
+                            <span class="badge">{{ __('messages.sections.rent_page.hero_section.badge') }}</span>
+                            <h1 class="title text-5xl">{{ __('messages.sections.rent_page.hero_section.title.span_1') }}
                                 <span
-                                    class="text-orange-200">{{ __('messages.sections.home_page.hero_section.title.span_2') }}</span>
+                                    class="text-orange-200">{{ __('messages.sections.rent_page.hero_section.title.span_2') }}</span>
                             </h1>
                             <p class="paragraph text-white text-lg">
-                                {{ __('messages.sections.home_page.hero_section.paragraph') }}
+                                {{ __('messages.sections.rent_page.hero_section.paragraph') }}
                             </p>
                         </article>
 
@@ -282,7 +282,9 @@
         </div>
     </section>
 
-    <!-- Recent Reviews -->
+    {{-- Recent Reviews --}}
     <x-reviews />
 
+    {{-- Footer --}}
+    <x-footer />
 </x-layout>

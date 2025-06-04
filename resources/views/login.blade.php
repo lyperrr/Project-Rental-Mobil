@@ -159,10 +159,10 @@
                         </div>
 
                         <!-- Social Login -->
-                        <button type="button"
+                        <button type="button" onclick="window.location.href='{{ route('auth.google') }}'"
                             class="w-full flex items-center cursor-pointer justify-center px-4 py-4 border border-white/20 rounded-2xl shadow-sm bg-white/60 backdrop-blur-sm gap-2 font-medium transition-all duration-300 hover:bg-shark-100">
                             <img class="size-5" src="{{ asset('svg/google.svg') }}" alt="">
-                            {{ __('messages.button.signup_with_google') }}
+                            {{ __('messages.button.login_with_google') }}
                         </button>
                     </form>
 
