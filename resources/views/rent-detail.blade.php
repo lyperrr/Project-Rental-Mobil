@@ -64,7 +64,7 @@
     <section class="container">
 
         {{-- Tab Section --}}
-        <div class="border border-orange-400 rounded-md  w-full max-w-6xl bg-white overflow-x-auto">
+        <div class="border border-orange-400 rounded-md  bg-white overflow-x-auto">
             <div
                 class="flex justify-between text-center text-lg font-semibold text-black divide-x divide-white whitespace-nowrap min-w-max">
                 <button class="w-full py-3 hover:bg-orange-50 focus:bg-orange-200 focus:outline-none">Rent
@@ -76,7 +76,7 @@
         </div>
 
         {{-- Rent Detail Grid --}}
-        <div class="p-8 bg-white shadow-md rounded-md max-w-6xl mt-4 mb-20">
+        <div class="p-8 bg-white shadow-md rounded-md  mt-4 mb-20">
             <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @for ($i = 0; $i < 9; $i++)
                     <div class="text-center">
