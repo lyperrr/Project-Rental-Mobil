@@ -66,7 +66,7 @@
                         {{ __('messages.navbar.contact') }}
                     </x-nav-link>
                 </ul>
-                <div class="w-fit p-4 sm:mx-auto lg:hidden">
+                <div class="w-auto p-4 sm:mx-auto lg:hidden">
                     @if (Auth::check())
                         <a href="{{ route('profile') }}" class="flex items-center justify-center">
                             <img src="{{ asset('img/profile.jpeg') }}" alt="{{ Auth::user()->username }}'s Profile"

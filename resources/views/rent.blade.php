@@ -47,11 +47,19 @@
     <section id="rent" class="xl:py-10 relative">
         <div class="container">
             <div class="grid xl:grid-cols-12 gap-4">
+                {{-- Button filter --}}
+                <div class="fixed xl:hidden z-50 bottom-4 right-4 ">
+                    <button 
+                    onclick="toggleFilter()"
+                    class="bg-orange-200 flex items-center justify-center text-white rounded-full size-15 border border-white">
+                        <i class='bx bx-filter-alt text-2xl'></i>
+                    </button>
+                </div>
                 {{-- FIlter --}}
-                <div
-                    class="fixed z-50 bottom-0 w-full left-0 bg-white xl:top-auto xl:left-auto xl:z-auto rounded-b-none rounded-t-2xl xl:rounded-2xl p-4 xl:static xl:col-span-3 border border-shark-100 h-fit">
+                <div id="mobileFilter"
+                    class="fixed z-40 bottom-0 w-full left-0 bg-white xl:top-auto xl:left-auto xl:z-auto rounded-b-none rounded-t-2xl xl:rounded-2xl p-4 xl:static xl:col-span-3 border border-shark-100 h-fit transform translate-y-full xl:translate-0 transition-transform duration-300 ease-in-out">
                     <div
-                        class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 gap-6 max-h-[90vh] xl:max-h-full overflow-y-auto relative bg-white">
+                        class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-1 gap-6 max-h-[85vh] xl:max-h-full overflow-y-auto relative bg-white">
                         <!-- Filter Header -->
                         <div
                             class="flex justify-between col-span-2 lg:col-span-3 xl:col-span-1 items-center sticky top-0 left-0 w-full bg-white pb-5 xl:p-0 xl:static">
@@ -60,13 +68,16 @@
                                 Filter Pencarian
                             </h3>
 
-                            <button class="xl:hidden cursor-pointer">
-                                <i class='bx bx-x text-3xl hover:text-orange-200 hover:rotate-90 transition-all duration-200 ease-linear'></i>
+                            <button 
+                            onclick="toggleFilter()"
+                            class="xl:hidden cursor-pointer">
+                                <i
+                                    class='bx bx-x text-3xl hover:text-orange-200 hover:rotate-90 transition-all duration-200 ease-linear'></i>
                             </button>
                         </div>
 
                         <!-- Price Range Filter -->
-                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg">
+                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bx-money text-2xl'></i>
                                 Rentang Harga
@@ -88,7 +99,7 @@
                         </div>
 
                         <!-- Car Type Filter -->
-                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg">
+                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bx-car text-2xl'></i>
                                 Tipe Mobil
@@ -123,7 +134,7 @@
                         </div>
 
                         <!-- Transmission Filter -->
-                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg">
+                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bx-cog text-2xl'></i>
                                 Transmisi
@@ -148,7 +159,7 @@
                         </div>
 
                         <!-- Passenger Capacity -->
-                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg">
+                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bx-group text-2xl'></i>
                                 Kapasitas Penumpang
@@ -178,7 +189,7 @@
                         </div>
 
                         <!-- Year Filter -->
-                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg">
+                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bxs-calendar text-2xl'></i>
                                 Tahun Kendaraan
@@ -214,7 +225,7 @@
                         </div>
 
                         <!-- Brand Filter -->
-                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg">
+                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bx-badge text-2xl'></i>
                                 Merek Mobil
@@ -250,17 +261,17 @@
 
                         <!-- Filter Buttons -->
                         <div
-                            class="flex flex-wrap gap-2 col-span-2 lg:col-span-3 lg:flex-nowrap lg:w-[70%] mx-auto lg:gap-4 xl:gap-2 pb-10 xl:pb-0 xl:mt-0 xl:w-full xl:flex-wrap xl:col-span-1 mt-6 grow">
-                            <button class="btn-primary w-full grow lg:text-base sm:py-4 lg:py-2">
+                            class="flex flex-wrap gap-2 sm:gap-4 w-full sm:w-[70%] col-span-2 lg:col-span-3 lg:w-[70%] mx-auto lg:gap-4 xl:gap-2 pb-10 xl:pb-0 xl:mt-0 xl:w-full xl:flex-wrap xl:col-span-1 mt-6 grow">
+                            <button class="btn-primary w-full grow sm:text-lg lg:text-base xl:text-sm sm:py-4 lg:py-2">
                                 Terapkan Filter
                             </button>
-                            <button class="btn-outline border grow w-full lg:text-base sm:py-4 lg:py-2">
+                            <button class="btn-outline border grow w-full sm:text-lg lg:text-base xl:text-sm sm:py-4 lg:py-2">
                                 Reset
                             </button>
                         </div>
                     </div>
                 </div>
-                <div class="col-span-9">
+                <div class="col-span-9 pt-10 xl:pt-0">
                     {{-- Card Rent --}}
                     <x-rent />
                 </div>
@@ -287,4 +298,12 @@
 
     {{-- Footer --}}
     <x-footer />
+    <script>
+    function toggleFilter() {
+        const filter = document.getElementById('mobileFilter');
+        filter.classList.toggle('translate-y-full');
+        filter.classList.toggle('translate-y-0');
+    }
+</script>
+
 </x-layout>

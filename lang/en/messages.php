@@ -257,19 +257,19 @@ return [
                     'duration' => 'Day',
                 ],
                 [
-                    'image' => 'https://img.freepik.com/free-photo/blue-jeep-photo-shooting-sunset_181624-13696.jpg',
+                    'image' => 'https://hips.hearstapps.com/hmg-prod/images/2024-land-rover-range-rover-evoque-phev-102-65380162bded9.jpg?crop=0.829xw:0.701xh;0.131xw,0.0916xh&resize=1200:*',
                     'title' => 'Range Rover Evoque',
                     'price' => '70k',
                     'duration' => 'Day',
                 ],
                 [
-                    'image' => 'https://img.freepik.com/free-photo/side-view-electric-car_144627-13397.jpg',
+                    'image' => 'https://www.usnews.com/object/image/00000194-2c64-dd98-a3ff-7f6fd3930000/25-hyundai-ioniq-5n-ext3.jpg?update-time=1735911592139&size=responsiveGallery',
                     'title' => 'Hyundai Ioniq 5',
                     'price' => '55k',
                     'duration' => 'Day',
                 ],
                 [
-                    'image' => 'https://img.freepik.com/free-photo/luxury-sedan-car-front_181624-13704.jpg',
+                    'image' => 'https://www.naplesillustrated.com/wp-content/uploads/sites/82/2020/05/Lexus-ES-1-696x474.jpg',
                     'title' => 'Lexus ES 350',
                     'price' => '60k',
                     'duration' => 'Day',
