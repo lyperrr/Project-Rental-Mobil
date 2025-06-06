@@ -77,7 +77,7 @@
   --background-image-sports_luxury_section: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/img/your-dream.jpg');
   --background-image-hero: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/img/hero-section.png');
   --background-image-hero-rent: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/img/hero-section-rent.png');
-  --background-image-hero-blog: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/img/hero-section-blog.jpg');
+  --background-image-hero-blog: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/img/hero_section-blog.jpg');
 
   /* Color */
   --color-shark-50: #f6f8f9;

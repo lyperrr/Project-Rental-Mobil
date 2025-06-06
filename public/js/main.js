@@ -154,24 +154,26 @@ window.addEventListener('', () => {
 });
 // End Slider Reviews
 
-// Profile Dropdown
-const profileButton = document.getElementById('profileButton');
-const profileDropdown = document.getElementById('profileDropdown');
+// Start Filter Logic
+const filterBtn = document.getElementById('filterBtn');
+const rentSection = document.getElementById('rent');
 
-if (profileButton && profileDropdown) {
-    profileButton.addEventListener('click', () => {
-        profileDropdown.classList.toggle('hidden');
-        profileDropdown.classList.toggle('scale-95');
-        profileDropdown.classList.toggle('opacity-0');
-        profileDropdown.classList.toggle('scale-100');
-        profileDropdown.classList.toggle('opacity-100');
-    });
-
-    document.addEventListener('click', (e) => {
-        if (!profileButton.contains(e.target) && !profileDropdown.contains(e.target)) {
-            profileDropdown.classList.add('hidden');
-            profileDropdown.classList.remove('scale-100', 'opacity-100');
-            profileDropdown.classList.add('scale-95', 'opacity-0');
-        }
-    });
+function toggleFilter() {
+    const filter = document.getElementById('mobileFilter');
+    filter.classList.toggle('translate-y-full');
+    filter.classList.toggle('translate-y-0');
 }
+
+window.addEventListener('scroll', () => {
+    const rect = rentSection.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (isVisible) {
+        filterBtn.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+        filterBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+    } else {
+        filterBtn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        filterBtn.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+    }
+});
+// End Filter Logic

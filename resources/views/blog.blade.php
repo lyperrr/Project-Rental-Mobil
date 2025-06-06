@@ -3,7 +3,7 @@
     <x-slot:title>{{ $title }}</x-slot:title>
 
     {{-- Container Content --}}
-    <main class="h-screen sm:h-[110vh] bg-no-repeat bg-cover bg-left sm:bg-center bg-hero-rent" >
+    <main class="h-screen sm:h-[110vh] bg-no-repeat bg-cover bg-left sm:bg-center bg-hero-blog" >
         {{-- Navbar --}}
         <x-navbar />
 

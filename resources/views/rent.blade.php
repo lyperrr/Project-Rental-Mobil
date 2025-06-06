@@ -44,16 +44,16 @@
     </main>
 
     <!-- Start Car Grid -->
-    <section id="rent" class="xl:py-10 relative">
+    <section id="rent" class="py-10 relative">
         <div class="container">
             <div class="grid xl:grid-cols-12 gap-4">
                 {{-- Button filter --}}
                 <div class="fixed xl:hidden z-50 bottom-4 right-4 ">
-                    <button 
-                    onclick="toggleFilter()"
-                    class="bg-orange-200 flex items-center justify-center text-white rounded-full size-15 border border-white">
+                    <button id="filterBtn" onclick="toggleFilter()"
+                        class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 pointer-events-none transition-all duration-300 ease-in-out bg-orange-200 flex items-center justify-center hover:bg-orange-100 hover:scale-103 text-white rounded-full size-15 border border-white">
                         <i class='bx bx-filter-alt text-2xl'></i>
                     </button>
+
                 </div>
                 {{-- FIlter --}}
                 <div id="mobileFilter"
@@ -68,16 +68,15 @@
                                 Filter Pencarian
                             </h3>
 
-                            <button 
-                            onclick="toggleFilter()"
-                            class="xl:hidden cursor-pointer">
+                            <button onclick="toggleFilter()" class="xl:hidden cursor-pointer">
                                 <i
                                     class='bx bx-x text-3xl hover:text-orange-200 hover:rotate-90 transition-all duration-200 ease-linear'></i>
                             </button>
                         </div>
 
                         <!-- Price Range Filter -->
-                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
+                        <div
+                            class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bx-money text-2xl'></i>
                                 Rentang Harga
@@ -99,7 +98,8 @@
                         </div>
 
                         <!-- Car Type Filter -->
-                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
+                        <div
+                            class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bx-car text-2xl'></i>
                                 Tipe Mobil
@@ -134,7 +134,8 @@
                         </div>
 
                         <!-- Transmission Filter -->
-                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
+                        <div
+                            class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bx-cog text-2xl'></i>
                                 Transmisi
@@ -159,7 +160,8 @@
                         </div>
 
                         <!-- Passenger Capacity -->
-                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
+                        <div
+                            class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bx-group text-2xl'></i>
                                 Kapasitas Penumpang
@@ -189,7 +191,8 @@
                         </div>
 
                         <!-- Year Filter -->
-                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
+                        <div
+                            class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bxs-calendar text-2xl'></i>
                                 Tahun Kendaraan
@@ -225,7 +228,8 @@
                         </div>
 
                         <!-- Brand Filter -->
-                        <div class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
+                        <div
+                            class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bx-badge text-2xl'></i>
                                 Merek Mobil
@@ -265,7 +269,8 @@
                             <button class="btn-primary w-full grow sm:text-lg lg:text-base xl:text-sm sm:py-4 lg:py-2">
                                 Terapkan Filter
                             </button>
-                            <button class="btn-outline border grow w-full sm:text-lg lg:text-base xl:text-sm sm:py-4 lg:py-2">
+                            <button
+                                class="btn-outline border grow w-full sm:text-lg lg:text-base xl:text-sm sm:py-4 lg:py-2">
                                 Reset
                             </button>
                         </div>
@@ -299,11 +304,8 @@
     {{-- Footer --}}
     <x-footer />
     <script>
-    function toggleFilter() {
-        const filter = document.getElementById('mobileFilter');
-        filter.classList.toggle('translate-y-full');
-        filter.classList.toggle('translate-y-0');
-    }
-</script>
+
+    </script>
+
 
 </x-layout>
