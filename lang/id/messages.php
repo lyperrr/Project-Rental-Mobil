@@ -153,10 +153,10 @@ return [
             'or_login_with' => 'Atau lanjutkan dengan',
             'remember' => 'Ingat saya',
             'errors' => [
-                'email_required' => 'Kolom email wajib diisi.',
-                'email_invalid' => 'Email harus berupa alamat email yang valid.',
-                'password_required' => 'Kolom kata sandi wajib diisi.',
-                'invalid_credentials' => 'Kredensial yang diberikan tidak cocok dengan catatan kami.',
+                'email_required' => 'Alamat email wajib diisi.',
+                'email_invalid' => 'Alamat email tidak valid.',
+                'password_required' => 'Kata sandi wajib diisi.',
+                'invalid_credentials' => 'Email atau kata sandi salah.',
             ],
             'label' => [
                 'email' => 'Email',
@@ -182,6 +182,18 @@ return [
             ],
             'title' => 'Buat Akun Baru',
             'subtitle' => 'Isi informasi di bawah untuk memulai',
+            'errors' => [
+                'username_required' => 'Nama pengguna wajib diisi.',
+                'username_taken' => 'Nama pengguna sudah digunakan, silakan pilih yang lain.',
+                'email_required' => 'Alamat email wajib diisi.',
+                'email_invalid' => 'Alamat email tidak valid.',
+                'email_taken' => 'Alamat email sudah terdaftar, silakan gunakan email lain.',
+                'password_required' => 'Kata sandi wajib diisi.',
+                'password_min' => 'Kata sandi minimal harus 8 karakter.',
+                'password_confirmation' => 'Konfirmasi kata sandi tidak cocok.',
+                'terms_required' => 'Anda harus menyetujui syarat dan ketentuan.',
+                'terms_accepted' => 'Anda harus menyetujui syarat dan ketentuan.',
+            ],
             'label' => [
                 'username' => 'Nama Pengguna',
                 'email' => 'Alamat Email',

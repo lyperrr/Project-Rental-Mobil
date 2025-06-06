@@ -10,14 +10,14 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Socialite\Facades\Socialite;
 
-class RegisterController extends Controller
+class SignupController extends Controller
 {
     public function showRegistrationForm()
     {
-        return view('signup', ['title' => __('messages.sections.signup_page.title')]);
+        return view('signup', ['title' => 'Signup']);
     }
 
-    public function register(Request $request)
+    public function Signup(Request $request)
     {
         $this->validator($request->all())->validate();
 

@@ -152,10 +152,10 @@ return [
             'or_login_with' => 'Or continue with',
             'remember' => 'Remember me',
             'errors' => [
-                'email_required' => 'The email field is required.',
-                'email_invalid' => 'The email must be a valid email address.',
-                'password_required' => 'The password field is required.',
-                'invalid_credentials' => 'The provided credentials do not match our records.',
+                'email_required' => 'Email address is required.',
+                'email_invalid' => 'Invalid email address.',
+                'password_required' => 'Password is required.',
+                'invalid_credentials' => 'Incorrect email or password.'
             ],
             'label' => [
                 'email' => 'Email',
@@ -181,6 +181,18 @@ return [
             ],
             'title' => 'Create New Account',
             'subtitle' => 'Fill in the information below to get started',
+            'errors' => [
+                'username_required' => 'Username is required.',
+                'username_taken' => 'Username is already taken, please choose another.',
+                'email_required' => 'Email address is required.',
+                'email_invalid' => 'Invalid email address.',
+                'email_taken' => 'Email address is already registered, please use a different one.',
+                'password_required' => 'Password is required.',
+                'password_min' => 'Password must be at least 8 characters.',
+                'password_confirmation' => 'Password confirmation does not match.',
+                'terms_required' => 'You must agree to the terms and conditions.',
+                'terms_accepted' => 'You must agree to the terms and conditions.',
+            ],
             'label' => [
                 'username' => 'Username',
                 'email' => 'Email Address',
