@@ -1,4 +1,104 @@
-        // Navbar Js
+// Start Scroll Up
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollUpBtn = document.getElementById('scrollUpBtn');
+
+            // Handle scroll to show/hide button with smooth animation
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 250) {
+                    // Show button with smooth "pull up" effect
+                    scrollUpBtn.classList.remove('hidden');
+                    // Use requestAnimationFrame for smoother transition
+                    requestAnimationFrame(() => {
+                        scrollUpBtn.classList.add('opacity-100', 'translate-y-0', 'scale-100', 'pointer-events-auto');
+                        scrollUpBtn.classList.remove('opacity-0', 'translate-y-4', 'scale-95', 'pointer-events-none');
+                    });
+                } else {
+                    // Hide button with smooth "pull down" effect
+                    scrollUpBtn.classList.add('opacity-0', 'translate-y-4', 'scale-95', 'pointer-events-none');
+                    scrollUpBtn.classList.remove('opacity-100', 'translate-y-0', 'scale-100', 'pointer-events-auto');
+                    // Hide after animation completes
+                    setTimeout(() => {
+                        if (window.scrollY <= 250) {
+                            scrollUpBtn.classList.add('hidden');
+                        }
+                    }, 400); // Match duration-400
+                }
+            });
+
+            // Smooth scroll to top with click animation
+            scrollUpBtn.addEventListener('click', () => {
+                // Add subtle pulse effect on click
+                scrollUpBtn.classList.add('animate-pulse');
+                setTimeout(() => {
+                    scrollUpBtn.classList.remove('animate-pulse');
+                }, 150);
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+// End Scroll Up
+
+// Start Using english popup
+document.addEventListener('DOMContentLoaded', () => {
+    // Check if notification has already been shown in this session
+    if (sessionStorage.getItem('notificationShown')) {
+        return; // Exit if notification was already displayed
+    }
+
+    const notification = document.getElementById('notification');
+    const countdownBar = document.getElementById('countdownBar');
+    
+    // Mark notification as shown
+    sessionStorage.setItem('notificationShown', 'true');
+    
+    // Initial styles for animation
+    notification.style.opacity = '0';
+    notification.style.transform = 'translateX(20px)';
+    
+    // Show notification with animation
+    notification.classList.remove('hidden');
+    setTimeout(() => {
+        notification.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        notification.style.opacity = '1';
+        notification.style.transform = 'translateX(0)';
+    }, 100); // Small delay for smooth rendering
+    
+    // Set duration for notification (in milliseconds)
+    const duration = 5000; // 5 seconds
+    
+    // Update countdown bar width
+    let startTime = Date.now();
+    const updateCountdown = () => {
+        const elapsed = Date.now() - startTime;
+        const progress = Math.max(0, 1 - elapsed / duration);
+        countdownBar.style.width = `${progress * 100}%`;
+        
+        if (progress > 0) {
+            requestAnimationFrame(updateCountdown);
+        } else {
+            // Animate out
+            notification.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            notification.style.opacity = '0';
+            notification.style.transform = 'translateX(20px)';
+            setTimeout(() => {
+                notification.classList.add('hidden');
+                // Reset styles for potential reuse
+                notification.style.opacity = '1';
+                notification.style.transform = 'translateX(0)';
+                notification.style.transition = '';
+            }, 500); // Match transition duration
+        }
+    };
+    
+    // Start countdown animation
+    requestAnimationFrame(updateCountdown);
+});
+// End Using english popup
+
+// Navbar Js
         document.addEventListener('DOMContentLoaded', function() {
             // Mendapatkan elemen hamburger, navbar, dan header
             const hamburger = document.getElementById('hamburger');
@@ -24,7 +124,7 @@
                     // Menambahkan kelas fixed dan efek transisi pada header saat di-scrol l
                     header.classList.add(
                         'shadow-lg',
-                        'bg-shark-950/50',
+                        'bg-shark-950/30',
                         'backdrop-blur-md',
                         'transition-background-color'
                     );
@@ -32,14 +132,14 @@
                     // Menghapus kelas fixed saat scroll ke atas
                     header.classList.remove(
                         'shadow-lg', 
-                        'bg-shark-950/50', 
+                        'bg-shark-950/30', 
                         'backdrop-blur-md',
                         'transition-background-color'
                     );
                 }
             });
         });
-        // End Navbar Js
+// End Navbar Js
 
 
 // Dropdown Language Js
@@ -177,3 +277,67 @@ window.addEventListener('scroll', () => {
     }
 });
 // End Filter Logic
+
+// Start Modal Login di rent-detail.blade.php
+function showModal() {
+    const modal = document.getElementById('loginModal');
+    const backdrop = document.getElementById('modalBackdrop');
+    const content = document.getElementById('modalContent');
+
+    // Show modal
+    modal.classList.remove('hidden');
+
+    // Reset any existing animations
+    backdrop.classList.remove('backdrop-exit');
+    content.classList.remove('modal-exit');
+
+    // Add entrance animations
+    requestAnimationFrame(() => {
+        backdrop.classList.add('backdrop-enter');
+        content.classList.add('modal-enter');
+    });
+
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+
+    // Add event listeners
+    modal.addEventListener('keydown', handleKeyDown);
+    backdrop.addEventListener('click', hideModal);
+}
+
+function hideModal() {
+    const modal = document.getElementById('loginModal');
+    const backdrop = document.getElementById('modalBackdrop');
+    const content = document.getElementById('modalContent');
+
+    // Remove entrance animations
+    backdrop.classList.remove('backdrop-enter');
+    content.classList.remove('modal-enter');
+
+    // Add exit animations
+    backdrop.classList.add('backdrop-exit');
+    content.classList.add('modal-exit');
+
+    // Hide modal after animation completes
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        backdrop.classList.remove('backdrop-exit');
+        content.classList.remove('modal-exit');
+        document.body.style.overflow = '';
+
+        // Remove event listeners
+        modal.removeEventListener('keydown', handleKeyDown);
+        backdrop.removeEventListener('click', hideModal);
+    }, 300);
+}
+
+function handleKeyDown(event) {
+    if (event.key === 'Escape') {
+        event.preventDefault();
+        hideModal();
+    }
+}
+
+// Update button untuk memanggil modal
+document.querySelector('button[onclick*="loginModal"]').setAttribute('onclick', 'showModal()');
+// End Modal Login di rent-detail.blade.php

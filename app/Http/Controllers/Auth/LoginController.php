@@ -10,7 +10,7 @@ class LoginController extends Controller
 {
     public function showLoginForm()
     {
-        return view('login', ['title' => 'Login']);
+        return view('login', ['title' => __('messages.button.login')]);
     }
 
     public function login(Request $request)

@@ -180,6 +180,18 @@ return [
                     'list3' => 'Keamanan data tingkat enterprise'
                 ]
             ],
+            'errors' => [
+                'username_required' => 'Nama pengguna wajib diisi.',
+                'username_taken' => 'Nama pengguna ini sudah digunakan.',
+                'email_required' => 'Alamat email wajib diisi.',
+                'email_invalid' => 'Masukkan alamat email yang valid.',
+                'email_taken' => 'Alamat email ini sudah terdaftar.',
+                'password_required' => 'Kata sandi wajib diisi.',
+                'password_min' => 'Kata sandi harus minimal 8 karakter.',
+                'password_confirmation' => 'Konfirmasi kata sandi tidak cocok.',
+                'terms_required' => 'Anda harus menyetujui syarat dan ketentuan.',
+                'terms_accepted' => 'Anda harus menerima syarat dan ketentuan.'
+            ],
             'title' => 'Buat Akun Baru',
             'subtitle' => 'Isi informasi di bawah untuk memulai',
             'errors' => [

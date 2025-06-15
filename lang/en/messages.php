@@ -179,6 +179,18 @@ return [
                     'list3' => 'Enterprise-grade data security'
                 ]
             ],
+            'errors' => [
+                'username_required' => 'The username field is required.',
+                'username_taken' => 'This username is already taken.',
+                'email_required' => 'The email field is required.',
+                'email_invalid' => 'Please enter a valid email address.',
+                'email_taken' => 'This email address is already registered.',
+                'password_required' => 'The password field is required.',
+                'password_min' => 'The password must be at least 8 characters.',
+                'password_confirmation' => 'The password confirmation does not match.',
+                'terms_required' => 'You must agree to the terms and conditions.',
+                'terms_accepted' => 'You must accept the terms and conditions.'
+            ],
             'title' => 'Create New Account',
             'subtitle' => 'Fill in the information below to get started',
             'errors' => [
@@ -344,6 +356,39 @@ return [
                     'username' => 'Sinta_Ardiani',
                     'rating' => 5.0,
                     'profile_image' => 'https://img.freepik.com/free-psd/portrait-girl-teenager_23-2151717388.jpg?ga=GA1.1.1193633351.1743924281&semt=ais_hybrid&w=740',
+                ],
+            ],
+
+
+            'faqs' => [
+                'How can I make a reservation?',
+                'What documents do I need to rent a vehicle?',
+                'Do you offer delivery and pickup services?',
+                'Is there an age requirement for renting a vehicle?',
+                'What are your rental rates?',
+                'What happens if I need to cancel my reservation?',
+            ],
+
+            'blogs' => [
+                [
+                    'image' => 'https://media.istockphoto.com/id/1354037529/photo/happy-young-caucasian-couple-family-hugging-embracing-while-taking-selfie-photo-vlogging.jpg?s=612x612&w=0&k=20&c=K07DyIizPDy1RbrC1MHIW2WCPHuHsL4whH0QFJ6FTvk=',
+                    'title' => 'Praesent adipiscing. Cras dapibus.',
+                    'excerpt' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, tempore.',
+                ],
+                [
+                    'image' => 'https://media.istockphoto.com/id/2200927158/photo/joyful-girl-african-american-woman-blogger-taking-selfie-photo-in-car-showroom-buying-new.jpg?s=612x612&w=0&k=20&c=XSnq7Bdbg97w5HUeLDUcRVNweRRl89IN363jCaIDl48=',
+                    'title' => 'Praesent adipiscing. Cras dapibus.',
+                    'excerpt' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, tempore.',
+                ],
+                [
+                    'image' => 'https://media.istockphoto.com/id/2166941969/photo/funny-travel-selfie-couple-making-faces-in-car-on-vacation.jpg?s=612x612&w=0&k=20&c=xBl-S1eZIM3o_y1LDunp-fXblTGlPNST60pAhSx4wYw=',
+                    'title' => 'Praesent adipiscing. Cras dapibus.',
+                    'excerpt' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, tempore.',
+                ],
+                [
+                    'image' => 'https://media.istockphoto.com/id/1443292360/photo/couple-happily-taking-selfies-in-new-car-in-showroom.jpg?s=612x612&w=0&k=20&c=Vw27K7gl_tcxIJPJ___ACYVnqEB18u6rENIH4n9oSH4=',
+                    'title' => 'Praesent adipiscing. Cras dapibus.',
+                    'excerpt' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, tempore.',
                 ],
             ],
         ],

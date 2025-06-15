@@ -4,7 +4,8 @@
             <div class="flex items-center justify-between w-full relative z-50 lg:w-auto">
                 {{-- Logo --}}
                 <a href="/" class="w-fit flex items-center">
-                    <img class="w-20 sm:w-25 object-contain lg:w-25 xl:w-30" src="{{ asset('img/logo.png') }}" alt="">
+                    <img class="w-20 sm:w-25 object-contain lg:w-25 xl:w-30" src="{{ asset('img/logo.png') }}"
+                        alt="">
                 </a>
 
                 <div class="flex items-center gap-2 sm:gap-4 lg:hidden">
@@ -13,7 +14,7 @@
                         <button id="langButtonMobile"
                             class="lang-button rounded-full border border-orange-200 focus:outline-none cursor-pointer w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center bg-white shadow">
                             <img id="selectedFlagMobile"
-                                src="{{ App::getLocale() == 'id' ? 'img/flag/indonesia.png' : 'img/flag/britain.png' }}"
+                                src="{{ asset(App::getLocale() == 'id' ? 'img/flag/indonesia.png' : 'img/flag/britain.png') }}"
                                 alt="{{ App::getLocale() == 'id' ? 'Indonesia' : 'English' }}"
                                 title="{{ App::getLocale() == 'id' ? 'Indonesia' : 'English' }}"
                                 class="selected-flag object-cover">
@@ -23,15 +24,17 @@
                             class="dropdown-menu absolute mt-2 left-1/2 space-y-2 -translate-x-1/2 w-full min-w-max bg-white border border-gray-200 rounded-lg shadow-lg hidden transform scale-95 opacity-0 transition-all duration-200 ease-in-out origin-top overflow-hidden sm:text-xl">
                             <button data-url="{{ url('locale/en') }}"
                                 class="flex items-center w-full px-2 pt-2 hover:bg-gray-100 transition-colors duration-150 language-option"
-                                data-flag="img/flag/britain.png" data-lang="English">
-                                <img src="img/flag/britain.png" alt="English"
-                                    class="w-6 h-6 sm:w-10 sm:h-10 object-cover mr-2"> English
+                                data-flag="{{ asset('img/flag/britain.png') }}" data-lang="English">
+                                <img src="{{ asset('img/flag/britain.png') }}" alt="English"
+                                    class="w-6 h-6 sm:w-10 sm:h-10 object-cover mr-2">
+                                English
                             </button>
                             <button data-url="{{ url('locale/id') }}"
                                 class="flex items-center w-full px-2 pb-2 hover:bg-gray-100 transition-colors duration-150 language-option"
-                                data-flag="img/flag/indonesia.png" data-lang="Indonesia">
-                                <img src="img/flag/indonesia.png" alt="Indonesia"
-                                    class="w-6 h-6 sm:w-10 sm:h-10 object-cover mr-2"> Indonesia
+                                data-flag="{{ asset('img/flag/indonesia.png') }}" data-lang="Indonesia">
+                                <img src="{{ asset('img/flag/indonesia.png') }}" alt="Indonesia"
+                                    class="w-6 h-6 sm:w-10 sm:h-10 object-cover mr-2">
+                                Indonesia
                             </button>
                         </div>
                     </div>
@@ -95,7 +98,7 @@
                         <button id="langButtonDesktop"
                             class="lang-button rounded-full border border-orange-200 focus:outline-none cursor-pointer w-8 h-8 sm:w-8 sm:h-8 flex items-center justify-center bg-white shadow">
                             <img id="selectedFlagDesktop"
-                                src="{{ App::getLocale() == 'id' ? 'img/flag/indonesia.png' : 'img/flag/britain.png' }}"
+                                src="{{ asset(App::getLocale() == 'id' ? 'img/flag/indonesia.png' : 'img/flag/britain.png') }}"
                                 alt="{{ App::getLocale() == 'id' ? 'Indonesia' : 'English' }}"
                                 title="{{ App::getLocale() == 'id' ? 'Indonesia' : 'English' }}"
                                 class="selected-flag object-cover">
@@ -105,15 +108,17 @@
                             class="dropdown-menu absolute mt-2 left-1/2 space-y-2 -translate-x-1/2 w-full min-w-max bg-white border border-gray-200 rounded-lg shadow-lg hidden transform scale-95 opacity-0 transition-all duration-200 ease-in-out origin-top overflow-hidden sm:text-xl">
                             <button data-url="{{ url('locale/en') }}"
                                 class="flex items-center w-full px-2 pt-2 hover:bg-gray-100 transition-colors duration-150 language-option sm:text-base"
-                                data-flag="img/flag/britain.png" data-lang="English">
-                                <img src="img/flag/britain.png" alt="English"
-                                    class="w-6 h-6 sm:w-6 sm:h-6 object-cover mr-2"> English
+                                data-flag="{{ asset('img/flag/britain.png') }}" data-lang="English">
+                                <img src="{{ asset('img/flag/britain.png') }}" alt="English"
+                                    class="w-6 h-6 sm:w-6 sm:h-6 object-cover mr-2">
+                                English
                             </button>
                             <button data-url="{{ url('locale/id') }}"
                                 class="flex items-center w-full px-2 pb-2 hover:bg-gray-100 transition-colors duration-150 language-option sm:text-base"
-                                data-flag="img/flag/indonesia.png" data-lang="Indonesia">
-                                <img src="img/flag/indonesia.png" alt="Indonesia"
-                                    class="w-6 h-6 sm:w-6 sm:h-6 object-cover mr-2"> Indonesia
+                                data-flag="{{ asset('img/flag/indonesia.png') }}" data-lang="Indonesia">
+                                <img src="{{ asset('img/flag/indonesia.png') }}" alt="Indonesia"
+                                    class="w-6 h-6 sm:w-6 sm:h-6 object-cover mr-2">
+                                Indonesia
                             </button>
                         </div>
                     </div>

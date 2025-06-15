@@ -1,9 +1,9 @@
 <x-layout>
     <x-slot:title>{{ $title }}</x-slot:title>
 
-    <div class="relative min-h-screen py-12 container">
+    <div class="relative min-h-screen flex items-center justify-center py-12 container">
         <div
-            class="flex w-full max-w-6xl mx-auto bg-white/10 backdrop-blur-2xl rounded-3xl shadow-2xl overflow-hidden border border-white/20">
+            class="flex w-full max-w-6xl mx-auto bg-white/10 backdrop-blur-2xl rounded-3xl shadow-xl overflow-hidden border border-white/20">
 
             <!-- Left Side - Hero Section -->
             <div

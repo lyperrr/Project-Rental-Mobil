@@ -8,6 +8,95 @@
 @source "../**/*.vue";
 
 @layer components {
+
+  /* Start Modal Animation Page Rent Detail */
+  .modal-overlay {
+    backdrop-filter: blur(4px);
+  }
+
+  .modal-enter {
+    animation: modalEnter 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+
+  .modal-exit {
+    animation: modalExit 0.3s cubic-bezier(0.55, 0.06, 0.68, 0.19) forwards;
+  }
+
+  @keyframes modalEnter {
+    from {
+      opacity: 0;
+      transform: scale(0.8) translateY(-30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes modalExit {
+    from {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    to {
+      opacity: 0;
+      transform: scale(0.8) translateY(-30px);
+    }
+  }
+
+  .backdrop-enter {
+    animation: backdropEnter 0.4s ease-out forwards;
+  }
+
+  .backdrop-exit {
+    animation: backdropExit 0.3s ease-in forwards;
+  }
+
+  @keyframes backdropEnter {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes backdropExit {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  .pulse-ring {
+    animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    50% {
+      transform: scale(1.1);
+      opacity: 0.7;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* End Modal Animation Page Rent Detail */
+
   .btn-primary {
     @apply flex items-center justify-center bg-gradient-to-r from-orange-100 to-orange-300 px-8 py-2 text-lg font-medium text-white rounded-lg hover:from-orange-300 hover:to-orange-100 transition-colors duration-200 ease-linear sm:px-4 cursor-pointer sm:py-2 lg:py-2 sm:text-sm lg:text-base;
   }

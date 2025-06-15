@@ -4,7 +4,7 @@
     {{-- Navbar --}}
     <x-navbar />
 
-    <main class="h-screen sm:h-[110vh] bg-no-repeat bg-cover bg-left sm:bg-center bg-hero-rent">
+    <main class="h-screen sm:h-[110vh] bg-no-repeat bg-cover bg-center lg:bg-left sm:bg-center bg-hero-rent">
 
         {{-- Content --}}
         {{-- Start Hero Section --}}
@@ -48,12 +48,11 @@
         <div class="container">
             <div class="grid xl:grid-cols-12 gap-4">
                 {{-- Button filter --}}
-                <div class="fixed xl:hidden z-50 bottom-4 right-4 ">
+                <div class="fixed xl:hidden z-50 bottom-4 right-4">
                     <button id="filterBtn" onclick="toggleFilter()"
-                        class="fixed bottom-6 right-6 z-50 opacity-0 translate-y-4 pointer-events-none transition-all duration-300 ease-in-out bg-orange-200 flex items-center justify-center hover:bg-orange-100 hover:scale-103 text-white rounded-full size-15 border border-white">
+                        class="fixed bottom-4 right-4 z-50 opacity-0 translate-y-4 pointer-events-none transition-all duration-300 ease-in-out bg-orange-200 flex items-center justify-center hover:bg-orange-100 hover:scale-103 text-white rounded-full size-14 border border-white">
                         <i class='bx bx-filter-alt text-2xl'></i>
                     </button>
-
                 </div>
                 {{-- FIlter --}}
                 <div id="mobileFilter"
@@ -278,7 +277,10 @@
                 </div>
                 <div class="col-span-9 pt-10 xl:pt-0">
                     {{-- Card Rent --}}
-                    <x-rent />
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                        <x-cars :cars=$cars />
+                    </div>
                 </div>
             </div>
         </div>
@@ -303,9 +305,7 @@
 
     {{-- Footer --}}
     <x-footer />
-    <script>
 
-    </script>
-
-
+    {{-- Scroll Up --}}
+    <x-scroll-up />
 </x-layout>

@@ -208,9 +208,11 @@
                                 Electric Cars
                             </button>
                         </div>
-                        <x-rent />
-
-                        <a href="{{ url('/rent#rent') }}" class="btn-primary gap-2 group w-fit mt-4 mx-auto">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <x-cars :cars=$cars />
+                        </div>
+                        <a href="{{ url('/rent#rent') }}"
+                            class="text-orange-200 font-medium flex items-center gap-1 group w-fit mt-4 mx-auto">
                             {{ __('messages.button.browse_cars') }}
                             <i
                                 class='bx bx-right-arrow-alt text-2xl group-hover:translate-x-2 transition-all duration-200 ease-linear'></i>
@@ -255,4 +257,22 @@
 
     {{-- Footer --}}
     <x-footer />
+
+    {{-- Scroll Up --}}
+    <x-scroll-up />
+
+    <div id="notification"
+        class="fixed top-4 md:top-24 lg:top-20 right-4 rounded-2xl w-[90%] sm:w-1/2 sm:max-w-[300px] text-white overflow-hidden z-50 border-2 border-white/40 hidden">
+        <div class="bg-white/5 backdrop-blur-sm p-4">
+            <div class="inline-flex">
+                <img src="{{ asset('img/flag/britain.png') }}" alt="English"
+                    class="w-6 h-6 sm:w-6 sm:h-6 object-cover mr-2">
+                <p class="text-center text-lg font-medium">Using English is Better.</p>
+            </div>
+            <div class="w-full bg-white/20 h-1 mt-3 rounded-full overflow-hidden">
+                <div id="countdownBar"
+                    class="bg-orange-100/70 h-full rounded-full transition-all duration-[50ms] ease-linear w-full"></div>
+            </div>
+        </div>
+    </div>
 </x-layout>

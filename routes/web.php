@@ -3,10 +3,15 @@
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RentController;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\SignupController;
 
+Route::get('/test', function () {
+    return view('test');
+});
 // Route untuk ganti bahasa
 Route::get('/locale/{lang}', function ($lang) {
     if (! in_array($lang, ['en', 'id'])) {
@@ -22,28 +27,25 @@ Route::get('/locale/{lang}', function ($lang) {
 // Semua route lain dibungkus pakai middleware SetLocale
 Route::middleware([\App\Http\Middleware\SetLocale::class])->group(function () {
 
-    Route::get('/', function () {
-        return view('home', ['title' => "Home"]);
+    Route::name('cars.')->group(function () {
+        Route::get('/', [HomeController::class, 'index'])->name('home');
+        Route::get('/rent', [RentController::class, 'index'])->name('rent');
+        Route::get('/rent/{id}', [RentController::class, 'show'])->name('show');
     });
+
+    // Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+
 
     Route::get('/about', function () {
-        return view('about', ['title' => "About"]);
-    });
-
-    Route::get('/rent', function () {
-        return view('rent', ['title' => "Rent"]);
-    });
-
-    Route::get('/rent-detail', function () {
-        return view('rent-detail', ['title' => "Rental-detail"]);
+        return view('about', ['title' => __('messages.navbar.about')]);
     });
 
     Route::get('/blog', function () {
-        return view('blog', ['title' => "Blog"]);
+        return view('blog', ['title' => __('messages.navbar.blog')]);
     });
 
     Route::get('/contact', function () {
-        return view('contact', ['title' => "Contact"]);
+        return view('contact', ['title' => __('messages.navbar.contact')]);
     });
     Route::get('/dashboard', function () {
         return view('admin.dashboard');

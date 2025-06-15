@@ -3,7 +3,7 @@
     <x-slot:title>{{ $title }}</x-slot:title>
 
     {{-- Container Content --}}
-    <main class="h-screen sm:h-[110vh] bg-no-repeat bg-cover bg-left sm:bg-center bg-hero-blog" >
+    <main class="h-screen sm:h-[110vh] bg-no-repeat bg-cover bg-top bg-hero-blog" >
         {{-- Navbar --}}
         <x-navbar />
 
@@ -212,4 +212,10 @@
             </div>
         </div>
     </section>
+    
+    {{-- Footer --}}
+    <x-footer />
+
+    {{-- Scroll Up --}}
+    <x-scroll-up />
 </x-layout>
