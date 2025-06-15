@@ -14,11 +14,7 @@ class SignupController extends Controller
 {
     public function showRegistrationForm()
     {
-<<<<<<< HEAD
-        return view('signup', ['title' => 'Signup']);
-=======
         return view('signup', ['title' => __('messages.button.signup')]);
->>>>>>> f2e23de (profile page and rent-detail --willy & jovi)
     }
 
     public function Signup(Request $request)

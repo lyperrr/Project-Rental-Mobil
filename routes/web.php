@@ -8,6 +8,7 @@ use App\Http\Controllers\RentController;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\SignupController;
+use App\Http\Controllers\ProfileController;
 
 Route::get('/test', function () {
     return view('test');
@@ -33,7 +34,7 @@ Route::middleware([\App\Http\Middleware\SetLocale::class])->group(function () {
         Route::get('/rent/{id}', [RentController::class, 'show'])->name('show');
     });
 
-    // Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
 
     Route::get('/about', function () {
@@ -57,7 +58,4 @@ Route::middleware([\App\Http\Middleware\SetLocale::class])->group(function () {
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
     Route::get('/auth/google', [SignupController::class, 'redirectToGoogle'])->name('auth.google');
     Route::get('/auth/google/callback', [SignupController::class, 'handleGoogleCallback']);
-    Route::get('/profile', function () {
-        return view('profile');
-    })->middleware('auth')->name('profile');
 });

@@ -169,9 +169,6 @@
         </div>
     </main>
 
-
-
-
     {{-- Footer --}}
     <x-footer />
 </x-layout>
