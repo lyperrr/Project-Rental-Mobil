@@ -26,4 +26,19 @@ class User extends Authenticatable
         'is_verified' => 'boolean',
         'created_at' => 'datetime',
     ];
+
+    public function userProfile()
+    {
+        return $this->hasOne(UserProfile::class);
+    }
+
+    public function rentals()
+    {
+        return $this->hasMany(Rent::class);
+    }
+
+        public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

@@ -8,10 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class UserProfile extends Model
 {
     use HasFactory;
-
+    protected $table = 'user_profiles';
     protected $fillable = [
         'user_id',
-        'full_name',
         'phone',
         'photo_profile',
         'ktp_number',
@@ -20,7 +19,7 @@ class UserProfile extends Model
         'sim_image',
     ];
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     // Relationships
     public function user()

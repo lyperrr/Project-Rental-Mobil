@@ -39,12 +39,12 @@
                             </div>
 
                             <article class="space-y-2 relative">
-                                {{-- Full Name --}}
-                                <h1 class="text-2xl font-semibold text-center mx-auto">John Doe</h1>
                                 {{-- Username --}}
+                                <h1 class="text-2xl font-semibold text-center mx-auto">John Doe</h1>
+                                {{-- User ID --}}
                                 <h3
                                     class="text-sm text-shark-400 text-center mx-auto bg-shark-100/60 px-2 py-1 rounded-full w-fit">
-                                    @johndoe_
+                                    
                                 </h3>
                                 {{-- Role --}}
                                 <h3

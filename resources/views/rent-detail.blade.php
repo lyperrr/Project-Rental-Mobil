@@ -92,9 +92,50 @@
                                     </li>
                                 </ul>
                             </div>
-                            <button onclick="showModal('{{ $car->id }}')" class="btn-primary w-full md:text-lg mt-4 py-3">
-                                {{ __('messages.button.rent_now') }}
-                            </button>
+
+                            <!-- Pengecekan Login dan Profil -->
+                            @auth
+                                @php
+                                    $userProfile = auth()->user()->userProfile;
+                                @endphp
+                                @if ($userProfile && !empty($userProfile->identity_number))
+                                    <!-- Form Penyewaan -->
+                                    <form action="{{ route('rent.store') }}" method="POST" class="mt-4">
+                                        @csrf
+                                        <input type="hidden" name="car_id" value="{{ $car->id }}">
+                                        <div class="grid gap-4">
+                                            <div>
+                                                <label for="start_date" class="block text-sm font-medium text-shark-700">Start Date</label>
+                                                <input type="date" name="start_date" id="start_date" class="w-full mt-1 p-2 border border-shark-300 rounded-md" required>
+                                            </div>
+                                            <div>
+                                                <label for="end_date" class="block text-sm font-medium text-shark-700">End Date</label>
+                                                <input type="date" name="end_date" id="end_date" class="w-full mt-1 p-2 border border-shark-300 rounded-md" required>
+                                            </div>
+                                            <div>
+                                                <label for="notes" class="block text-sm font-medium text-shark-700">Additional Notes</label>
+                                                <textarea name="notes" id="notes" class="w-full mt-1 p-2 border border-shark-300 rounded-md" rows="4"></textarea>
+                                            </div>
+                                            <button type="submit" class="btn-primary w-full md:text-lg py-3">
+                                                {{ __('messages.button.submit_rental') }}
+                                            </button>
+                                        </div>
+                                    </form>
+                                @else
+                                    <!-- Arahkan ke halaman profil jika belum lengkap -->
+                                    <div class="text-center mt-4">
+                                        <p class="text-shark-600 mb-2">Please complete your profile to proceed with the rental.</p>
+                                        <a href="{{ route('profile') }}" class="btn-primary w-full md:text-lg py-3">
+                                            Complete Your Profile
+                                        </a>
+                                    </div>
+                                @endif
+                            @else
+                                <!-- Tombol Rent Now untuk pengguna yang belum login -->
+                                <button onclick="showModal('{{ $car->id }}')" class="btn-primary w-full md:text-lg mt-4 py-3">
+                                    {{ __('messages.button.rent_now') }}
+                                </button>
+                            @endauth
                         </div>
                     </div>
                 </aside>
@@ -109,19 +150,19 @@
 
                         <div class="grid grid-cols-2 gap-4 md:gap-6 *:text-center border-t border-shark-400 pt-2">
                             @forelse([
-                ['icon' => 'bx-car', 'label' => 'Brand', 'value' => $car->brand],
-                ['icon' => 'bxs-car', 'label' => 'Model', 'value' => $car->model],
-                ['icon' => 'bx-calendar', 'label' => 'Model Year', 'value' => $car->year],
-                [
-                    'icon' => $car->status === 'available' ? 'bx-check-circle' : ($car->status === 'rented' ? 'bx-car' : 'bx-wrench'),
-                    'label' => 'Status',
-                    'value' => ucfirst($car->status ?? 'Unknown'),
-                ],
-                ['icon' => 'bx-cog', 'label' => 'Transmission', 'value' => $car->transmission],
-                ['icon' => 'bx-gas-pump', 'label' => 'Fuel Type', 'value' => $car->fuel_type],
-                ['icon' => 'bx-group', 'label' => 'Seats', 'value' => $car->seats],
-                ['icon' => 'bx-id-card', 'label' => 'License Plate', 'value' => $car->license_plate],
-            ] as $item)
+                                ['icon' => 'bx-car', 'label' => 'Brand', 'value' => $car->brand],
+                                ['icon' => 'bxs-car', 'label' => 'Model', 'value' => $car->model],
+                                ['icon' => 'bx-calendar', 'label' => 'Model Year', 'value' => $car->year],
+                                [
+                                    'icon' => $car->status === 'available' ? 'bx-check-circle' : ($car->status === 'rented' ? 'bx-car' : 'bx-wrench'),
+                                    'label' => 'Status',
+                                    'value' => ucfirst($car->status ?? 'Unknown'),
+                                ],
+                                ['icon' => 'bx-cog', 'label' => 'Transmission', 'value' => $car->transmission],
+                                ['icon' => 'bx-gas-pump', 'label' => 'Fuel Type', 'value' => $car->fuel_type],
+                                ['icon' => 'bx-group', 'label' => 'Seats', 'value' => $car->seats],
+                                ['icon' => 'bx-id-card', 'label' => 'License Plate', 'value' => $car->license_plate],
+                            ] as $item)
                                 <div>
                                     <div class="flex gap-1 items-center">
                                         <i class='bx {{ $item['icon'] }} text-2xl text-orange-200/80'></i>
@@ -141,7 +182,6 @@
                     </div>
                 </aside>
 
-
                 {{-- Description --}}
                 <aside class="bg-white p-5 rounded-xl shadow-lg border border-white/20">
                     <div class="">
@@ -157,13 +197,12 @@
                             @endif
                         </div>
                     </div>
-
                 </aside>
             </div>
         </div>
     </section>
 
-    <!-- Modal HTML yang diperbaiki -->
+    <!-- Modal HTML -->
     <div id="loginModal" class="fixed inset-0 z-50 hidden">
         <!-- Backdrop dengan blur effect -->
         <div id="modalBackdrop" class="fixed inset-0 bg-black/60 modal-overlay"></div>
@@ -245,7 +284,6 @@
                             </a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

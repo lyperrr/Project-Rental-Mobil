@@ -32,9 +32,12 @@ Route::middleware([\App\Http\Middleware\SetLocale::class])->group(function () {
         Route::get('/', [HomeController::class, 'index'])->name('home');
         Route::get('/rent', [RentController::class, 'index'])->name('rent');
         Route::get('/rent/{id}', [RentController::class, 'show'])->name('show');
+        Route::post('/rent', [RentController::class, 'store'])->name('rent.store');
     });
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/profile/password', [ProfileController::class, 'changePassword'])->name('profile.password');
 
 
     Route::get('/about', function () {

@@ -8,6 +8,7 @@
     <title>{{ $title }}</title>
     {{-- Styles --}}
     @vite('resources/css/app.css')
+    <link rel="shortcut icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
     {{-- Box Icon --}}
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>

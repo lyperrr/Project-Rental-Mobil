@@ -27,6 +27,6 @@ class Payment extends Model
     // Relationships
     public function rental()
     {
-        return $this->belongsTo(Rental::class);
+        return $this->belongsTo(Rent::class);
     }
 }
