@@ -27,6 +27,7 @@ class User extends Authenticatable
         'created_at' => 'datetime',
     ];
 
+
     public function userProfile()
     {
         return $this->hasOne(UserProfile::class);
@@ -37,7 +38,7 @@ class User extends Authenticatable
         return $this->hasMany(Rent::class);
     }
 
-        public function reviews()
+    public function reviews()
     {
         return $this->hasMany(Review::class);
     }

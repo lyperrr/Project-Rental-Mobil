@@ -1,111 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>User Profile</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Logout Modal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        shark: {
+                            50: '#f8f9fa',
+                            200: '#e9ecef',
+                            400: '#6c757d',
+                            500: '#495057',
+                            600: '#343a40',
+                            700: '#212529',
+                            900: '#1a1d21'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for better mobile compatibility */
+        .modal-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 29, 33, 0.5);
+            z-index: 9999; /* Higher z-index */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            box-sizing: border-box;
+        }
+        
+        .modal-content {
+            max-width: 400px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        /* Ensure modal works on all screen sizes */
+        @media (max-width: 640px) {
+            .modal-content {
+                max-width: 95vw;
+                margin: 0 auto;
+            }
+        }
+        
+        /* Animation classes */
+        .modal-hidden {
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0.95);
+            transition: all 0.3s ease;
+        }
+        
+        .modal-visible {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 p-4">
-
-  <!-- Container -->
-  <div class="max-w-6xl mx-auto grid gap-6 lg:grid-cols-3">
-
-    <!-- Profile Card -->
-    <div class="bg-white rounded-xl shadow p-6 text-center">
-      <div class="bg-black rounded-t-xl h-24 flex justify-center items-end">
-        <div class="bg-white text-xl font-bold text-blue-600 border-4 border-white rounded-full w-20 h-20 flex items-center justify-center -mb-10">
-          JD
-        </div>
-      </div>
-      <div class="mt-12">
-        <h2 class="text-xl font-semibold">John Doe</h2>
-        <p class="text-gray-500">@johndoe</p>
-        <div class="mt-2 inline-flex items-center px-2 py-1 bg-green-100 text-green-700 rounded text-sm">
-          <i class='bx bx-check-shield mr-1'></i> Verified User
-        </div>
-        <div class="mt-4 flex justify-around text-gray-700">
-          <div><p class="font-bold text-lg">15</p><p class="text-sm">Rentals</p></div>
-          <div><p class="font-bold text-lg">4.8</p><p class="text-sm">Rating</p></div>
-        </div>
-      </div>
+<body class="bg-gray-100 p-8">
+    <!-- Test Button -->
+    <div class="text-center">
+        <h1 class="text-2xl font-bold mb-4">Test Logout Modal</h1>
+        <p class="mb-4">Click the logout button below to test the modal</p>
+        
+        <!-- Logout Form -->
+        <form action="#" method="POST" id="logoutForm" class="inline">
+            <button type="submit"
+                class="inline-flex items-center size-10 p-4 justify-center bg-red-600 border border-transparent rounded-md font-semibold text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
+                onclick="return confirmLogout(event)">
+                <i class="bx bx-log-out text-2xl"></i>
+            </button>
+        </form>
     </div>
 
-    <!-- Personal Info -->
-    <div class="lg:col-span-2 space-y-6">
-      <div class="bg-white rounded-xl shadow p-6">
-        <h3 class="font-semibold text-lg mb-4 flex items-center gap-2">
-          <i class='bx bx-user text-blue-600'></i> Personal Information
-        </h3>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div>
-            <label class="text-sm text-gray-600">Full Name</label>
-            <input type="text" value="John Doe" class="w-full border rounded p-2 bg-gray-50" readonly>
-          </div>
-          <div>
-            <label class="text-sm text-gray-600">Email</label>
-            <input type="email" value="john.doe@example.com" class="w-full border rounded p-2 bg-gray-50" readonly>
-          </div>
-          <div>
-            <label class="text-sm text-gray-600">Phone</label>
-            <input type="text" value="+62 812-3456-7890" class="w-full border rounded p-2 bg-gray-50" readonly>
-          </div>
-          <div>
-            <label class="text-sm text-gray-600">Username</label>
-            <input type="text" value="johndoe" class="w-full border rounded p-2 bg-gray-50" readonly>
-          </div>
+    <!-- Logout Confirmation Modal -->
+    <div id="logoutModal" class="modal-backdrop modal-hidden">
+        <div class="modal-content bg-white rounded-xl shadow-xl transform">
+            <div class="sticky top-0 bg-white z-10 rounded-t-xl">
+                <div class="flex justify-between items-center p-6 py-4 border-b border-shark-200">
+                    <div class="inline-flex items-center text-shark-900">
+                        <i class="bx bx-log-out mr-2 text-3xl"></i>
+                        <h3 class="text-xl font-semibold">Confirm Logout</h3>
+                    </div>
+                    <button onclick="closeLogoutModal()"
+                        class="cursor-pointer flex items-center justify-center text-shark-400 hover:text-shark-600 transition-all duration-150 hover:rotate-90">
+                        <i class="bx bx-x text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <p class="text-shark-700 text-center text-base">
+                    Are you sure you want to log out?
+                </p>
+                <div class="mt-6 flex flex-col sm:flex-row justify-end space-y-2 sm:space-y-0 sm:space-x-3">
+                    <button type="button" onclick="closeLogoutModal()"
+                        class="w-full sm:w-auto px-4 py-2 border border-shark-200 rounded-md text-sm font-medium text-shark-700 bg-white hover:bg-shark-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-shark-500">
+                        Cancel
+                    </button>
+                    <button type="button" onclick="submitLogout()"
+                        class="w-full sm:w-auto btn-loading px-4 py-2 bg-red-600 text-white font-semibold rounded flex items-center justify-center gap-2 relative hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                        <svg class="loading-spinner hidden animate-spin h-5 w-5 text-white"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
+                                stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                            </path>
+                        </svg>
+                        <span class="button-text">Log Out</span>
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <!-- Identity -->
-      <div class="bg-white rounded-xl shadow p-6">
-        <h3 class="font-semibold text-lg mb-4 flex items-center gap-2">
-          <i class='bx bx-id-card text-blue-600'></i> Identity Documents
-        </h3>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div>
-            <label class="text-sm text-gray-600">KTP Number</label>
-            <input type="text" value="3201234567890001" class="w-full border rounded p-2 bg-gray-50" readonly>
-            <img src="images/ktp.png" alt="KTP" class="w-full h-40 mt-2 object-cover rounded bg-black">
-          </div>
-          <div>
-            <label class="text-sm text-gray-600">SIM Number</label>
-            <input type="text" value="1234567890123456" class="w-full border rounded p-2 bg-gray-50" readonly>
-            <img src="images/sim.png" alt="SIM" class="w-full h-40 mt-2 object-cover rounded bg-black">
-          </div>
-        </div>
-      </div>
-
-      <!-- Account Settings -->
-      <div class="bg-white rounded-xl shadow p-6">
-        <h3 class="font-semibold text-lg mb-4 flex items-center gap-2">
-          <i class='bx bx-cog text-blue-600'></i> Account Settings
-        </h3>
-        <div class="grid md:grid-cols-2 gap-4 mb-4">
-          <div>
-            <label class="text-sm text-gray-600">Account Role</label>
-            <input type="text" value="User" class="w-full border rounded p-2 bg-gray-50" readonly>
-          </div>
-          <div>
-            <label class="text-sm text-gray-600">Member Since</label>
-            <input type="text" value="January 15, 2024" class="w-full border rounded p-2 bg-gray-50" readonly>
-          </div>
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded flex items-center gap-1">
-            <i class='bx bx-lock-alt'></i> Change Password
-          </button>
-          <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded flex items-center gap-1">
-            <i class='bx bx-log-out'></i> Logout
-          </button>
-          <button class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded flex items-center gap-1">
-            <i class='bx bx-trash'></i> Delete Account
-          </button>
-        </div>
-      </div>
     </div>
 
-  </div>
+    <script>
+        // Improved JavaScript with better mobile support
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, initializing logout modal...');
+            
+            // Ensure modal exists
+            const modal = document.getElementById('logoutModal');
+            if (!modal) {
+                console.error('Logout modal not found!');
+                return;
+            }
+
+            // Open modal function
+            window.confirmLogout = function(event) {
+                console.log('confirmLogout triggered');
+                event.preventDefault();
+                event.stopPropagation();
+                
+                const modal = document.getElementById('logoutModal');
+                if (modal) {
+                    // Remove hidden class and add visible class
+                    modal.classList.remove('modal-hidden');
+                    modal.classList.add('modal-visible');
+                    
+                    // Prevent body scroll on mobile
+                    document.body.style.overflow = 'hidden';
+                    
+                    console.log('Modal should be visible now');
+                } else {
+                    console.error('Modal element not found');
+                }
+                return false;
+            };
+
+            // Close modal function
+            window.closeLogoutModal = function() {
+                console.log('closeLogoutModal triggered');
+                const modal = document.getElementById('logoutModal');
+                if (modal) {
+                    modal.classList.remove('modal-visible');
+                    modal.classList.add('modal-hidden');
+                    
+                    // Restore body scroll
+                    document.body.style.overflow = '';
+                }
+            };
+
+            // Submit logout form
+            window.submitLogout = function() {
+                console.log('submitLogout triggered');
+                const form = document.getElementById('logoutForm');
+                const submitBtn = document.querySelector('#logoutModal button[onclick="submitLogout()"]');
+                const submitSpinner = submitBtn?.querySelector('.loading-spinner');
+
+                if (form && submitBtn && submitSpinner) {
+                    submitBtn.disabled = true;
+                    submitBtn.classList.add('cursor-not-allowed', 'opacity-75');
+                    submitSpinner.classList.remove('hidden');
+                    
+                    // For demo purposes, just show alert
+                    setTimeout(() => {
+                        alert('Logout form would be submitted here');
+                        submitBtn.disabled = false;
+                        submitBtn.classList.remove('cursor-not-allowed', 'opacity-75');
+                        submitSpinner.classList.add('hidden');
+                        closeLogoutModal();
+                    }, 2000);
+                    
+                    // Uncomment this for actual form submission
+                    // form.submit();
+                } else {
+                    console.error('Logout form, submit button, or spinner not found');
+                }
+            };
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    closeLogoutModal();
+                }
+            });
+
+            // Close modal when clicking backdrop
+            modal.addEventListener('click', function(event) {
+                if (event.target === this) {
+                    closeLogoutModal();
+                }
+            });
+
+            // Prevent modal content clicks from closing modal
+            const modalContent = modal.querySelector('.modal-content');
+            if (modalContent) {
+                modalContent.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                });
+            }
+
+            console.log('Logout modal initialized successfully');
+        });
+
+        // Touch event handling for better mobile support
+        document.addEventListener('touchstart', function() {
+            // This ensures touch events are properly handled
+        }, { passive: true });
+    </script>
 </body>
 </html>

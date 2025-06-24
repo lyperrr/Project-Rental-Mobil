@@ -33,11 +33,20 @@ class LoginController extends Controller
                 return redirect()->intended('/dashboard');
             }
 
-            return redirect()->intended('/rent');
+            return redirect()->intended('/profile');
         }
 
         return back()->withErrors([
             'email' => __('messages.sections.login_page.errors.invalid_credentials'),
         ])->onlyInput('email');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/login');
     }
 }

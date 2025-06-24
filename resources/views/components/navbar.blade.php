@@ -70,20 +70,29 @@
                     </x-nav-link>
                 </ul>
                 <div class="w-auto p-4 sm:mx-auto lg:hidden">
+                    {{-- Profile Photo or Login/Signup --}}
                     @if (Auth::check())
-                        <a href="{{ route('profile') }}" class="flex items-center justify-center">
-                            <img src="{{ asset('img/profile.jpeg') }}" alt="{{ Auth::user()->username }}'s Profile"
-                                title="{{ Auth::user()->username }}"
-                                class="w-8 h-8 sm:w-14 sm:h-14 rounded-full border border-orange-200 object-cover hover:border-orange-100 transition-all duration-200">
+                        <a href="{{ route('profile') }}" class="flex items-center gap-2">
+                            @if ($userProfile && $userProfile->photo_profile)
+                                <img src="{{ $userProfile->photo_profile }}"
+                                    alt="{{ Auth::user()->username }}'s Profile" title="{{ Auth::user()->username }}"
+                                    class="w-15 h-15 sm:w-20 sm:h-20 rounded-full border border-orange-200 object-cover hover:border-orange-100 transition-all duration-200 sm:mx-auto">
+                                <span class="text-shark-950 text-2xl font-medium">{{ Auth::user()->username }}</span>
+                            @else
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full sm:mx-auto border border-orange-200 bg-shark-100 flex items-center justify-center text-shark-400 hover:border-orange-100 transition-all duration-200"
+                                    title="{{ Auth::user()->username }}">
+                                    <i class="bx bx-user text-2xl sm:text-4xl"></i>
+                                </div>
+                            @endif
                         </a>
                     @else
                         <div class="mt-4 flex items-center gap-4 w-full sm:w-[70%] sm:mx-auto sm:gap-5">
                             <a href="{{ route('login') }}"
-                                class="btn-primary flex justify-center items-center w-full lg:w-auto sm:py-4 sm:text-xl">
+                                class="btn-primary flex justify-center items-center w-full lg:w-auto sm:py-4 sm:text-2xl">
                                 {{ __('messages.button.login') }}
                             </a>
                             <a href="{{ route('signup') }}"
-                                class="btn-outline flex justify-center text-shark-950 items-center w-full lg:w-auto sm:py-4 sm:text-xl">
+                                class="btn-outline flex justify-center text-shark-950 items-center w-full lg:w-auto sm:py-4 sm:text-2xl">
                                 {{ __('messages.button.signup') }}
                             </a>
                         </div>
@@ -125,13 +134,70 @@
 
                     {{-- Profile Photo or Login/Signup --}}
                     @if (Auth::check())
-                        <a href="{{ route('profile') }}" class="flex items-center justify-center">
-                            <img src="{{ asset('img/profile.jpeg') }}" alt="{{ Auth::user()->username }}'s Profile"
-                                title="{{ Auth::user()->username }}"
-                                class="w-8 h-8 sm:w-8 sm:h-8 rounded-full border border-orange-200 object-cover hover:border-orange-100 transition-all duration-200">
-                        </a>
+                        <div class="relative">
+                            <!-- Profile Button -->
+                            <button type="button" id="profileButton" class="flex items-center justify-center cursor-pointer">
+                                @if ($userProfile && $userProfile->photo_profile)
+                                    <img src="{{ $userProfile->photo_profile }}"
+                                        alt="{{ Auth::user()->username }}'s Profile"
+                                        title="{{ Auth::user()->username }}"
+                                        class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-orange-200 object-cover hover:border-orange-100 transition-all duration-200">
+                                @else
+                                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-orange-200 bg-shark-100 flex items-center justify-center text-shark-400 hover:border-orange-100 transition-all duration-200"
+                                        title="{{ Auth::user()->username }}">
+                                        <i class="bx bx-user text-2xl sm:text-4xl"></i>
+                                    </div>
+                                @endif
+                            </button>
+
+                            <!-- Profile Popup -->
+                            <div id="profilePopup"
+                                class="hidden fixed z-50 right-10 top-16 sm:top-20 w-64 bg-white rounded-xl shadow-xl transform transition-all duration-300">
+                                <div class="p-2 border-b border-shark-200">
+                                    <div class="flex items-center space-x-2">
+                                        @if ($userProfile && $userProfile->photo_profile)
+                                            <img src="{{ $userProfile->photo_profile }}"
+                                                alt="{{ Auth::user()->username }}'s Profile"
+                                                class="w-12 h-12 rounded-full border border-orange-200 object-cover">
+                                        @else
+                                            <div
+                                                class="w-12 h-12 rounded-full border border-orange-200 bg-shark-100 flex items-center justify-center text-shark-400">
+                                                <i class="bx bx-user text-3xl"></i>
+                                            </div>
+                                        @endif
+                                        <div>
+                                            <h4 class="text-shark-900 font-semibold text-base">
+                                                {{ Auth::user()->username }}</h4>
+                                            <p class="text-shark-500 text-sm">{{ Auth::user()->email }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="p-2 space-y-2">
+                                    <a href="/profile"
+                                        class="p-2 flex items-center gap-2 text-shark-700 hover:text-shark-950 hover:bg-shark-50 rounded-md text-sm font-medium transition-all duration-150">
+                                        <i class="bx bx-user text-xl"></i>
+                                        View Profile
+                                    </a>
+                                    <!-- Logout Form -->
+                                    <form action="{{ route('logout') }}" method="POST" id="logoutForm">
+                                        @csrf
+                                        <button type="submit"
+                                            class="flex items-center cursor-pointer gap-2 w-full p-2 justify-center bg-red-600 border border-transparent rounded-md font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors"
+                                            onclick="return confirmLogout(event)">
+                                            <i class="bx bx-log-out text-xl"></i>
+                                            Logout
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <!-- Logout Modal (unchanged) -->
+                            <x-LogoutModalConfirmation />
+                        </div>
+
                     @else
-                        <a href="{{ route('login') }}" class="btn-primary flex justify-center items-center text-base">
+                        <a href="{{ route('login') }}"
+                            class="btn-primary flex justify-center items-center text-base">
                             {{ __('messages.button.login') }}
                         </a>
                         <a href="{{ route('signup') }}"

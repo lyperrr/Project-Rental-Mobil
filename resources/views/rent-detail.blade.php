@@ -105,15 +105,21 @@
                                         <input type="hidden" name="car_id" value="{{ $car->id }}">
                                         <div class="grid gap-4">
                                             <div>
-                                                <label for="start_date" class="block text-sm font-medium text-shark-700">Start Date</label>
-                                                <input type="date" name="start_date" id="start_date" class="w-full mt-1 p-2 border border-shark-300 rounded-md" required>
+                                                <label for="start_date"
+                                                    class="block text-sm font-medium text-shark-700">Start Date</label>
+                                                <input type="date" name="start_date" id="start_date"
+                                                    class="w-full mt-1 p-2 border border-shark-300 rounded-md" required>
                                             </div>
                                             <div>
-                                                <label for="end_date" class="block text-sm font-medium text-shark-700">End Date</label>
-                                                <input type="date" name="end_date" id="end_date" class="w-full mt-1 p-2 border border-shark-300 rounded-md" required>
+                                                <label for="end_date" class="block text-sm font-medium text-shark-700">End
+                                                    Date</label>
+                                                <input type="date" name="end_date" id="end_date"
+                                                    class="w-full mt-1 p-2 border border-shark-300 rounded-md" required>
                                             </div>
                                             <div>
-                                                <label for="notes" class="block text-sm font-medium text-shark-700">Additional Notes</label>
+                                                <label for="notes"
+                                                    class="block text-sm font-medium text-shark-700">Additional
+                                                    Notes</label>
                                                 <textarea name="notes" id="notes" class="w-full mt-1 p-2 border border-shark-300 rounded-md" rows="4"></textarea>
                                             </div>
                                             <button type="submit" class="btn-primary w-full md:text-lg py-3">
@@ -124,7 +130,8 @@
                                 @else
                                     <!-- Arahkan ke halaman profil jika belum lengkap -->
                                     <div class="text-center mt-4">
-                                        <p class="text-shark-600 mb-2">Please complete your profile to proceed with the rental.</p>
+                                        <p class="text-shark-600 mb-2">Please complete your profile to proceed with the
+                                            rental.</p>
                                         <a href="{{ route('profile') }}" class="btn-primary w-full md:text-lg py-3">
                                             Complete Your Profile
                                         </a>
@@ -132,7 +139,8 @@
                                 @endif
                             @else
                                 <!-- Tombol Rent Now untuk pengguna yang belum login -->
-                                <button onclick="showModal('{{ $car->id }}')" class="btn-primary w-full md:text-lg mt-4 py-3">
+                                <button onclick="showModal('{{ $car->id }}')"
+                                    class="btn-primary w-full md:text-lg mt-4 py-3">
                                     {{ __('messages.button.rent_now') }}
                                 </button>
                             @endauth
