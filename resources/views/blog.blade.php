@@ -13,19 +13,18 @@
                 <div class="flex items-center justify-center h-screen">
                     <div class="text-center text-white">
                         <article>
-                            <span class="badge">Blog Terpercaya</span>
+                            <span class="badge">TruthTalk Blog</span>
                             <h1 class="title text-5xl">
-                                Temukan Inspirasi <span class="text-orange-200">Setiap Hari</span>
+                                Find Inspiration <span class="text-orange-200">Every Day</span>
                             </h1>
                             <p class="paragraph text-white text-lg">
-                                Baca artikel menarik, tips berguna, dan cerita inspiratif yang akan memperkaya wawasan Anda setiap hari
+                                Read interesting articles, useful tips and inspiring stories that will enrich your insight every day.
                             </p>
                         </article>
 
                         <div class="mt-6 flex justify-center">
-                            <a href=""
-                                class="btn-outline gap-2 border-white text-white hover:border-orange-100 hover:text-orange-100 px-6 py-2  rounded-lg inline-flex items-center">
-                                Lihat Artikel
+                            <a href="" class="btn-outline gap-2 border-white text-white hover:border-orange-100 hover:text-orange-100 px-6 py-2  rounded-lg inline-flex items-center">
+                                View Article
                                 <i class='bx bx-right-arrow-alt text-2xl ml-2'></i>
                             </a>
                         </div>
@@ -39,9 +38,9 @@
     <section class="py-10">
         <div class="container">
             <article class="text-center mb-10">
-                <span class="badge">Artikel Pilihan</span>
-                <h1 class="title">Artikel Terpopuler</h1>
-                <p class="paragraph">Temukan artikel-artikel terbaik yang paling banyak dibaca dan disukai oleh pembaca kami</p>
+                <span class="badge">Featured Articles</span>
+                <h1 class="title">Most Popular Articles</h1>
+                <p class="paragraph">Find the best articles that are most read and liked by our readers.</p>
             </article>
             <div class="grid lg:grid-cols-3 gap-6">
                 <!-- Artikel 1 - Mobil -->
@@ -52,15 +51,15 @@
                     </div>
                     <div class="p-6 relative flex flex-col flex-grow">
                         <h3 class="text-xl font-bold text-slate-800 hover:text-orange-600 transition-colors duration-300 mb-3 leading-tight">
-                            <a href="#" class="block">Mobil Terbaru di Bali yang Dapat Anda Sewa</a>
+                            <a href="#" class="block">Latest Cars in Bali That You Can Rent</a>
                         </h3>
                         <p class="text-slate-600 mb-4 leading-relaxed flex-grow">
-                            Temukan mobil sewaan terbaik di Bali yang cocok untuk perjalanan Anda bersama keluarga atau teman.
+                            Find the best rental car in Bali that is suitable for your trip with family or friends.
                         </p>
                         <div class="flex items-center justify-between mt-auto">
                             <p class="text-slate-500 text-sm">15 Jun 2025</p>
                             <a href="#" class="btn-primary text-sm bg-orange-500 text-white rounded-full px-6 py-2 hover:bg-orange-600 transition-colors duration-300">
-                                Baca Selengkapnya
+                                {{ __('messages.sections.blog_page.container.btns') }}
                             </a>
                         </div>
                     </div>
@@ -74,15 +73,15 @@
                     </div>
                     <div class="p-6 relative flex flex-col flex-grow">
                         <h3 class="text-xl font-bold text-slate-800 hover:text-orange-600 transition-colors duration-300 mb-3 leading-tight">
-                            <a href="#" class="block">Mobil Hemat BBM untuk Liburan Bali</a>
+                            <a href="#" class="block">Fuel Efficient Cars for Bali Holidays</a>
                         </h3>
                         <p class="text-slate-600 mb-4 leading-relaxed flex-grow">
-                            Temukan pilihan mobil dengan efisiensi bahan bakar terbaik untuk pengalaman liburan yang lebih hemat dan nyaman di Bali dan keren dan nyaman.
+                            Find the best fuel efficient car options for a more economical and comfortable holiday experience in Bali that is cool and comfortable.
                         </p>
                         <div class="flex items-center justify-between mt-auto">
                             <p class="text-slate-500 text-sm">17 Jun 2025</p>
                             <a href="#" class="btn-primary text-sm bg-orange-500 text-white rounded-full px-6 py-2 hover:bg-orange-600 transition-colors duration-300">
-                                Baca Selengkapnya
+                                {{ __('messages.sections.blog_page.container.btns') }}
                             </a>
                         </div>
                     </div>
@@ -96,15 +95,15 @@
                     </div>
                     <div class="p-6 relative flex flex-col flex-grow">
                         <h3 class="text-xl font-bold text-slate-800 hover:text-orange-600 transition-colors duration-300 mb-3 leading-tight">
-                            <a href="#" class="block">Mobil Keluarga Terbaik untuk Wisata Bali</a>
+                            <a href="#" class="block">Best Family Car for Bali Tour</a>
                         </h3>
                         <p class="text-slate-600 mb-4 leading-relaxed flex-grow">
-                            Temukan mobil keluarga yang nyaman dan cocok untuk membawa seluruh anggota keluarga menjelajahi Bali.
+                            Find a comfortable family car that is suitable for taking the whole family to explore Bali.
                         </p>
                         <div class="flex items-center justify-between mt-auto">
                             <p class="text-slate-500 text-sm">20 Jun 2025</p>
                             <a href="#" class="btn-primary text-sm bg-orange-500 text-white rounded-full px-6 py-2 hover:bg-orange-600 transition-colors duration-300">
-                                Baca Selengkapnya
+                                {{ __('messages.sections.blog_page.container.btns') }}
                             </a>
                         </div>
                     </div>
@@ -118,15 +117,15 @@
                     </div>
                     <div class="p-6 relative flex flex-col flex-grow">
                         <h3 class="text-xl font-bold text-slate-800 hover:text-orange-600 transition-colors duration-300 mb-3 leading-tight">
-                            <a href="#" class="block">Wisata Alam Terbaik di Bali yang Harus Dikunjungi</a>
+                            <a href="#" class="block">Best Nature Tourism in Bali That You Must Visit</a>
                         </h3>
                         <p class="text-slate-600 mb-4 leading-relaxed flex-grow">
-                            Jelajahi keindahan wisata alam yang memukau dan tak terlupakan di Bali, mulai dari hamparan pantai berpasir putih yang menenangkan.
+                            Explore the stunning and unforgettable beauty of natural attractions in Bali, starting from the expanse of calming white sandy beaches.
                         </p>
                         <div class="flex items-center justify-between mt-auto">
                             <p class="text-slate-500 text-sm">23 Jun 2025</p>
                             <a href="#" class="btn-primary text-sm bg-orange-500 text-white rounded-full px-6 py-2 hover:bg-orange-600 transition-colors duration-300">
-                                Baca Selengkapnya
+                                {{ __('messages.sections.blog_page.container.btns') }}
                             </a>
                         </div>
                     </div>
@@ -140,15 +139,15 @@
                     </div>
                     <div class="p-6 relative flex flex-col flex-grow">
                         <h3 class="text-xl font-bold text-slate-800 hover:text-orange-600 transition-colors duration-300 mb-3 leading-tight">
-                            <a href="#" class="block">Destinasi Wisata Bali yang Instagramable</a>
+                            <a href="#" class="block">Instagrammable Bali Tourist Destinations</a>
                         </h3>
                         <p class="text-slate-600 mb-4 leading-relaxed flex-grow">
-                            Temukan spot-spot wisata di Bali yang cocok untuk berfoto dan mendapatkan foto Instagram yang menakjubkan.
+                            Find tourist spots in Bali that are suitable for taking photos and getting amazing Instagram photos.
                         </p>
                         <div class="flex items-center justify-between mt-auto">
                             <p class="text-slate-500 text-sm">25 Jun 2025</p>
                             <a href="#" class="btn-primary text-sm bg-orange-500 text-white rounded-full px-6 py-2 hover:bg-orange-600 transition-colors duration-300">
-                                Baca Selengkapnya
+                                {{ __('messages.sections.blog_page.container.btns') }}
                             </a>
                         </div>
                     </div>
@@ -162,15 +161,15 @@
                     </div>
                     <div class="p-6 relative flex flex-col flex-grow">
                         <h3 class="text-xl font-bold text-slate-800 hover:text-orange-600 transition-colors duration-300 mb-3 leading-tight">
-                            <a href="#" class="block">Panduan Wisata Bali: Kuliner dan Keindahan Alam</a>
+                            <a href="#" class="block">Bali Travel Guide: Culinary and Natural Beauty</a>
                         </h3>
                         <p class="text-slate-600 mb-4 leading-relaxed flex-grow">
-                            Temukan berbagai tempat kuliner di Bali yang wajib dicoba dan nikmati keindahan alam yang menenangkan.
+                            Discover various culinary places in Bali that are a must-try and enjoy the calming natural beauty.
                         </p>
                         <div class="flex items-center justify-between mt-auto">
                             <p class="text-slate-500 text-sm">28 Jun 2025</p>
                             <a href="#" class="btn-primary text-sm bg-orange-500 text-white rounded-full px-6 py-2 hover:bg-orange-600 transition-colors duration-300">
-                                Baca Selengkapnya
+                                {{ __('messages.sections.blog_page.container.btns') }}
                             </a>
                         </div>
                     </div>
@@ -184,7 +183,7 @@
         <div class="text-center">
             <a href="#"
                 class="btn-primary bg-orange-500 text-white rounded-full px-6 py-3 hover:bg-orange-600 transition-colors duration-300 inline-flex items-center gap-2 text-lg">
-                Lihat Lebih Banyak Artikel
+                View More Articles
                 <i class='bx bx-chevron-down text-2xl'></i>
             </a>
         </div>
@@ -198,10 +197,10 @@
             <div class="h-[70vh] bg-black bg-opacity-70 rounded-xl flex items-center justify-center">
                 <article class="text-white text-center max-w-2xl px-4">
                     <span class="badge text-white">Newsletter</span>
-                    <h1 class="text-3xl font-bold my-4 text-gray-100">Dapatkan Update Artikel Terbaru</h1>
-                    <p class="mb-6 text-gray-200">Subscribe newsletter kami dan dapatkan notifikasi artikel terbaru yang menarik untuk dibaca</p>
+                    <h1 class="text-3xl font-bold my-4 text-gray-100">Get Latest Article Updates</h1>
+                    <p class="mb-6 text-gray-200">Subscribe to our newsletter and get notifications of the latest interesting articles to read.</p>
                     <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                        <input type="email" placeholder="Masukkan email Anda"
+                        <input type="email" placeholder="Enter your email"
                             class="flex-1 px-4 py-3 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-orange-500 border-white border" required>
                         <button type="submit" class="btn-primary gap-2 group">
                             Subscribe

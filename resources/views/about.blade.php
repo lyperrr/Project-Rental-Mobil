@@ -19,8 +19,7 @@
         <div class="container">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center text-center lg:text-left">
                 <div class="overflow-hidden rounded-xl shadow-xl">
-                    <img src="https://i.pinimg.com/736x/f7/0d/7c/f70d7c16ed2f811edfdd4fc5eb0adf9f.jpg" alt="Hero Image"
-                        class="w-full hover:scale-105 hover:rotate-1 h-full transition-all duration-200 ease-linear" />
+                    <img src="https://i.pinimg.com/736x/f7/0d/7c/f70d7c16ed2f811edfdd4fc5eb0adf9f.jpg" alt="Hero Image" class="w-full hover:scale-105 hover:rotate-1 h-full transition-all duration-200 ease-linear"/>
                 </div>
                 <div class="">
                     <h1 class="title lg:mx-0">
@@ -30,11 +29,8 @@
                         class="text-2xl sm:text-xl lg:text-2xl font-bold mb-4 leading-tight bg-gradient-to-r from-orange-300 to-orange-100 bg-clip-text text-transparent">
                         You Start The Engine and Your Advanture Begin
                     </p>
-                    <p class="text-base text-gray-600 max-w-xl">
-                        Kami adalah perusahaan yang bergerak di bidang otomotif dan petualangan, menyediakan kendaraan
-                        berkualitas serta layanan terbaik untuk menemani setiap langkah perjalanan Anda. Dengan semangat
-                        eksplorasi, kami percaya bahwa setiap perjalanan adalah awal dari cerita baru — dan semuanya
-                        dimulai saat Anda menyalakan mesin.
+                    <p class="text-base text-gray-600 max-w-xl text-justify">
+                        We are a company engaged in automotive and adventure, providing quality vehicles and the best service to accompany every step of your journey. With the spirit of exploration, we believe that every journey is the beginning of a new story, and it all starts when you start the engine.
                     </p>
                 </div>
             </div>
@@ -67,42 +63,37 @@
                         class="text-4xl md:text-5xl text-center xl:text-left lg:max-w-xl xl:max-w-none mx-auto font-extrabold mb-6 leading-tight">
                         Experience Excellence In Every Mile
                     </h2>
-                    <p
-                        class="text-base sm:text-lg lg:text-xl max-w-2xl text-center mx-auto xl:text-left xl:mx-0 text-shark-600 leading-relaxed mb-10">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor minus in nemo nostrum totam aut
-                        eveniet, saepe corrupti sed nobis autem voluptates atque iste dolorum nam corporis placeat
-                        earum.
+                    <p class="text-base sm:text-lg lg:text-xl max-w-2xl text-center mx-auto xl:text-left xl:mx-0 text-shark-600 leading-relaxed mb-10">
+                        Every kilometer you travel with us is proof of our superior and trusted service quality. We are committed to providing the best service with comfort, safety and professionalism on every trip you take.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="text-left flex items-start">
                             <i class="bx bx-check-circle text-orange-500 text-3xl mr-3 mt-1"></i>
                             <div>
-                                <h3 class="text-xl font-bold">Transparansi Harga</h3>
-                                <p class="text-base text-shark-600">Tidak ada biaya tersembunyi, semua jelas di awal.
+                                <h3 class="text-xl font-bold">Price Transparency</h3>
+                                <p class="text-base text-shark-600">There are no hidden costs, everything is clear from the start.
                                 </p>
                             </div>
                         </div>
                         <div class="text-left flex items-start">
                             <i class="bx bx-car text-orange-500 text-3xl mr-3 mt-1"></i>
                             <div>
-                                <h3 class="text-xl font-bold">Armada Terbaru</h3>
-                                <p class="text-base text-shark-600">Beragam pilihan mobil terbaru dan terawat.</p>
+                                <h3 class="text-xl font-bold">Latest Fleet</h3>
+                                <p class="text-base text-shark-600">A wide selection of the newest and best-maintained cars.</p>
                             </div>
                         </div>
                         <div class="text-left flex items-start">
                             <i class="bx bx-support text-orange-500 text-3xl mr-3 mt-1"></i>
                             <div>
-                                <h3 class="text-xl font-bold">Dukungan 24/7</h3>
-                                <p class="text-base text-shark-600">Tim kami siap membantu kapan saja Anda butuhkan.</p>
+                                <h3 class="text-xl font-bold">24/7 Support</h3>
+                                <p class="text-base text-shark-600">Our team is ready to help whenever you need it.</p>
                             </div>
                         </div>
                         <div class="text-left flex items-start">
                             <i class="bx bx-map text-orange-500 text-3xl mr-3 mt-1"></i>
                             <div>
-                                <h3 class="text-xl font-bold">Lokasi Penjemputan Fleksibel</h3>
-                                <p class="text-base text-shark-600">Ambil dan kembalikan mobil di tempat yang nyaman
-                                    bagi
-                                    Anda.</p>
+                                <h3 class="text-xl font-bold">Flexible Pickup Location</h3>
+                                <p class="text-base text-shark-600">Pick up and return the car at a location convenient for you.</p>
                             </div>
                         </div>
                     </div>
@@ -119,9 +110,9 @@
     <section class="py-10 mx-auto bg-black/40 md:bg-transparent">
         <div class="container text-center">
             <div class="md:bg-black/40 md:rounded-2xl md:py-20">
-                <p class="badge w-fit mx-auto">Save Big With Our Cheap Car Rental!</p>
-                <h2 class="text-2xl lg:text-3xl text-white font-bold mt-4">Save Big With Our Cheap Car Rental!</h2>
-                <p class="my-2 text-white"><b>Top Outlet. Local Suppliers. 24/7 Support</b></p>
+                <p class="badge w-fit mx-auto">Easy and Fast Car Rental!</p>
+                <h2 class="text-2xl lg:text-3xl text-white font-bold mt-4">Quality Cars, Friendly Prices. Book Now!</h2>
+                <p class="my-2 text-white"><b>Explore More with the Best Rental Prices!</b></p>
                 <div class="flex justify-center mt-10">
                     <a href="/rent" class="btn-primary px-4 py-2 rounded font-semibold">Book Ride</a>
                 </div>

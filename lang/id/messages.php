@@ -225,6 +225,11 @@ return [
             'privacy_policy' => 'Kebijakan Privasi',
             'or_signup_with' => 'Atau daftar dengan'
         ],
+        'contact_page' => [
+            'contact_us' => 'Hubungi Kami',
+            'get_in_touch' => 'Mulai Percakapa',
+            
+        ]
     ],
 
     'button' => [

@@ -392,6 +392,119 @@ return [
                 ],
             ],
         ],
+        'contact_page' => [
+            'in_article' => [
+                'contact_us' => 'Contact Us',
+                'get_in_touch' => 'Get In Touch',
+                'description' => 'We would love to hear from you. Have a question, feedback, or just want to connect? We’re here to listen and help. Reach out through the contact form, send us an email, or connect via social media. Let’s start the conversation and see how we can support you.'
+            ],         
+            'left_side' => [
+                'contact_information' => 'Contact Information',
+                'address' => 'Address',
+                'addreses' => 'Jimbaran, Bali Indonesia',
+                'phone' => 'Phone',
+                'number' => 'Phone Number: +628123456789',
+                'email' => 'Email Address',
+                'email_addres' => 'Email: example@gmail.com',
+                'opening_hours' => 'Opening Hours',
+                'hours' => 'Monday – Friday: 09.00 – 17.00 WITA Saturday: 09.00 – 13.00 WITA',
+            ],
+            'location' => 'Location',
+            'follow us' => 'Follow Us',
+            'aside' => [
+                'transportation' => 'Transportation',
+                'trusted service' => 'Trusted Service',
+                'support' => '24/7 Support'
+            ]
+        ],
+        'about_page' => [
+            'title' => 'About Company',
+            'right_image' => [
+                'about_cpmpany' => 'About Company',
+                'text' => 'You Start The Engine and Your Advanture Begin',
+                'paragraph' => 'We are a company engaged in automotive and adventure, providing quality vehicles and the best service to accompany every step of your journey. With the spirit of exploration, we believe that every journey is the beginning of a new story, and it all starts when you start the engine.'
+            ],
+            'then_section' => [
+                'text_1' => 'Save Big With Our Cheap Car Rental!',
+                'text_2' => 'Top Outlet. Local Suppliers. 24/7 Support',
+                'buttons' => [
+                    'book_ride' => 'Book Ride',
+                    'contact_us' => 'Contact Us'
+                ],
+            'container' => [
+                'why_choose_us' => 'Why Choose Us',
+                'text' => "Experience Excellence In Every Mile",
+                'paragraph' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor minus in nemo nostrum totam aut eveniet, saepe corrupti sed nobis autem voluptates atque iste dolorum nam corporis placeat earum.',
+                    'grid_1' => [
+                        'price_transparency' => 'Price Transparency',
+                        'description' => 'There are no hidden costs, everything is clear from the start.'
+                    ],
+                    'grid_2' => [
+                        'latest_fleet' => 'Latest Fleet',
+                        'description' => 'A wide selection of the newest and best-maintained cars.'
+                    ],
+                    'grid_3' => [
+                        'support' => '24/7 Suppor',
+                        'description' => 'Our team is ready to help whenever you need it.'
+                    ],
+                    'grid_4' => [
+                        'Pickup_location' => 'Flexible Pickup Location',
+                        'description' => 'Pick up and return the car at a location convenient for you.'
+                    ],
+                ],
+                'hero_banner' => [
+                    'easy' => 'Easy and Fast Car Rental!',
+                    'quality' => 'Quality Cars, Friendly Prices. Book Now!',
+                    'explore' => 'Explore More with the Best Rental Prices!',
+                    'book_ride' => 'Book Ride'
+                ]
+            ]
+        ],
+        'blog_page' => [
+            'article' => [
+                'badge' => 'TruthTalk Blog',
+                'text' => 'Find Inspiration Every Day',
+                'paragraph' => 'Read interesting articles, useful tips and inspiring stories that will enrich your insight every day.',
+                'button' => 'View Article'
+            ],
+            'container' => [
+                'badge' => 'Featured Articles',
+                'title' => 'Most Popular Articles',
+                'paragraph' => 'Find the best articles that are most read and liked by our readers.',
+                'card_1' => [
+                    'block' => 'Latest Cars in Bali That You Can Rent',
+                    'paragraph' => 'Find the best rental car in Bali that is suitable for your trip with family or friends.'
+                ],
+                'card_2' => [
+                    'block' => 'Fuel Efficient Cars for Bali Holidays',
+                    'paragraph' => 'Find the best fuel efficient car options for a more economical and comfortable holiday experience in Bali that is cool and comfortable.'
+                ],
+                'card_3' => [
+                    'block' => 'Best Family Car for Bali Tour',
+                    'paragraph' => 'Find a comfortable family car that is suitable for taking the whole family to explore Bali.'
+                ],
+                'card_4' => [
+                    'block' => 'Best Nature Tourism in Bali That You Must Visit',
+                    'paragraph' => 'Explore the stunning and unforgettable beauty of natural attractions in Bali, starting from the expanse of calming white sandy beaches.'
+                ],
+                'card_5' => [
+                    'block' => 'Instagrammable Bali Tourist Destinations',
+                    'paragraph' => 'Find tourist spots in Bali that are suitable for taking photos and getting amazing Instagram photos.'
+                ],
+                'card_6' => [
+                    'block' => 'Bali Travel Guide: Culinary and Natural Beauty',
+                    'paragraph' => '',
+                ],
+                'btns' => 'Read more',
+                'more' => 'View More Articles'
+            ],
+            'newsletter_section' => [
+                'text' => 'Get Latest Article Updates',
+                'paragraph' => 'Subscribe to our newsletter and get notifications of the latest interesting articles to read',
+                'placeholder' => 'Enter your email',
+                'subscribe' => 'Subscribe'
+            ]
+        ],
     ],
 
     'button' => [

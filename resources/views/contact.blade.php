@@ -11,13 +11,13 @@
         </div>
 
         <!-- Teks yang tidak terpengaruh scale -->
-        <h1 class="relative z-10">Contact Us</h1>
+        <h1 class="relative z-10">{{ __('messages.sections.contact_page.in_article.contact_us') }}</h1>
     </section>
 
     <section class="py-10">
         <div class="container">
             <article class="sm:text-center">
-                <span class="badge">Contact Us</span>
+                <span class="badge">{{ __('messages.sections.contact_page.in_article.contact_us') }}</span>
                 <h1 class="title">
                     Get In Touch
                 </h1>
@@ -59,7 +59,6 @@
                                     <span class="text-shark-600">
                                         Phone Number:
                                         <a href="tel:123456789" class="text-blue-500 underline">+628123456789</a>
-
                                     </span>
                                 </div>
                             </li>
