@@ -9,6 +9,8 @@ use App\Http\Controllers\RentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\SignupController;
+use App\Http\Controllers\Admin\AdminController;
+
 
 // Test route
 Route::get('/test', fn() => view('test'));
@@ -22,6 +24,14 @@ Route::get('/locale/{lang}', function ($lang) {
 
     return Redirect::back();
 });
+
+//route admin
+// Route::get('/admin/dashboard', function () {
+//     return view('admin.dashboard');
+// });
+
+
+
 
 // Group middleware SetLocale
 Route::middleware([\App\Http\Middleware\SetLocale::class])->group(function () {
@@ -47,7 +57,18 @@ Route::middleware([\App\Http\Middleware\SetLocale::class])->group(function () {
     Route::view('/contact', 'contact', ['title' => __('messages.navbar.contact')])->name('contact');
 
     // Route admin
-    Route::get('/dashboard', fn() => view('admin.dashboard'))->middleware('auth')->name('dashboard');
+        Route::prefix('admin')->name('admin.')->group(function () {
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+        Route::get('/mobil', [AdminController::class, 'mobil'])->name('mobil');
+    });
+
+
+    // Route::name('admin.')->group(function () {
+    //     Route::get('/admin/dashboard')->name('admin.dashboard');
+    //     Route::get('/admin/mobil')->name('admin.cars');
+    // });
+    // Route::get('/dashboard', fn() => view('admin.dashboard'))->middleware('auth')->name('dashboard');
+
 
     // Cars routes
     Route::name('cars.')->group(function () {
