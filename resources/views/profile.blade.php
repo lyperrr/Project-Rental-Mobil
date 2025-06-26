@@ -25,7 +25,7 @@
                         <div class="bg-white rounded-xl shadow-sm border border-shark-100 overflow-hidden">
                             <div class="px-6 py-5 border-b border-shark-100">
                                 <h2 class="text-lg font-semibold text-shark-900 flex items-center">
-                                    <i class="bx bxs-user-account text-2xl mr-2"></i> Profile Photo
+                                    <i class="bx bxs-user-account text-orange-100 text-2xl mr-2"></i> Profile Photo
                                 </h2>
                             </div>
                             <div class="p-6">
@@ -37,8 +37,8 @@
                                                 class="w-full h-full object-cover">
                                         @else
                                             <div
-                                                class="w-full h-full flex items-center justify-center bg-shark-100 text-shark-400">
-                                                <i class="bx bx-user text-6xl"></i>
+                                                class="w-full h-full flex items-center justify-center">
+                                                <img src="{{ asset('img/profile.jpeg') }}" alt="{{ $user->username }}" title="{{ $user->username }}">
                                             </div>
                                         @endif
                                     </div>
@@ -73,7 +73,7 @@
                         <div class="bg-white rounded-xl shadow-sm border border-shark-100 overflow-hidden">
                             <div class="px-6 py-5 border-b border-shark-100">
                                 <h2 class="text-lg font-semibold text-shark-900 flex items-center">
-                                    <i class="bx bx-line-chart text-2xl mr-2"></i> Rental Statistics
+                                    <i class="bx bx-line-chart text-orange-100 text-2xl mr-2"></i> Rental Statistics
                                 </h2>
                             </div>
                             <div class="p-6">
@@ -119,7 +119,7 @@
                             <div
                                 class="px-6 py-5 border-b border-shark-100 flex items-center justify-between flex-wrap">
                                 <h2 class="text-lg font-semibold text-shark-900 inline-flex items-center">
-                                    <i class="bx bxs-user-detail mr-2 text-3xl"></i>Personal Information
+                                    <i class="bx bxs-user-detail text-orange-100 mr-2 text-2xl"></i>Personal Information
                                 </h2>
 
                                 <div class="flex items-center space-x-2">
@@ -177,7 +177,7 @@
                         <div class="bg-white rounded-xl shadow-sm border border-shark-100 overflow-hidden">
                             <div class="px-6 py-5 border-b border-shark-100">
                                 <h2 class="text-lg font-semibold text-shark-900 flex items-center">
-                                    <i class="bx bx-folder text-2xl mr-2"></i> Documents
+                                    <i class="bx bx-folder text-orange-100 text-2xl mr-2"></i> Documents
                                 </h2>
                             </div>
                             <div class="p-6">

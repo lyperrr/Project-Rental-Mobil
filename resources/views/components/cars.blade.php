@@ -1,9 +1,9 @@
 @forelse ($cars as $car)
     <div class="group overflow-hidden bg-white shadow rounded-2xl border border-shark-100 hover:shadow-md">
         <div class="overflow-hidden">
-            <a href="{{ route('cars.show', $car->id) }}"> <!-- Use the correct route name -->
-                @if ($car->image)
-                    <img src="{{ $car->image }}"
+            <a href="{{ route('cars.show', $car->id) }}">
+                @if ($car->image_base64)
+                    <img src="{{ $car->image_base64 }}"
                         class="w-full min-h-50 max-h-50 object-cover group-hover:scale-103 transition-all duration-150 ease-linear"
                         alt="{{ $car->brand . ' ' . $car->model }}" />
                 @else
@@ -16,7 +16,7 @@
         </div>
         <div class="p-4">
             <div class="w-fit">
-                <a href="{{ route('cars.show', $car->id) }}"> <!-- Use the correct route name -->
+                <a href="{{ route('cars.show', $car->id) }}">
                     <h2 class="text-lg font-semibold hover:text-orange-200 transition-all duration-150 ease-linear">
                         {{ $car->brand }} {{ $car->model }}
                     </h2>
@@ -52,7 +52,6 @@
                     </p>
                 </article>
                 <a href="{{ route('cars.show', $car->id) }}" class="btn-primary lg:text-sm px-4">
-                    <!-- Use the correct route name -->
                     {{ __('messages.button.rent_now') }}
                 </a>
             </div>
@@ -63,8 +62,8 @@
         <div class="flex flex-col items-center justify-center">
             <i class='bx bx-car text-5xl text-gray-400 mb-4'></i>
             <h3 class="text-xl font-semibold text-gray-600">No Cars Available</h3>
-            <p class="text-gray-500 mt-2">Sorry, no cars are available for rent at the moment. Please check back
-                later!</p>
+            <p class="text-gray-500 mt-2">Sorry, no cars are available for rent at the moment. Please check back later!
+            </p>
             <a href="{{ route('cars.home') }}" class="mt-4 btn-primary px-4 py-2">
                 Back to Home
             </a>

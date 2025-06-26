@@ -26,8 +26,8 @@
                         <div
                             class="mt-4 sm:w-[70%] sm:mt-5 mx-auto lg:mt-4 lg:flex lg:gap-4 lg:items-center lg:justify-center">
                             <a href="#rent" class="btn-primary gap-2 sm:py-2.5 sm:text-2xl lg:px-6 lg:text-base">
-                                {{ __('messages.button.rent_now') }}
                                 <i class='bx bx-car text-2xl'></i>
+                                {{ __('messages.button.rent_now') }}
                             </a>
                             <a href="{{ url('/rent') }}"
                                 class="btn-outline gap-2 mt-2 group sm:mt-3 sm:py-2 sm:text-2xl lg:text-base lg:m-0 border-white text-white hover:border-orange-100 hover:text-orange-100 ">

@@ -18,146 +18,44 @@
     <section class="py-10">
         <div class="container">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <aside class="bg-white shadow-lg rounded-xl">
-                    <div class="overflow-hidden group min-h-[20vh] max-h-[40vh] xl:max-h-[60vh] aspect-[16/9] w-full">
-                        @if ($car->image)
-                            <img src="{{ $car->image }}" alt="{{ $car->brand }} {{ $car->model }}"
-                                class="w-full h-full object-cover rounded-md group-hover:scale-103 transition-all duration-150 ease-linear" />
-                        @else
-                            <div class="flex items-center justify-center bg-shark-100 rounded-md w-full h-full">
-                                <i
-                                    class="bx bx-image-alt text-7xl text-shark-400 group-hover:scale-103 transition-all duration-150 ease-linear"></i>
-                            </div>
-                        @endif
-                    </div>
-                    <div class="p-5 border-t border-shark-400">
+
+                <div class="grid grid-cols-1 gap-6">
+                    <aside class="bg-white shadow-lg rounded-xl">
                         <div
-                            class="bg-gradient-to-r from-orange-100/30 to-orange-300/20 rounded-md text-center border border-orange-200/60 p-4 font-medium py-2 md:py-4 lg:flex justify-between items-center lg:h-32">
-                            <h5 class="text-base md:text-lg">Rental Price:</h5>
-                            <p
-                                class="text-lg md:text-2xl bg-gradient-to-r from-orange-300 to-orange-100 bg-clip-text text-transparent">
-                                Rp. {{ number_format($car->price_per_day, 0, ',', '.') }}/day
-                            </p>
+                            class="overflow-hidden group min-h-[20vh] max-h-[40vh] xl:max-h-[60vh] aspect-[16/9] w-full">
+                            @if ($car->image_base64)
+                                <img src="{{ $car->image_base64 }}" alt="{{ $car->brand }} {{ $car->model }}"
+                                    class="w-full h-full object-cover rounded-md group-hover:scale-103 transition-all duration-150 ease-linear"
+                                    loading="lazy" />
+                            @else
+                                <div class="flex items-center justify-center bg-shark-100 rounded-md w-full h-full">
+                                    <i
+                                        class="bx bx-image-alt text-7xl text-shark-400 group-hover:scale-103 transition-all duration-150 ease-linear"></i>
+                                </div>
+                            @endif
                         </div>
-                    </div>
-                </aside>
-
-                {{-- Details --}}
-                <aside class="bg-white p-5 rounded-xl shadow-lg border border-white/20">
-                    <div class="grid grid-cols-2 gap-4 md:gap-6 *:text-center">
-                        @forelse([
-                                ['icon' => 'bx-car', 'label' => 'Brand', 'value' => $car->brand],
-                                ['icon' => 'bx-calendar', 'label' => 'Model Year', 'value' => $car->year],
-                                ['icon' => 'bx-cog', 'label' => 'Transmission', 'value' => $car->transmission],
-                                ['icon' => 'bx-gas-pump', 'label' => 'Fuel Type', 'value' => $car->fuel_type],
-                                ['icon' => 'bx-group', 'label' => 'Seats', 'value' => $car->seats],
-                                ['icon' => 'bx-id-card', 'label' => 'License Plate', 'value' => $car->license_plate],
-                            ] as $item)
-                            <aside>
-                                <div class="flex gap-1 items-center">
-                                    <i class='bx {{ $item['icon'] }} text-2xl text-orange-200/80'></i>
-                                    <h5 class="font-semibold text-base md:text-xl lg:text-base">{{ $item['label'] }}
-                                    </h5>
-                                </div>
+                        <div class="p-5 border-t border-shark-400">
+                            <div
+                                class="bg-gradient-to-r from-orange-100/30 to-orange-300/20 rounded-md text-center border border-orange-200/60 p-4 font-medium py-2 md:py-4 lg:flex justify-between items-center lg:h-32">
+                                <h5 class="text-base md:text-lg">Rental Price:</h5>
                                 <p
-                                    class="bg-shark-50/50 mt-1 md:mt-2 md:text-lg lg:text-base py-2 border border-orange-100/40 font-medium rounded-md capitalize">
-                                    {{ $item['value'] }}
+                                    class="text-lg md:text-2xl bg-gradient-to-r from-orange-300 to-orange-100 bg-clip-text text-transparent">
+                                    Rp. {{ number_format($car->price_per_day, 0, ',', '.') }}/day
                                 </p>
-                            </aside>
-                        @empty
-                            <p class="text-center text-shark-500">N/A</p>
-                        @endforelse
-                        <div class="col-span-2">
-                            <div class="border-t border-shark-400 pt-2">
-                                <div class="flex items-center gap-1 mb-3">
-                                    <i class="bx bx-info-circle text-3xl text-orange-200"></i>
-                                    <h5 class="font-semibold text-base md:text-xl lg:text-base">Requirements</h5>
-                                </div>
-                                <ul class="grid md:grid-cols-2 gap-2 text-left">
-                                    <li class="">
-                                        <i class="bx bx-check text-green-500"></i>
-                                        Valid driver's license
-                                    </li>
-                                    <li class="">
-                                        <i class="bx bx-check text-green-500"></i>
-                                        Minimum age 21 years
-                                    </li>
-                                    <li class="">
-                                        <i class="bx bx-check text-green-500"></i>
-                                        Security deposit required
-                                    </li>
-                                    <li class="">
-                                        <i class="bx bx-check text-green-500"></i>
-                                        Valid ID card/passport
-                                    </li>
-                                </ul>
+                            </div>
+                        </div>
+                    </aside>
+
+                    {{-- Car Details --}}
+                    <aside class="bg-white p-5 rounded-xl shadow-lg border border-white/20">
+                        <div>
+                            <div class="flex items-center gap-1 mb-3">
+                                <i class="bx bx-detail text-3xl text-orange-200"></i>
+                                <h4 class="font-semibold text-2xl">Car Details</h4>
                             </div>
 
-                            <!-- Pengecekan Login dan Profil -->
-                            @auth
-                                @php
-                                    $userProfile = auth()->user()->userProfile;
-                                @endphp
-                                @if ($userProfile && !empty($userProfile->identity_number))
-                                    <!-- Form Penyewaan -->
-                                    <form action="{{ route('rent.store') }}" method="POST" class="mt-4">
-                                        @csrf
-                                        <input type="hidden" name="car_id" value="{{ $car->id }}">
-                                        <div class="grid gap-4">
-                                            <div>
-                                                <label for="start_date"
-                                                    class="block text-sm font-medium text-shark-700">Start Date</label>
-                                                <input type="date" name="start_date" id="start_date"
-                                                    class="w-full mt-1 p-2 border border-shark-300 rounded-md" required>
-                                            </div>
-                                            <div>
-                                                <label for="end_date" class="block text-sm font-medium text-shark-700">End
-                                                    Date</label>
-                                                <input type="date" name="end_date" id="end_date"
-                                                    class="w-full mt-1 p-2 border border-shark-300 rounded-md" required>
-                                            </div>
-                                            <div>
-                                                <label for="notes"
-                                                    class="block text-sm font-medium text-shark-700">Additional
-                                                    Notes</label>
-                                                <textarea name="notes" id="notes" class="w-full mt-1 p-2 border border-shark-300 rounded-md" rows="4"></textarea>
-                                            </div>
-                                            <button type="submit" class="btn-primary w-full md:text-lg py-3">
-                                                {{ __('messages.button.submit_rental') }}
-                                            </button>
-                                        </div>
-                                    </form>
-                                @else
-                                    <!-- Arahkan ke halaman profil jika belum lengkap -->
-                                    <div class="text-center mt-4">
-                                        <p class="text-shark-600 mb-2">Please complete your profile to proceed with the
-                                            rental.</p>
-                                        <a href="{{ route('profile') }}" class="btn-primary w-full md:text-lg py-3">
-                                            Complete Your Profile
-                                        </a>
-                                    </div>
-                                @endif
-                            @else
-                                <!-- Tombol Rent Now untuk pengguna yang belum login -->
-                                <button onclick="showModal('{{ $car->id }}')"
-                                    class="btn-primary w-full md:text-lg mt-4 py-3">
-                                    {{ __('messages.button.rent_now') }}
-                                </button>
-                            @endauth
-                        </div>
-                    </div>
-                </aside>
-
-                {{-- Car Details --}}
-                <aside class="bg-white p-5 rounded-xl shadow-lg border border-white/20">
-                    <div>
-                        <div class="flex items-center gap-1 mb-3">
-                            <i class="bx bx-detail text-3xl text-orange-200"></i>
-                            <h4 class="font-semibold text-2xl">Car Details</h4>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4 md:gap-6 *:text-center border-t border-shark-400 pt-2">
-                            @forelse([
+                            <div class="grid grid-cols-2 gap-4 md:gap-6 *:text-center border-t border-shark-400 pt-2">
+                                @forelse([
                                 ['icon' => 'bx-car', 'label' => 'Brand', 'value' => $car->brand],
                                 ['icon' => 'bxs-car', 'label' => 'Model', 'value' => $car->model],
                                 ['icon' => 'bx-calendar', 'label' => 'Model Year', 'value' => $car->year],
@@ -171,41 +69,365 @@
                                 ['icon' => 'bx-group', 'label' => 'Seats', 'value' => $car->seats],
                                 ['icon' => 'bx-id-card', 'label' => 'License Plate', 'value' => $car->license_plate],
                             ] as $item)
-                                <div>
-                                    <div class="flex gap-1 items-center">
-                                        <i class='bx {{ $item['icon'] }} text-2xl text-orange-200/80'></i>
-                                        <h5 class="font-semibold text-base md:text-xl lg:text-base">
-                                            {{ $item['label'] }}
-                                        </h5>
+                                    <div>
+                                        <div class="flex gap-1 items-center">
+                                            <i class='bx {{ $item['icon'] }} text-2xl text-orange-200/80'></i>
+                                            <h5 class="font-semibold text-base md:text-xl lg:text-base">
+                                                {{ $item['label'] }}
+                                            </h5>
+                                        </div>
+                                        <p
+                                            class="bg-shark-50/50 mt-1 md:mt-2 md:text-lg lg:text-base py-2 border border-orange-100/40 font-medium rounded-md capitalize">
+                                            {{ $item['value'] }}
+                                        </p>
                                     </div>
-                                    <p
-                                        class="bg-shark-50/50 mt-1 md:mt-2 md:text-lg lg:text-base py-2 border border-orange-100/40 font-medium rounded-md capitalize">
-                                        {{ $item['value'] }}
-                                    </p>
-                                </div>
-                            @empty
-                                <p class="text-center text-shark-500">N/A</p>
-                            @endforelse
+                                @empty
+                                    <p class="text-center text-shark-500">N/A</p>
+                                @endforelse
+                            </div>
                         </div>
-                    </div>
-                </aside>
+                    </aside>
+                </div>
 
-                {{-- Description --}}
-                <aside class="bg-white p-5 rounded-xl shadow-lg border border-white/20">
-                    <div class="">
-                        <div class="flex items-center gap-1 mb-3">
-                            <i class="bx bx-info-circle text-3xl text-orange-200"></i>
-                            <h4 class="font-semibold text-2xl">Description</h4>
+                <div class="space-y-6">
+                    @auth
+                        @php
+                            $userProfile = auth()->user()->userProfile;
+                            $profileComplete =
+                                $userProfile &&
+                                !empty($userProfile->full_name) &&
+                                !empty($userProfile->phone) &&
+                                !empty($userProfile->ktp_number) &&
+                                !empty($userProfile->sim_number) &&
+                                !empty($userProfile->ktp_image) &&
+                                !empty($userProfile->ktp_image_mime) &&
+                                !empty($userProfile->sim_image) &&
+                                !empty($userProfile->sim_image_mime);
+                        @endphp
+
+                        @if ($profileComplete)
+                            <!-- Payment Form Section -->
+                            @auth
+                                @php
+                                    $userProfile = auth()->user()->userProfile;
+                                    $profileComplete =
+                                        $userProfile &&
+                                        !empty($userProfile->full_name) &&
+                                        !empty($userProfile->phone) &&
+                                        !empty($userProfile->ktp_number) &&
+                                        !empty($userProfile->sim_number) &&
+                                        !empty($userProfile->ktp_image) &&
+                                        !empty($userProfile->ktp_image_mime) &&
+                                        !empty($userProfile->sim_image) &&
+                                        !empty($userProfile->sim_image_mime);
+                                @endphp
+
+                                @if ($profileComplete)
+                                    <!-- Payment Form Section -->
+                                    <aside class="bg-white p-5 rounded-xl shadow-lg border border-white/20 order-2 lg:order-1">
+                                        <div class="flex items-center gap-3 mb-6">
+                                            <i class="bx bx-credit-card text-3xl text-orange-500"></i>
+                                            <h5 class="font-bold text-xl text-gray-800">Book Your Rental</h5>
+                                        </div>
+
+                                        <!-- Order Summary -->
+                                        <div
+                                            class="bg-gradient-to-r from-orange-50 to-orange-100/50 rounded-lg p-4 mb-6 border border-orange-200/50">
+                                            <h6 class="font-semibold text-gray-800 mb-3">Order Summary</h6>
+                                            <div class="text-sm text-gray-600 space-y-2">
+                                                <p>Car: {{ $car->brand }} {{ $car->model }}</p>
+                                                <p>Rental Price: Rp. {{ number_format($car->price_per_day, 0, ',', '.') }}/day
+                                                </p>
+                                                <p id="summary-period" class="hidden">Rental Period: <span
+                                                        id="summary-start-date"></span> to <span id="summary-end-date"></span>
+                                                </p>
+                                                <p id="summary-total" class="font-semibold text-orange-600 hidden">Total: Rp
+                                                    <span id="total-amount"></span></p>
+                                            </div>
+                                        </div>
+
+                                        <form action="{{ route('cars.rent.store') }}" method="POST" class="space-y-5"
+                                            id="payment-form">
+                                            @csrf
+                                            <input type="hidden" name="car_id" value="{{ $car->id }}">
+                                            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+                                            <input type="hidden" name="order_id" id="order_id" value="">
+                                            <input type="hidden" name="payment_token" id="payment_token" value="">
+
+                                            <!-- Rental Type -->
+                                            <div>
+                                                <label for="rental_type"
+                                                    class="block text-sm font-semibold text-gray-700 mb-2">Rental Type</label>
+                                                <div class="flex flex-wrap gap-4">
+                                                    @foreach (['Hours', 'Days', 'Weeks', 'Month'] as $type)
+                                                        <label class="flex items-center space-x-2 text-sm text-gray-600">
+                                                            <input type="radio" name="rental_type"
+                                                                value="{{ strtolower($type) }}" class="accent-orange-500"
+                                                                {{ $loop->first ? 'checked' : '' }}>
+                                                            <span>{{ $type }}</span>
+                                                        </label>
+                                                    @endforeach
+                                                </div>
+                                            </div>
+
+                                            <!-- Pickup and Dropoff Location -->
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <div>
+                                                    <label for="pickup_location"
+                                                        class="block text-sm font-semibold text-gray-700 mb-2">Pickup
+                                                        Location</label>
+                                                    <h1>Jimbaran, Bali Indonesia</h1>
+                                                </div>
+                                            </div>
+
+                                            <!-- Pickup and Dropoff Date -->
+                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                <div>
+                                                    <label for="pickup_date"
+                                                        class="block text-sm font-semibold text-gray-700 mb-2">Pickup Date &
+                                                        Time</label>
+                                                    <div class="flex gap-2">
+                                                        <input type="date" name="pickup_date" id="pickup_date"
+                                                            class="w-2/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent shadow-sm transition duration-200"
+                                                            required>
+                                                        <input type="time" name="pickup_time" id="pickup_time"
+                                                            class="w-1/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent shadow-sm transition duration-200"
+                                                            required>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <label for="dropoff_date"
+                                                        class="block text-sm font-semibold text-gray-700 mb-2">Dropoff Date &
+                                                        Time</label>
+                                                    <div class="flex gap-2">
+                                                        <input type="date" name="dropoff_date" id="dropoff_date"
+                                                            class="w-2/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent shadow-sm transition duration-200"
+                                                            required>
+                                                        <input type="time" name="dropoff_time" id="dropoff_time"
+                                                            class="w-1/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent shadow-sm transition duration-200"
+                                                            required>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Optional Features -->
+                                            <div>
+                                                <label class="block text-sm font-semibold text-gray-700 mb-2">Optional
+                                                    Features</label>
+                                                <label class="flex items-center space-x-2 text-sm text-gray-600">
+                                                    <input type="checkbox" name="baby_seat" value="1"
+                                                        class="accent-orange-500">
+                                                    <span>Baby Seat - Rp 150,000</span>
+                                                </label>
+                                            </div>
+
+                                            <!-- Submit Button -->
+                                            <button type="submit" id="pay-button"
+                                                class="btn-primary w-full md:text-lg mt-4 py-3">
+                                                {{ __('messages.button.book_now') }}
+                                            </button>
+                                        </form>
+                                    </aside>
+                                @else
+                                    <!-- Original Details Section -->
+                                    <aside class="bg-white p-5 rounded-xl shadow-lg border border-white/20 order-2 lg:order-1">
+                                        <div class="grid grid-cols-2 gap-4 md:gap-6 *:text-center">
+                                            @forelse([
+                                                ['icon' => 'bx-car', 'label' => 'Brand', 'value' => $car->brand],
+                                                ['icon' => 'bx-calendar', 'label' => 'Model Year', 'value' => $car->year],
+                                                ['icon' => 'bx-cog', 'label' => 'Transmission', 'value' => $car->transmission],
+                                                ['icon' => 'bx-gas-pump', 'label' => 'Fuel Type', 'value' => $car->fuel_type],
+                                                ['icon' => 'bx-group', 'label' => 'Seats', 'value' => $car->seats],
+                                                ['icon' => 'bx-id-card', 'label' => 'License Plate', 'value' => $car->license_plate],
+                                            ] as $item)
+                                                <aside>
+                                                    <div class="flex gap-1 items-center">
+                                                        <i class='bx {{ $item['icon'] }} text-2xl text-orange-200/80'></i>
+                                                        <h5 class="font-semibold text-base md:text-xl lg:text-base">
+                                                            {{ $item['label'] }}</h5>
+                                                    </div>
+                                                    <p
+                                                        class="bg-shark-50/50 mt-1 md:mt-2 md:text-lg lg:text-base py-2 border border-orange-100/40 font-medium rounded-md capitalize">
+                                                        {{ $item['value'] }}
+                                                    </p>
+                                                </aside>
+                                            @empty
+                                                <p class="text-center text-shark-500">N/A</p>
+                                            @endforelse
+                                            <div class="col-span-2">
+                                                <div class="border-t border-shark-400 pt-2">
+                                                    <div class="flex items-center gap-1 mb-3">
+                                                        <i class="bx bx-info-circle text-3xl text-orange-200"></i>
+                                                        <h5 class="font-semibold text-base md:text-xl lg:text-base">
+                                                            Requirements
+                                                        </h5>
+                                                    </div>
+                                                    <ul class="grid md:grid-cols-2 gap-2 text-left">
+                                                        <li class=""><i class="bx bx-check text-green-500"></i> Valid
+                                                            driver's license</li>
+                                                        <li class=""><i class="bx bx-check text-green-500"></i> Minimum
+                                                            age
+                                                            21 years</li>
+                                                        <li class=""><i class="bx bx-check text-green-500"></i> Security
+                                                            deposit required</li>
+                                                        <li class=""><i class="bx bx-check text-green-500"></i> Valid ID
+                                                            card/passport</li>
+                                                    </ul>
+                                                </div>
+                                                <div class="text-center mt-4">
+                                                    <p class="text-shark-600 mb-2">Please complete your profile to proceed with
+                                                        the
+                                                        rental.</p>
+                                                    <a href="{{ route('profile') }}"
+                                                        class="btn-primary w-full md:text-lg py-3">Complete Your Profile</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </aside>
+                                @endif
+                            @endauth
+                        @else
+                            <!-- Original Details Section -->
+                            <aside class="bg-white p-5 rounded-xl shadow-lg border border-white/20 order-2 lg:order-1">
+                                <div class="grid grid-cols-2 gap-4 md:gap-6 *:text-center">
+                                    @forelse([
+                                                                ['icon' => 'bx-car', 'label' => 'Brand', 'value' => $car->brand],
+                                                                ['icon' => 'bx-calendar', 'label' => 'Model Year', 'value' => $car->year],
+                                                                ['icon' => 'bx-cog', 'label' => 'Transmission', 'value' => $car->transmission],
+                                                                ['icon' => 'bx-gas-pump', 'label' => 'Fuel Type', 'value' => $car->fuel_type],
+                                                                ['icon' => 'bx-group', 'label' => 'Seats', 'value' => $car->seats],
+                                                                ['icon' => 'bx-id-card', 'label' => 'License Plate', 'value' => $car->license_plate],
+                                                            ] as $item)
+                                        <div>
+                                            <div class="flex gap-1 items-center">
+                                                <i class='bx {{ $item['icon'] }} text-2xl text-orange-200/80'></i>
+                                                <h5 class="font-semibold text-base md:text-xl lg:text-base">
+                                                    {{ $item['label'] }}</h5>
+                                            </div>
+                                            <p
+                                                class="bg-shark-50/50 mt-1 md:mt-2 md:text-lg lg:text-base py-2 border border-orange-100/40 font-medium rounded-md capitalize">
+                                                {{ $item['value'] }}
+                                            </p>
+                                        </div>
+                                    @empty
+                                        <p class="text-center text-shark-500">N/A</p>
+                                    @endforelse
+                                    <div class="col-span-2">
+                                        <div class="border-t border-shark-400 pt-2">
+                                            <div class="flex items-center gap-1 mb-3">
+                                                <i class="bx bx-info-circle text-3xl text-orange-200"></i>
+                                                <h5 class="font-semibold text-base md:text-xl lg:text-base">Requirements
+                                                </h5>
+                                            </div>
+                                            <ul class="grid md:grid-cols-2 gap-2 text-left">
+                                                <li class="">
+                                                    <i class="bx bx-check text-green-500"></i>
+                                                    Valid driver's license
+                                                </li>
+                                                <li class="">
+                                                    <i class="bx bx-check text-green-500"></i>
+                                                    Minimum age 21 years
+                                                </li>
+                                                <li class="">
+                                                    <i class="bx bx-check text-green-500"></i>
+                                                    Security deposit required
+                                                </li>
+                                                <li class="">
+                                                    <i class="bx bx-check text-green-500"></i>
+                                                    Valid ID card/passport
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="text-center mt-4">
+                                            <p class="text-shark-600 mb-2">Please complete your profile to proceed with the
+                                                rental.</p>
+                                            <a href="{{ route('profile') }}" class="btn-primary w-full md:text-lg py-3">
+                                                Complete Your Profile
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </aside>
+                        @endif
+                    @else
+                        <!-- Original Details Section for Unauthenticated Users -->
+                        <aside class="bg-white p-5 rounded-xl shadow-lg border border-white/20">
+                            <div class="grid grid-cols-2 gap-4 md:gap-6 *:text-center">
+                                @forelse([
+                                                            ['icon' => 'bx-car', 'label' => 'Brand', 'value' => $car->brand],
+                                                            ['icon' => 'bx-calendar', 'label' => 'Model Year', 'value' => $car->year],
+                                                            ['icon' => 'bx-cog', 'label' => 'Transmission', 'value' => $car->transmission],
+                                                            ['icon' => 'bx-gas-pump', 'label' => 'Fuel Type', 'value' => $car->fuel_type],
+                                                            ['icon' => 'bx-group', 'label' => 'Seats', 'value' => $car->seats],
+                                                            ['icon' => 'bx-id-card', 'label' => 'License Plate', 'value' => $car->license_plate],
+                                                        ] as $item)
+                                    <div>
+                                        <div class="flex gap-1 items-center">
+                                            <i class='bx {{ $item['icon'] }} text-2xl text-orange-200/80'></i>
+                                            <h5 class="font-semibold text-base md:text-xl lg:text-base">
+                                                {{ $item['label'] }}
+                                            </h5>
+                                        </div>
+                                        <p
+                                            class="bg-shark-50/50 mt-1 md:mt-2 md:text-lg lg:text-base py-2 border border-orange-100/40 font-medium rounded-md capitalize">
+                                            {{ $item['value'] }}
+                                        </p>
+                                    </div>
+                                @empty
+                                    <p class="text-center text-shark-500">N/A</p>
+                                @endforelse
+                                <div class="col-span-2">
+                                    <div class="border-t border-shark-400 pt-2">
+                                        <div class="flex items-center gap-1 mb-3">
+                                            <i class="bx bx-info-circle text-3xl text-orange-200"></i>
+                                            <h5 class="font-semibold text-base md:text-xl lg:text-base">Requirements</h5>
+                                        </div>
+                                        <ul class="grid md:grid-cols-2 gap-2 text-left">
+                                            <li class="">
+                                                <i class="bx bx-check text-green-500"></i>
+                                                Valid driver's license
+                                            </li>
+                                            <li class="">
+                                                <i class="bx bx-check text-green-500"></i>
+                                                Minimum age 21 years
+                                            </li>
+                                            <li class="">
+                                                <i class="bx bx-check text-green-500"></i>
+                                                Security deposit required
+                                            </li>
+                                            <li class="">
+                                                <i class="bx bx-check text-green-500"></i>
+                                                Valid ID card/passport
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <button onclick="showModal('{{ $car->id }}')"
+                                        class="btn-primary w-full md:text-lg mt-4 py-3">
+                                        {{ __('messages.button.rent_now') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </aside>
+                    @endauth
+
+                    {{-- Description --}}
+                    <aside class="bg-white p-5 rounded-xl shadow-lg border border-white/20 order-1">
+                        <div class="">
+                            <div class="flex items-center gap-1 mb-3">
+                                <i class="bx bx-info-circle text-3xl text-orange-200"></i>
+                                <h4 class="font-semibold text-2xl">Description</h4>
+                            </div>
+                            <div class="border-t border-shark-400 pt-2">
+                                @if (!empty(trim($car->description ?? '')))
+                                    <p class="text-base text-shark-600">{{ trim($car->description) }}</p>
+                                @else
+                                    <p class="text-base text-shark-600 italic">No description available</p>
+                                @endif
+                            </div>
                         </div>
-                        <div class="border-t border-shark-400 pt-2">
-                            @if (!empty(trim($car->description ?? '')))
-                                <p class="text-base text-shark-600">{{ trim($car->description) }}</p>
-                            @else
-                                <p class="text-base text-shark-600 italic">No description available</p>
-                            @endif
-                        </div>
-                    </div>
-                </aside>
+                    </aside>
+                </div>
+
             </div>
         </div>
     </section>

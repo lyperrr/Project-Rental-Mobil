@@ -18,13 +18,6 @@ class Car extends Model
         'fuel_type',
         'transmission',
         'seats',
-        'renter_id', // New: ID of the user renting the car
-        'start_date', // New: Rental start date
-        'end_date', // New: Rental end date
-        'total_price', // New: Total rental price
-        'driver_license', // New: Driver's license number
-        'additional_notes', // New: Additional notes
-        'rental_status', // New: Rental status (pending, approved, etc.)
     ];
 
     protected $casts = [
@@ -32,16 +25,15 @@ class Car extends Model
         'fuel_type' => 'string',
         'transmission' => 'string',
         'year' => 'integer',
-        'seats' => 'integer',
-        'price_per_day' => 'decimal:2',
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'total_price' => 'decimal:2',
-        'rental_status' => 'string',
     ];
 
-    public function renter()
+    // Optional: Accessor to get the image as base64 for display
+    public function getImageBase64Attribute()
     {
-        return $this->belongsTo(User::class, 'renter_id');
+        if ($this->image) {
+            return 'data:image/jpeg;base64,' . base64_encode($this->image);
+        }
+        return null;
     }
+    
 }

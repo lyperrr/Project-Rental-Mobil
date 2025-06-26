@@ -79,9 +79,9 @@
                                     class="w-15 h-15 sm:w-20 sm:h-20 rounded-full border border-orange-200 object-cover hover:border-orange-100 transition-all duration-200 sm:mx-auto">
                                 <span class="text-shark-950 text-2xl font-medium">{{ Auth::user()->username }}</span>
                             @else
-                                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full sm:mx-auto border border-orange-200 bg-shark-100 flex items-center justify-center text-shark-400 hover:border-orange-100 transition-all duration-200"
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full sm:mx-auto border overflow-hidden border-orange-200 bg-shark-100 flex items-center justify-center text-shark-400 hover:border-orange-100 transition-all duration-200"
                                     title="{{ Auth::user()->username }}">
-                                    <i class="bx bx-user text-2xl sm:text-4xl"></i>
+                                    <img src="{{ asset('img/profile.jpeg') }}" alt="">
                                 </div>
                             @endif
                         </a>
@@ -143,9 +143,9 @@
                                         title="{{ Auth::user()->username }}"
                                         class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-orange-200 object-cover hover:border-orange-100 transition-all duration-200">
                                 @else
-                                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-orange-200 bg-shark-100 flex items-center justify-center text-shark-400 hover:border-orange-100 transition-all duration-200"
+                                    <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border overflow-hidden border-orange-200 bg-shark-100 flex items-center justify-center text-shark-400 hover:border-orange-100 transition-all duration-200"
                                         title="{{ Auth::user()->username }}">
-                                        <i class="bx bx-user text-2xl sm:text-4xl"></i>
+                                        <img src="{{ asset('img/profile.jpeg') }}" alt="">
                                     </div>
                                 @endif
                             </button>
@@ -161,8 +161,8 @@
                                                 class="w-12 h-12 rounded-full border border-orange-200 object-cover">
                                         @else
                                             <div
-                                                class="w-12 h-12 rounded-full border border-orange-200 bg-shark-100 flex items-center justify-center text-shark-400">
-                                                <i class="bx bx-user text-3xl"></i>
+                                                class="w-12 h-12 rounded-full border overflow-hidden border-orange-200 bg-shark-100 flex items-center justify-center text-shark-400">
+                                                <img src="{{ asset('img/profile.jpeg') }}" alt="">
                                             </div>
                                         @endif
                                         <div>

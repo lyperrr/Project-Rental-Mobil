@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('license_plate', 20)->nullable();
             $table->decimal('price_per_day', 10, 2)->nullable();
             $table->text('description')->nullable();
-            $table->string('image')->nullable();
+            $table->longBlob('image')->nullable();
             $table->enum('status', ['available', 'rented', 'maintenance'])->default('available');
             $table->enum('fuel_type', ['petrol', 'diesel', 'electric', 'hybrid'])->nullable();
             $table->enum('transmission', ['manual', 'automatic', 'electric'])->nullable();
