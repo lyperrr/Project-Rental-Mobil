@@ -60,6 +60,9 @@ Route::middleware([\App\Http\Middleware\SetLocale::class])->group(function () {
         Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
         Route::get('/mobil', [AdminController::class, 'mobil'])->name('mobil');
+        Route::get('/laporan', [AdminController::class, 'laporan'])->name('laporan');
+        Route::get('/pelanggan', [AdminController::class, 'pelanggan'])->name('pelanggan');
+        Route::get('/penyewaan', [AdminController::class, 'penyewaan'])->name('penyewaan');
     });
 
 

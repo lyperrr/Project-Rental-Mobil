@@ -1,6 +1,6 @@
 @extends('components.admin-layout')
 
-@section('title', 'Data Mobil')
+@section('title', 'Data Penyewaan')
 
 @section('content')
 
@@ -8,9 +8,9 @@
 
   {{-- Header --}}
   <div class="d-flex justify-content-between align-items-center mb-4">
-    <h1 class="h3 text-gray-800 font-weight-bold">Data Mobil</h1>
+    <h1 class="h3 text-gray-800 font-weight-bold">Data Penyewaan</h1>
     <a href="#" class="btn btn-primary">
-      <i class="fas fa-plus"></i> Tambah Mobil
+      <i class="fas fa-plus"></i> Tambah Penyewaan
     </a>
   </div>
 
@@ -20,23 +20,25 @@
       <table class="table table-striped table-hover mb-0">
         <thead class="bg-light">
           <tr>
-            <th>No</th>
-            <th>Foto</th>
-            <th>Nama Mobil</th>
-            <th>Merk</th>
-            <th>Plat Nomor</th>
+            <th>#</th>
+            <th>Nama Pelanggan</th>
+            <th>Mobil</th>
+            <th>Tgl Sewa</th>
+            <th>Tgl Kembali</th>
             <th>Status</th>
+            <th>Total</th>
             <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>1</td>
-            <td><img src="/images/mobil1.jpg" alt="Mobil" width="80"></td>
+            <td>Andi</td>
             <td>Toyota Avanza</td>
-            <td>Toyota</td>
-            <td>DK 1234 AB</td>
-            <td><span class="badge badge-success">Tersedia</span></td>
+            <td>2025-06-20</td>
+            <td>2025-06-23</td>
+            <td><span class="badge badge-warning">Berlangsung</span></td>
+            <td>Rp1.500.000</td>
             <td>
               <a href="#" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
               <a href="#" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
@@ -44,17 +46,18 @@
           </tr>
           <tr>
             <td>2</td>
-            <td><img src="/images/mobil2.jpg" alt="Mobil" width="80"></td>
+            <td>Sri</td>
             <td>Honda Brio</td>
-            <td>Honda</td>
-            <td>DK 5678 CD</td>
-            <td><span class="badge badge-secondary">Disewa</span></td>
+            <td>2025-06-18</td>
+            <td>2025-06-21</td>
+            <td><span class="badge badge-success">Selesai</span></td>
+            <td>Rp1.800.000</td>
             <td>
               <a href="#" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
               <a href="#" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
             </td>
           </tr>
-          {{-- Tambahkan data lain di sini --}}
+          {{-- Tambahkan baris lain di sini --}}
         </tbody>
       </table>
     </div>

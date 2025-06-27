@@ -23,31 +23,37 @@
         </li>
 
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="/admin/pelanggan" class="nav-link">
             <i class="nav-icon fas fa-user"></i>
             <p>Data Pelanggan</p>
           </a>
         </li>
 
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="/admin/penyewaan" class="nav-link">
             <i class="nav-icon fas fa-file-invoice"></i>
             <p>Penyewaan</p>
           </a>
         </li>
 
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="/admin/laporan" class="nav-link">
             <i class="nav-icon fas fa-chart-line"></i>
             <p>Laporan</p>
           </a>
         </li>
 
-        <li class="nav-item mt-4">
-          <a href="#" class="nav-link text-danger">
-            <i class="nav-icon fas fa-sign-out-alt"></i>
-            <p>Logout</p>
-          </a>
+        <li class="nav-item">
+          <!-- Logout Form -->
+          <form action="{{ route('logout') }}" method="POST" id="logoutForm">
+              @csrf
+              <button type="submit"
+                  class="btn-danger display-flex width-100 nav-link text-white"
+                  onclick="return confirmLogout(event)">
+                  <i class="nav-icon fas fa-sign-out-alt"></i>
+                  Logout
+              </button>
+            </form>
         </li>
       </ul>
     </nav>

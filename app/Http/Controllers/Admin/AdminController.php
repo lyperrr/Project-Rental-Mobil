@@ -16,4 +16,19 @@ class AdminController extends Controller
     {
         return view('admin.mobil');
     }
+
+    public function laporan()
+    {
+        return view('admin.laporan');
+    }
+
+    public function pelanggan()
+    {
+        return view('admin.pelanggan');
+    }
+
+    public function penyewaan()
+    {
+        return view('admin.penyewaan');
+    }
 }
