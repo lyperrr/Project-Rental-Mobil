@@ -40,35 +40,35 @@
             </article>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 p-4">
-<!-- Form Review -->
-<aside>
-    <div class="bg-white shadow-md rounded-xl p-4 border border-white/20">
-        <form action="{{ route('reviews.store') }}" method="POST" class="space-y-4">
-            @csrf
+                <!-- Form Review -->
+                <aside>
+                    <div class="bg-white shadow-md rounded-xl p-4 border border-white/20">
+                        <form action="{{ route('reviews.store') }}" method="POST" class="space-y-4">
+                            @csrf
 
-            <!-- Rating Input -->
-            @foreach(['service_rating' => 'Layanan', 'car_rating' => 'Mobil', 'website_rating' => 'Website'] as $name => $label)
-                <div class="flex items-center gap-4 text-lg font-semibold">
-                    {{ $label }}
-                    <div class="text-2xl text-orange-400 space-x-1">
-                        @for ($i = 1; $i <= 5; $i++)
-                            <label>
-                                <input type="radio" name="{{ $name }}" value="{{ $i }}" class="hidden" required>
-                                <i class='bx bx-star cursor-pointer hover:text-orange-300'></i>
-                            </label>
-                        @endfor
+                            <!-- Rating Input -->
+                            @foreach(['service_rating' => 'Layanan', 'car_rating' => 'Mobil', 'website_rating' => 'Website'] as $name => $label)
+                                <div class="flex items-center gap-4 text-lg font-semibold">
+                                    {{ $label }}
+                                    <div class="text-2xl text-orange-400 space-x-1">
+                                        @for ($i = 1; $i <= 5; $i++)
+                                            <label>
+                                                <input type="radio" name="{{ $name }}" value="{{ $i }}" class="hidden" required>
+                                                <i class='bx bx-star cursor-pointer hover:text-orange-300'></i>
+                                            </label>
+                                        @endfor
+                                    </div>
+                                </div>
+                            @endforeach
+
+                            <!-- Description -->
+                            <textarea name="description" class="border rounded-md w-full h-32 p-4 resize-none" required placeholder="Bagikan pengalaman Anda..."></textarea>
+
+                            <!-- Submit -->
+                            <button type="submit" class="btn-primary w-full">Kirim Review</button>
+                        </form>
                     </div>
-                </div>
-            @endforeach
-
-            <!-- Description -->
-            <textarea name="description" class="border rounded-md w-full h-32 p-4 resize-none" required placeholder="Bagikan pengalaman Anda..."></textarea>
-
-            <!-- Submit -->
-            <button type="submit" class="btn-primary w-full">Kirim Review</button>
-        </form>
-    </div>
-</aside>
+                </aside>
 
 
                 <!-- Rating Summary -->

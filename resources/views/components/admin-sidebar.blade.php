@@ -37,6 +37,13 @@
         </li>
 
         <li class="nav-item">
+          <a href="/admin/blog" class="nav-link">
+            <i class="nav-icon fas fa-blog"></i>
+            <p>Blog</p>
+          </a>
+        </li>
+
+        <li class="nav-item">
           <a href="/admin/laporan" class="nav-link">
             <i class="nav-icon fas fa-chart-line"></i>
             <p>Laporan</p>
@@ -45,13 +52,13 @@
 
         <li class="nav-item">
           <!-- Logout Form -->
-          <form action="{{ route('logout') }}" method="POST" id="logoutForm">
+          <form action="{{ route('logout') }}" method="POST" id="logoutForm" class="">
               @csrf
               <button type="submit"
                   class="btn-danger display-flex width-100 nav-link text-white"
                   onclick="return confirmLogout(event)">
                   <i class="nav-icon fas fa-sign-out-alt"></i>
-                  Logout
+                  <p>Logout</p>
               </button>
             </form>
         </li>

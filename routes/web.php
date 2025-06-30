@@ -73,6 +73,8 @@ Route::middleware([\App\Http\Middleware\SetLocale::class])->group(function () {
         Route::get('/laporan', [AdminController::class, 'laporan'])->name('laporan');
         Route::get('/pelanggan', [AdminController::class, 'pelanggan'])->name('pelanggan');
         Route::get('/penyewaan', [AdminController::class, 'penyewaan'])->name('penyewaan');
+        Route::get('/blog', [AdminController::class, 'blog'])->name('admin.blog');
+
     });
 
 

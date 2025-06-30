@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Review;
 
 class ReviewController extends Controller
 {
@@ -12,7 +13,7 @@ class ReviewController extends Controller
             'service_rating' => 'required|numeric|min:1|max:5',
             'car_rating' => 'required|numeric|min:1|max:5',
             'website_rating' => 'required|numeric|min:1|max:5',
-            'description' => 'required|string',
+            'description' => 'required|string|max:1000',
         ]);
 
         $average = round((
@@ -22,8 +23,8 @@ class ReviewController extends Controller
         ) / 3, 1);
 
         Review::create([
-            'user_id' => auth()->id() ?? 1, 
-            'title' => 'Ulasan Pengguna',
+            'user_id' => auth()->check() ? auth()->id() : null,
+            'title' => 'Ulasan oleh ' . (auth()->user()->name ?? 'Pengguna Anonim'),
             'description' => $validated['description'],
             'stars' => $average,
             'service_rating' => $validated['service_rating'],
