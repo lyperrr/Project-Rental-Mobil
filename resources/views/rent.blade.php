@@ -40,7 +40,7 @@
                 </div>
             </div>
         </section>
-        {{-- End Hero Section --}}
+        {{-- End Hero Section --}} 
     </main>
 
     <!-- Start Car Grid -->
@@ -64,7 +64,7 @@
                             class="flex justify-between col-span-2 lg:col-span-3 xl:col-span-1 items-center sticky top-0 left-0 w-full bg-white pb-5 xl:p-0 xl:static">
                             <h3 class="text-xl font-bold flex items-center gap-2">
                                 <i class='bx bx-filter-alt text-2xl'></i>
-                                Filter Pencarian
+                                {{ __('messages.sections.rent_page.filter_section.title') }}
                             </h3>
 
                             <button onclick="toggleFilter()" class="xl:hidden cursor-pointer">
@@ -78,17 +78,17 @@
                             class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bx-money text-2xl'></i>
-                                Rentang Harga
+                                {{ __('messages.sections.rent_page.filter_section.price_range.title') }}
                             </h4>
                             <div class="space-y-3">
                                 <div>
-                                    <label class="text-sm text-shark-600">Minimum (Rp)</label>
+                                    <label class="text-sm text-shark-600">{{ __('messages.sections.rent_page.filter_section.price_range.min') }}</label>
                                     <input type="number" min="0"
                                         class="w-full mt-1 px-3 py-2 border-1 border-orange-300/60 rounded-lg focus:ring-1 focus:outline-none focus:ring-orange-200 focus:border-orange-200"
                                         placeholder="100,000">
                                 </div>
                                 <div>
-                                    <label class="text-sm text-shark-600">Maksimum (Rp)</label>
+                                    <label class="text-sm text-shark-600">{{ __('messages.sections.rent_page.filter_section.price_range.max') }}</label>
                                     <input type="number" min="0"
                                         class="w-full mt-1 px-3 py-2 border-1 border-orange-300/60 rounded-lg focus:ring-1 focus:outline-none focus:ring-orange-200 focus:border-orange-200"
                                         placeholder="1,000,000">
@@ -101,7 +101,7 @@
                             class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bx-car text-2xl'></i>
-                                Tipe Mobil
+                                {{ __('messages.sections.rent_page.filter_section.car_type.title') }}
                             </h4>
                             <div class="space-y-2">
                                 <label class="flex items-center">
@@ -137,23 +137,23 @@
                             class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bx-cog text-2xl'></i>
-                                Transmisi
+                                {{ __('messages.sections.rent_page.filter_section.transmission.title') }}
                             </h4>
                             <div class="space-y-2">
                                 <label class="flex items-center">
                                     <input type="radio" name="transmission"
                                         class="w-4 h-4 text-orange-200 border-shark-300 focus:ring-orange-200 accent-orange-300">
-                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">Manual</span>
+                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.transmission.options.manual') }}</span>
                                 </label>
                                 <label class="flex items-center">
                                     <input type="radio" name="transmission"
                                         class="w-4 h-4 text-orange-200 border-shark-300 focus:ring-orange-200 accent-orange-300">
-                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">Automatic</span>
+                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.transmission.options.automatic') }}</span>
                                 </label>
                                 <label class="flex items-center">
                                     <input type="radio" name="transmission"
                                         class="w-4 h-4 text-orange-200 border-shark-300 focus:ring-orange-200 accent-orange-300">
-                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">Semua</span>
+                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.transmission.options.all') }}</span>
                                 </label>
                             </div>
                         </div>
@@ -162,29 +162,29 @@
                         <div
                             class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
-                                <i class='bx bx-group text-2xl'></i>
-                                Kapasitas Penumpang
+                                <i class='bx bx-group text-2xl'></i> 
+                                {{ __('messages.sections.rent_page.filter_section.passenger_capacity.title') }}
                             </h4>
                             <div class="space-y-2">
                                 <label class="flex items-center">
                                     <input type="checkbox"
                                         class="w-4 h-4 text-orange-200 border-shark-300 rounded focus:ring-orange-200 accent-orange-300">
-                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">2 Orang</span>
+                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.passenger_capacity.options.2_people') }}</span>
                                 </label>
                                 <label class="flex items-center">
                                     <input type="checkbox"
                                         class="w-4 h-4 text-orange-200 border-shark-300 rounded focus:ring-orange-200 accent-orange-300">
-                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">4 Orang</span>
+                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.passenger_capacity.options.4_people') }}</span>
                                 </label>
                                 <label class="flex items-center">
                                     <input type="checkbox"
                                         class="w-4 h-4 text-orange-200 border-shark-300 rounded focus:ring-orange-200 accent-orange-300">
-                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">6 Orang</span>
+                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.passenger_capacity.options.6_people') }}</span>
                                 </label>
                                 <label class="flex items-center">
                                     <input type="checkbox"
                                         class="w-4 h-4 text-orange-200 border-shark-300 rounded focus:ring-orange-200 accent-orange-300">
-                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">8+ Orang</span>
+                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.passenger_capacity.options.8_people') }}</span>
                                 </label>
                             </div>
                         </div>
@@ -194,14 +194,14 @@
                             class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bxs-calendar text-2xl'></i>
-                                Tahun Kendaraan
+                                {{ __('messages.sections.rent_page.filter_section.year.title') }}
                             </h4>
                             <div class="space-y-3">
                                 <div>
-                                    <label class="text-sm text-shark-600">Dari Tahun</label>
+                                    <label class="text-sm text-shark-600">{{ __('messages.sections.rent_page.filter_section.year.from') }}</label>
                                     <select
                                         class="w-full mt-1 px-3 py-2 border-1 border-orange-300/60 rounded-lg focus:ring-1 focus:outline-none focus:ring-orange-200 focus:border-orange-200">
-                                        <option value="">Pilih Tahun</option>
+                                        <option value="">{{ __('messages.sections.rent_page.filter_section.year.placeholder') }}</option>
                                         <option value="2024">2024</option>
                                         <option value="2023">2023</option>
                                         <option value="2022">2022</option>
@@ -211,10 +211,10 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <label class="text-sm text-shark-600">Sampai Tahun</label>
+                                    <label class="text-sm text-shark-600">{{ __('messages.sections.rent_page.filter_section.year.to') }}</label>
                                     <select
                                         class="w-full mt-1 px-3 py-2 border-1 border-orange-300/60 rounded-lg focus:ring-1 focus:outline-none focus:ring-orange-200 focus:border-orange-200">
-                                        <option value="">Pilih Tahun</option>
+                                        <option value="">{{ __('messages.sections.rent_page.filter_section.year.placeholder') }}</option>
                                         <option value="2024">2024</option>
                                         <option value="2023">2023</option>
                                         <option value="2022">2022</option>
@@ -231,7 +231,7 @@
                             class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
                                 <i class='bx bx-badge text-2xl'></i>
-                                Merek Mobil
+                                {{ __('messages.sections.rent_page.filter_section.brand.title') }}
                             </h4>
                             <div class="space-y-2">
                                 <label class="flex items-center">
@@ -266,11 +266,11 @@
                         <div
                             class="flex flex-wrap gap-2 sm:gap-4 w-full sm:w-[70%] col-span-2 lg:col-span-3 lg:w-[70%] mx-auto lg:gap-4 xl:gap-2 pb-10 xl:pb-0 xl:mt-0 xl:w-full xl:flex-wrap xl:col-span-1 mt-6 grow">
                             <button class="btn-primary w-full grow sm:text-lg lg:text-base xl:text-sm sm:py-4 lg:py-2">
-                                Terapkan Filter
+                                {{ __('messages.button.apply_filter') }}
                             </button>
                             <button
                                 class="btn-outline border grow w-full sm:text-lg lg:text-base xl:text-sm sm:py-4 lg:py-2">
-                                Reset
+                                {{ __('messages.button.reset') }}
                             </button>
                         </div>
                     </div>
@@ -291,12 +291,10 @@
     <!-- Call to Action -->
     <section class="bg-orange-200 container text-white py-10">
         <div class="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-            <h2 class="text-2xl font-bold">Ready To Go Now?</h2>
-            <p class="my-4 md:my-0"><b>Book your car today and enjoy a smooth ride. AutoRent is ready 24/7 for your
-                    journey.</b></p>
+            <h2 class="text-2xl font-bold">{{ __('messages.sections.rent_page.cta_section.heading') }}</h2>
+            <p class="my-4 md:my-0"><b>{{ __('messages.sections.rent_page.cta_section.text') }}</b></p>
             <button
-                class="bg-white text-orange-200 hover:bg-white/80 transition-all duration-200 ease-linear hover:text-orange-100 px-4 py-2 rounded cursor-pointer font-semibold">Get
-                Started</button>
+                class="bg-white text-orange-200 hover:bg-white/80 transition-all duration-200 ease-linear hover:text-orange-100 px-4 py-2 rounded cursor-pointer font-semibold">{{ __('messages.button.get_started') }}</button>
         </div>
     </section>
 

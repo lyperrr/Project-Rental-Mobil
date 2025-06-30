@@ -124,7 +124,7 @@ return [
                 'paragraph' => '',
             ],
         ],
-        'rent_page' => [
+        'rent_page' => [    
             'hero_section' => [
                 'badge' => 'Begin Your Trip With Us',
                 'title' => [
@@ -133,7 +133,47 @@ return [
                 ],
                 'paragraph' => 'Get behind the wheel quickly with our easy and affordable car rentals. Pick the perfect car for your journey today!',
             ],
-
+            'filter_section' => [
+                'title' => 'Search Filter',
+                'price_range' => [
+                    'title' => 'Price Range',
+                    'min' => 'Minimum (Rp)',
+                    'max' => 'Maximum (Rp)',
+                ],
+                'car_type' => [
+                    'title' => 'Car Type'
+                ],
+                'transmission' => [
+                    'title' => 'Transmission',
+                    'options' => [
+                        'manual' => 'Manual', 
+                        'automatic' => 'Automatic', 
+                        'all' => 'All'
+                    ],
+                ],
+                'passenger_capacity' => [
+                    'title' => 'Passenger Capacity',
+                    'options' => [
+                        '2_people' => '2 People', 
+                        '4_people' => '4 People', 
+                        '6_people' => '6 People', 
+                        '8_people' => '8+ People'
+                    ],
+                ],
+                'year' => [
+                    'title' => 'Vehicle Year',
+                    'from' => 'From Year',
+                    'to' => 'To Year',
+                    'placeholder' => 'Select Year',
+                ],
+                'brand' => [
+                    'title' => 'Car Brand',
+                ]           
+            ],
+            'cta_section' => [
+                'heading' => 'Ready To Go Now?',
+                'text' => 'Book your car today and enjoy a smooth ride. AutoRent is ready 24/7 for your journey.',
+            ]
         ],
         'login_page' => [
             'left_desktop' => [
@@ -354,7 +394,7 @@ return [
                     'title' => 'Highly Recommend',
                     'description' => 'Great service and reliable cars. Will rent again!',
                     'username' => 'Sinta_Ardiani',
-                    'rating' => 5.0,
+                    'rating' => 2.0,
                     'profile_image' => 'https://img.freepik.com/free-psd/portrait-girl-teenager_23-2151717388.jpg?ga=GA1.1.1193633351.1743924281&semt=ais_hybrid&w=740',
                 ],
             ],
@@ -407,30 +447,29 @@ return [
                 'email' => 'Email Address',
                 'email_addres' => 'Email: example@gmail.com',
                 'opening_hours' => 'Opening Hours',
-                'hours' => 'Monday – Friday: 09.00 – 17.00 WITA Saturday: 09.00 – 13.00 WITA',
+                'hours' => [
+                    'p_1' => 'Monday – Friday: 09.00 – 17.00 WITA', 
+                    'p_2' => 'Saturday: 09.00 – 13.00 WITA',
+                ] ,
             ],
             'location' => 'Location',
-            'follow us' => 'Follow Us',
+            'follow_us' => 'Follow Us',
             'aside' => [
                 'transportation' => 'Transportation',
-                'trusted service' => 'Trusted Service',
+                'trusted_service' => 'Trusted Service',
                 'support' => '24/7 Support'
             ]
         ],
         'about_page' => [
             'title' => 'About Company',
             'right_image' => [
-                'about_cpmpany' => 'About Company',
+                'about_company' => 'About Company',
                 'text' => 'You Start The Engine and Your Advanture Begin',
                 'paragraph' => 'We are a company engaged in automotive and adventure, providing quality vehicles and the best service to accompany every step of your journey. With the spirit of exploration, we believe that every journey is the beginning of a new story, and it all starts when you start the engine.'
             ],
             'then_section' => [
                 'text_1' => 'Save Big With Our Cheap Car Rental!',
                 'text_2' => 'Top Outlet. Local Suppliers. 24/7 Support',
-                'buttons' => [
-                    'book_ride' => 'Book Ride',
-                    'contact_us' => 'Contact Us'
-                ],
             'container' => [
                 'why_choose_us' => 'Why Choose Us',
                 'text' => "Experience Excellence In Every Mile",
@@ -465,7 +504,6 @@ return [
                 'badge' => 'TruthTalk Blog',
                 'text' => 'Find Inspiration Every Day',
                 'paragraph' => 'Read interesting articles, useful tips and inspiring stories that will enrich your insight every day.',
-                'button' => 'View Article'
             ],
             'container' => [
                 'badge' => 'Featured Articles',
@@ -493,12 +531,11 @@ return [
                 ],
                 'card_6' => [
                     'block' => 'Bali Travel Guide: Culinary and Natural Beauty',
-                    'paragraph' => '',
+                    'paragraph' => 'Discover various culinary places in Bali that are a must-try and enjoy the calming natural beauty.',
                 ],
-                'btns' => 'Read more',
-                'more' => 'View More Articles'
             ],
             'newsletter_section' => [
+                'span' => 'Newsletter',
                 'text' => 'Get Latest Article Updates',
                 'paragraph' => 'Subscribe to our newsletter and get notifications of the latest interesting articles to read',
                 'placeholder' => 'Enter your email',
@@ -520,5 +557,13 @@ return [
         'login_with_google' => 'Login with Google',
         'signup_with_google' => 'Sign Up with Google',
         'profile' => 'Profile',
+        'read_more' => 'Read more', 
+        'view_more_articles' => 'View More Articles',
+        'view_article' => 'View Article',
+        'book_ride' => 'Book Ride',
+        'contact_us' => 'Contact Us',
+        'apply_filter' => 'Apply Filter',
+        'reset' => 'Reset',
+        'get_started' => 'Get Started',
     ],
 ];

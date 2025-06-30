@@ -10,6 +10,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\SignupController;
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\ReviewController;
 
 
 // Test route
@@ -87,5 +88,7 @@ Route::middleware([\App\Http\Middleware\SetLocale::class])->group(function () {
             Route::get('/profile', 'index')->name('profile');
             Route::put('/profile', 'update')->name('profile.update');
         });
+
+        Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
     });
 });

@@ -19,12 +19,10 @@
             <article class="sm:text-center">
                 <span class="badge">{{ __('messages.sections.contact_page.in_article.contact_us') }}</span>
                 <h1 class="title">
-                    Get In Touch
+                    {{ __('messages.sections.contact_page.in_article.get_in_touch') }}
                 </h1>
                 <p class="paragraph">
-                    We would love to hear from you. Have a question, feedback, or just want to connect? We’re here to
-                    listen and help. Reach out through the contact form, send us an email, or connect via social media.
-                    Let’s start the conversation and see how we can support you.
+                    {{ __('messages.sections.contact_page.in_article.description') }}
                 </p>
             </article>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-5">
@@ -32,7 +30,7 @@
                 <aside class="bg-white p-5 rounded-xl shadow-lg border border-white/20 ">
                     <div class="flex items-center">
                         <i class='bx bxs-contact text-3xl text-orange-200 mr-3'></i>
-                        <h4 class="font-semibold text-2xl">Contact Information</h4>
+                        <h4 class="font-semibold text-2xl">{{ __('messages.sections.contact_page.left_side.contact_information') }}</h4>
                     </div>
 
                     <div class="">
@@ -44,8 +42,8 @@
                                         class='bx bxs-map text-xl text-white group-hover:animate-bounce transition-all duration-200 ease-linear'></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-shark-900">Address</h4>
-                                    <p class="text-shark-600">Jimbaran, Bali Indonesia</p>
+                                    <h4 class="font-semibold text-shark-900">{{ __('messages.sections.contact_page.left_side.address') }}</h4>
+                                    <p class="text-shark-600">{{ __('messages.sections.contact_page.left_side.addreses') }}</p>
                                 </div>
                             </li>
                             <li class="flex items-center space-x-4 group w-fit">
@@ -55,9 +53,9 @@
                                         class='bx bxs-phone text-xl text-white group-hover:animate-bounce transition-all duration-200 ease-linear'></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-shark-900">Phone</h4>
+                                    <h4 class="font-semibold text-shark-900">{{ __('messages.sections.contact_page.left_side.phone') }}</h4>
                                     <span class="text-shark-600">
-                                        Phone Number:
+                                        {{ __('messages.sections.contact_page.left_side.number') }}
                                         <a href="tel:123456789" class="text-blue-500 underline">+628123456789</a>
                                     </span>
                                 </div>
@@ -69,9 +67,9 @@
                                         class='bx bxs-envelope text-xl text-white group-hover:animate-bounce transition-all duration-200 ease-linear'></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-shark-900">Email Address</h4>
+                                    <h4 class="font-semibold text-shark-900">{{ __('messages.sections.contact_page.left_side.email') }}</h4>
                                     <span class="text-shark-600">
-                                        Email:
+                                        {{ __('messages.sections.contact_page.left_side.email_addres') }}
                                         <a href="example@gmail.com"
                                             class="text-blue-500 underline">example@gmail.com</a>
                                     </span>
@@ -84,10 +82,10 @@
                                         class='bx bxs-time text-xl text-white group-hover:animate-bounce transition-all duration-200 ease-linear'></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-semibold text-shark-900">Opening Hours</h4>
+                                    <h4 class="font-semibold text-shark-900">{{ __('messages.sections.contact_page.left_side.opening_hours') }}</h4>
                                     <div class="text-gray-600 space-y-1">
-                                        <p>Senin – Jumat: 09.00 – 17.00 WITA</p>
-                                        <p>Sabtu: 09.00 – 13.00 WITA</p>
+                                        <p>{{ __('messages.sections.contact_page.left_side.hours.p_1') }}</p>
+                                        <p>{{ __('messages.sections.contact_page.left_side.hours.p_2') }}</p>
                                     </div>
                                 </div>
                             </li>
@@ -101,7 +99,7 @@
                     <div class="flex items-center mb-4">
                         <h3 class="text-2xl font-semibold flex items-center">
                             <i class='bx bxs-map text-2xl text-orange-200 mr-3'></i>
-                            Location
+                            {{ __('messages.sections.contact_page.location') }}
                         </h3>
                     </div>
                     <div class="flex-1">
@@ -116,7 +114,7 @@
                     <div class="flex items-center">
                         <h3 class="text-2xl font-semibold mb-4 flex items-center">
                             <i class='bx bxs-share-alt text-2xl text-orange-200 mr-3'></i>
-                            Follow Us
+                            {{ __('messages.sections.contact_page.follow_us') }}
                         </h3>
                     </div>
                     <div class="flex space-x-4 ">
@@ -145,19 +143,19 @@
                         <div
                             class="bg-gradient-to-r from-blue-500 to-blue-600 p-6 rounded-xl flex flex-col items-center justify-center text-center text-white min-h-[120px] hover:scale-103 hover:shadow-md transition-transform duration-300">
                             <i class='bx bxs-car text-5xl mb-2'></i>
-                            <h4 class="font-semibold text-lg lg:text-base">Transportation</h4>
+                            <h4 class="font-semibold text-lg lg:text-base">{{ __('messages.sections.contact_page.aside.transportation') }}</h4>
                         </div>
 
                         <div
                             class="bg-gradient-to-r from-green-500 to-green-600 p-6 rounded-xl flex flex-col items-center justify-center text-center text-white min-h-[120px] hover:scale-103 hover:shadow-md transition-transform duration-300">
                             <i class='bx bx-check-shield text-5xl mb-2'></i>
-                            <h4 class="font-semibold text-lg lg:text-base">Trusted Service</h4>
+                            <h4 class="font-semibold text-lg lg:text-base">{{ __('messages.sections.contact_page.aside.trusted_service') }}</h4>
                         </div>
 
                         <div
                             class="bg-gradient-to-r from-purple-500 to-purple-600 p-6 rounded-xl flex flex-col items-center justify-center text-center text-white min-h-[120px] hover:scale-103 hover:shadow-md transition-transform duration-300">
                             <i class='bx bx-support text-5xl mb-2'></i>
-                            <h4 class="font-semibold text-lg lg:text-base">24/7 Support</h4>
+                            <h4 class="font-semibold text-lg lg:text-base">{{ __('messages.sections.contact_page.aside.support') }}</h4>
                         </div>
                     </div>
                 </aside>
