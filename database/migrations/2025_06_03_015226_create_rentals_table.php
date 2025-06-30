@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,6 +15,8 @@ class CreateRentalsTable extends Migration
             $table->date('end_date')->nullable();
             $table->decimal('total_price', 10, 2)->nullable();
             $table->enum('status', ['pending', 'confirmed', 'cancelled', 'completed'])->default('pending');
+            $table->string('snap_token', 36)->nullable();
+            $table->string('transaction_id', 100)->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->nullable();
         });

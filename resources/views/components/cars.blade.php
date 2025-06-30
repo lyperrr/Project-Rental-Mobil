@@ -45,7 +45,7 @@
                 <article class="font-medium">
                     <span class="text-sm flex items-center gap-1.5 opacity-70">
                         <i class='bx bxs-purchase-tag text-xl'></i>
-                        <span>Rental price</span>
+                        <span>{{ __('messages.sections.rent_page.rent_price') }}</span>
                     </span>
                     <p class="text-orange-200 font-semibold text-base">
                         Rp. {{ number_format($car->price_per_day, 0, ',', '.') }} / day

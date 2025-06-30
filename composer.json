@@ -12,6 +12,7 @@
         "laravel/socialite": "^5.21",
         "laravel/tinker": "^2.10.1",
         "laravel/ui": "^4.6",
+        "midtrans/midtrans-php": "^2.6",
         "stichoza/google-translate-php": "^5.2"
     },
     "require-dev": {

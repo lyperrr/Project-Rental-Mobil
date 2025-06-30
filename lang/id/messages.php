@@ -125,6 +125,7 @@ return [
             ],
         ],
         'rent_page' => [
+            'rent_price' => 'Harga Sewa',
             'hero_section' => [
                 'badge' => 'Mulai Perjalananmu Bersama Kami',
                 'title' => [
@@ -146,17 +147,17 @@ return [
                 'transmission' => [
                     'title' => 'Transmisi',
                     'options' => [
-                        'manual' => 'Manual', 
-                        'automatic' => 'Otomatis', 
+                        'manual' => 'Manual',
+                        'automatic' => 'Otomatis',
                         'all' => 'Semua'
                     ],
                 ],
                 'passenger_capacity' => [
                     'title' => 'Kapasitas Penumpang',
                     'options' => [
-                        '2_people' => '2 orang', 
-                        '4_people' => '4 orang', 
-                        '6_people' => '6 orang', 
+                        '2_people' => '2 orang',
+                        '4_people' => '4 orang',
+                        '6_people' => '6 orang',
                         '8_people' => '8+ orang'
                     ],
                 ],
@@ -373,8 +374,15 @@ return [
                 'paragraph' => 'Berlangganan newsletter kami dan dapatkan notifikasi artikel menarik terbaru untuk dibaca.',
                 'placeholder' => 'Masukkan email Anda',
                 'subscribe' => 'Berlangganan'
+            ],
+            'all_articles' => [
+                'badge' => 'Semua Artikel',
+                'title' => 'Artikel Terbaru',
+                'paragraph' => 'Jelajahi semua artikel terbaru yang telah kami publikasikan',
+                'empty_message' => 'Belum ada artikel yang tersedia.'
             ]
         ],
+
 
     ],
 

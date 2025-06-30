@@ -30,13 +30,13 @@ class LoginController extends Controller
             // Check user role and redirect accordingly
             $user = Auth::user();
             if ($user->role === 'admin') {
-                return redirect()->intended('/dashboard');
+                return redirect()->intended('/admin/dashboard');
             }
 
             return redirect()->intended('/profile');
         }
 
-        return back()->withErrors([
+    return back()->withErrors([
             'email' => __('messages.sections.login_page.errors.invalid_credentials'),
         ])->onlyInput('email');
     }
