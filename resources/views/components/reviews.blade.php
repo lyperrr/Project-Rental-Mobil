@@ -43,21 +43,37 @@
                 <!-- Form Review -->
                 <aside>
                     <div class="bg-white shadow-md rounded-xl p-4 border border-white/20">
-                        <form action="{{ route('reviews.store') }}" method="POST" class="space-y-4">
+                        <form action="" method="POST" class="space-y-4">
                             @csrf
 
                             <!-- Rating Input -->
                             @foreach(['service_rating' => 'Layanan', 'car_rating' => 'Mobil', 'website_rating' => 'Website'] as $name => $label)
                                 <div class="flex items-center gap-4 text-lg font-semibold">
                                     {{ $label }}
-                                    <div class="text-2xl text-orange-400 space-x-1">
+                                    <div class="text-2xl text-orange-400 space-x-1 star-rating" data-name="{{ $name }}">
                                         @for ($i = 1; $i <= 5; $i++)
                                             <label>
-                                                <input type="radio" name="{{ $name }}" value="{{ $i }}" class="hidden" required>
-                                                <i class='bx bx-star cursor-pointer hover:text-orange-300'></i>
+                                                <input type="radio" name="{{ $name }}" value="{{ $i }}" class="opacity-0 absolute" required>
+                                                <i class='bx bx-star cursor-pointer'></i>
                                             </label>
                                         @endfor
                                     </div>
+                                    <script>
+                                        document.querySelectorAll('.star-rating').forEach(group => {
+                                            const stars = group.querySelectorAll('i');
+                                            const radios = group.querySelectorAll('input');
+
+                                            stars.forEach((star, index) => {
+                                                star.addEventListener('click', () => {
+                                                    radios[index].checked = true;
+                                                    stars.forEach((s, i) => {
+                                                        s.classList.toggle('bxs-star', i <= index);
+                                                        s.classList.toggle('bx-star', i > index);
+                                                    });
+                                                });
+                                            });
+                                        });
+                                    </script>
                                 </div>
                             @endforeach
 
@@ -69,7 +85,6 @@
                         </form>
                     </div>
                 </aside>
-
 
                 <!-- Rating Summary -->
                 <aside>
@@ -86,7 +101,6 @@
                             </div>
                             <div class="text-sm text-gray-500">{{ $totalReviews }} reviews</div>
                         </div>
-
                         @for ($i = 5; $i >= 1; $i--)
                             @php
                                 $percent = $totalReviews > 0 ? ($ratingCount[$i] / $totalReviews) * 100 : 0;
@@ -100,7 +114,6 @@
                                 </div>
                             </div>
                         @endfor
-
                     </div>
                 </aside>
             </div>

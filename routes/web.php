@@ -89,8 +89,9 @@ Route::middleware([\App\Http\Middleware\SetLocale::class])->group(function () {
         Route::controller(ProfileController::class)->group(function () {
             Route::get('/profile', 'index')->name('profile');
             Route::put('/profile', 'update')->name('profile.update');
+            // Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
         });
 
-        Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
+        // Route::get('/all-reviews', [ReviewController::class, 'index'])->name('reviews.index');
     });
 });
