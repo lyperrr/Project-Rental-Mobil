@@ -31,4 +31,11 @@ class AdminController extends Controller
     {
         return view('admin.penyewaan');
     }
+
+    public function blog()
+    {
+        $blogs = \App\Models\Blog::latest()->get();
+        return view('admin.blog', compact('blogs'));
+    }
+
 }
