@@ -3,14 +3,15 @@
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RentController;
+use Illuminate\Support\Facades\Redirect;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\SignupController;
 use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\Auth\SignupController;
 
 
 // Test route
@@ -54,7 +55,15 @@ Route::middleware([\App\Http\Middleware\SetLocale::class])->group(function () {
 
     // Halaman statis
     Route::view('/about', 'about', ['title' => __('messages.navbar.about')])->name('about');
-    Route::view('/blog', 'blog', ['title' => __('messages.navbar.blog')])->name('blog');
+    // Blog routes
+    // Route blog yang dinamis dari database
+    Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+    Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
+    // Route show untuk blog menggunakan BlogController method showDetail
+    Route::get('/show/{id}', [BlogController::class, 'showDetail'])->name('show');
+    Route::get('/blog/image/{id}', [BlogController::class, 'showImage'])->name('blog.image');
+
+
     Route::view('/contact', 'contact', ['title' => __('messages.navbar.contact')])->name('contact');
 
     // Route admin

@@ -124,7 +124,8 @@ return [
                 'paragraph' => '',
             ],
         ],
-        'rent_page' => [    
+        'rent_page' => [
+            'rent_price' => 'Rent Price',
             'hero_section' => [
                 'badge' => 'Begin Your Trip With Us',
                 'title' => [
@@ -146,17 +147,17 @@ return [
                 'transmission' => [
                     'title' => 'Transmission',
                     'options' => [
-                        'manual' => 'Manual', 
-                        'automatic' => 'Automatic', 
+                        'manual' => 'Manual',
+                        'automatic' => 'Automatic',
                         'all' => 'All'
                     ],
                 ],
                 'passenger_capacity' => [
                     'title' => 'Passenger Capacity',
                     'options' => [
-                        '2_people' => '2 People', 
-                        '4_people' => '4 People', 
-                        '6_people' => '6 People', 
+                        '2_people' => '2 People',
+                        '4_people' => '4 People',
+                        '6_people' => '6 People',
                         '8_people' => '8+ People'
                     ],
                 ],
@@ -168,7 +169,7 @@ return [
                 ],
                 'brand' => [
                     'title' => 'Car Brand',
-                ]           
+                ]
             ],
             'cta_section' => [
                 'heading' => 'Ready To Go Now?',
@@ -408,36 +409,13 @@ return [
                 'What are your rental rates?',
                 'What happens if I need to cancel my reservation?',
             ],
-
-            'blogs' => [
-                [
-                    'image' => 'https://media.istockphoto.com/id/1354037529/photo/happy-young-caucasian-couple-family-hugging-embracing-while-taking-selfie-photo-vlogging.jpg?s=612x612&w=0&k=20&c=K07DyIizPDy1RbrC1MHIW2WCPHuHsL4whH0QFJ6FTvk=',
-                    'title' => 'Praesent adipiscing. Cras dapibus.',
-                    'excerpt' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, tempore.',
-                ],
-                [
-                    'image' => 'https://media.istockphoto.com/id/2200927158/photo/joyful-girl-african-american-woman-blogger-taking-selfie-photo-in-car-showroom-buying-new.jpg?s=612x612&w=0&k=20&c=XSnq7Bdbg97w5HUeLDUcRVNweRRl89IN363jCaIDl48=',
-                    'title' => 'Praesent adipiscing. Cras dapibus.',
-                    'excerpt' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, tempore.',
-                ],
-                [
-                    'image' => 'https://media.istockphoto.com/id/2166941969/photo/funny-travel-selfie-couple-making-faces-in-car-on-vacation.jpg?s=612x612&w=0&k=20&c=xBl-S1eZIM3o_y1LDunp-fXblTGlPNST60pAhSx4wYw=',
-                    'title' => 'Praesent adipiscing. Cras dapibus.',
-                    'excerpt' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, tempore.',
-                ],
-                [
-                    'image' => 'https://media.istockphoto.com/id/1443292360/photo/couple-happily-taking-selfies-in-new-car-in-showroom.jpg?s=612x612&w=0&k=20&c=Vw27K7gl_tcxIJPJ___ACYVnqEB18u6rENIH4n9oSH4=',
-                    'title' => 'Praesent adipiscing. Cras dapibus.',
-                    'excerpt' => 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam, tempore.',
-                ],
-            ],
         ],
         'contact_page' => [
             'in_article' => [
                 'contact_us' => 'Contact Us',
                 'get_in_touch' => 'Get In Touch',
                 'description' => 'We would love to hear from you. Have a question, feedback, or just want to connect? We’re here to listen and help. Reach out through the contact form, send us an email, or connect via social media. Let’s start the conversation and see how we can support you.'
-            ],         
+            ],
             'left_side' => [
                 'contact_information' => 'Contact Information',
                 'address' => 'Address',
@@ -448,9 +426,9 @@ return [
                 'email_addres' => 'Email: example@gmail.com',
                 'opening_hours' => 'Opening Hours',
                 'hours' => [
-                    'p_1' => 'Monday – Friday: 09.00 – 17.00 WITA', 
+                    'p_1' => 'Monday – Friday: 09.00 – 17.00 WITA',
                     'p_2' => 'Saturday: 09.00 – 13.00 WITA',
-                ] ,
+                ],
             ],
             'location' => 'Location',
             'follow_us' => 'Follow Us',
@@ -470,10 +448,10 @@ return [
             'then_section' => [
                 'text_1' => 'Save Big With Our Cheap Car Rental!',
                 'text_2' => 'Top Outlet. Local Suppliers. 24/7 Support',
-            'container' => [
-                'why_choose_us' => 'Why Choose Us',
-                'text' => "Experience Excellence In Every Mile",
-                'paragraph' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor minus in nemo nostrum totam aut eveniet, saepe corrupti sed nobis autem voluptates atque iste dolorum nam corporis placeat earum.',
+                'container' => [
+                    'why_choose_us' => 'Why Choose Us',
+                    'text' => "Experience Excellence In Every Mile",
+                    'paragraph' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor minus in nemo nostrum totam aut eveniet, saepe corrupti sed nobis autem voluptates atque iste dolorum nam corporis placeat earum.',
                     'grid_1' => [
                         'price_transparency' => 'Price Transparency',
                         'description' => 'There are no hidden costs, everything is clear from the start.'
@@ -500,48 +478,62 @@ return [
             ]
         ],
         'blog_page' => [
+            // Top article section
             'article' => [
                 'badge' => 'TruthTalk Blog',
                 'text' => 'Find Inspiration Every Day',
-                'paragraph' => 'Read interesting articles, useful tips and inspiring stories that will enrich your insight every day.',
+                'paragraph' => 'Read interesting articles, helpful tips, and inspiring stories that will enrich your insight every day.',
             ],
+
+            // Featured articles container
             'container' => [
                 'badge' => 'Featured Articles',
                 'title' => 'Most Popular Articles',
-                'paragraph' => 'Find the best articles that are most read and liked by our readers.',
+                'paragraph' => 'Discover the top articles that are most read and loved by our readers.',
                 'card_1' => [
                     'block' => 'Latest Cars in Bali That You Can Rent',
-                    'paragraph' => 'Find the best rental car in Bali that is suitable for your trip with family or friends.'
+                    'paragraph' => 'Find the best rental cars in Bali that suit your trip with family or friends.'
                 ],
                 'card_2' => [
-                    'block' => 'Fuel Efficient Cars for Bali Holidays',
-                    'paragraph' => 'Find the best fuel efficient car options for a more economical and comfortable holiday experience in Bali that is cool and comfortable.'
+                    'block' => 'Fuel-Efficient Cars for Bali Holidays',
+                    'paragraph' => 'Discover the best fuel-efficient car options for a more economical and comfortable holiday experience in Bali.'
                 ],
                 'card_3' => [
-                    'block' => 'Best Family Car for Bali Tour',
-                    'paragraph' => 'Find a comfortable family car that is suitable for taking the whole family to explore Bali.'
+                    'block' => 'Best Family Cars for Bali Tours',
+                    'paragraph' => 'Find comfortable family cars perfect for exploring Bali with your loved ones.'
                 ],
                 'card_4' => [
-                    'block' => 'Best Nature Tourism in Bali That You Must Visit',
-                    'paragraph' => 'Explore the stunning and unforgettable beauty of natural attractions in Bali, starting from the expanse of calming white sandy beaches.'
+                    'block' => 'Top Nature Destinations in Bali You Must Visit',
+                    'paragraph' => 'Explore the breathtaking and unforgettable natural attractions in Bali, starting with its calming white sandy beaches.'
                 ],
                 'card_5' => [
-                    'block' => 'Instagrammable Bali Tourist Destinations',
-                    'paragraph' => 'Find tourist spots in Bali that are suitable for taking photos and getting amazing Instagram photos.'
+                    'block' => 'Instagrammable Tourist Destinations in Bali',
+                    'paragraph' => 'Find Bali’s best spots for capturing stunning Instagram-worthy photos.'
                 ],
                 'card_6' => [
                     'block' => 'Bali Travel Guide: Culinary and Natural Beauty',
-                    'paragraph' => 'Discover various culinary places in Bali that are a must-try and enjoy the calming natural beauty.',
+                    'paragraph' => 'Discover must-try culinary spots in Bali and enjoy its serene natural beauty.'
                 ],
             ],
+
+            // Newsletter section
             'newsletter_section' => [
                 'span' => 'Newsletter',
-                'text' => 'Get Latest Article Updates',
-                'paragraph' => 'Subscribe to our newsletter and get notifications of the latest interesting articles to read',
+                'text' => 'Get the Latest Article Updates',
+                'paragraph' => 'Subscribe to our newsletter and receive notifications of the latest interesting articles to read.',
                 'placeholder' => 'Enter your email',
                 'subscribe' => 'Subscribe'
+            ],
+
+            // All articles section
+            'all_articles' => [
+                'badge' => 'All Articles',
+                'title' => 'Latest Articles',
+                'paragraph' => 'Browse all the latest articles we have published.',
+                'empty_message' => 'No articles are available at the moment.'
             ]
-        ],
+        ]
+
     ],
 
     'button' => [
@@ -557,7 +549,7 @@ return [
         'login_with_google' => 'Login with Google',
         'signup_with_google' => 'Sign Up with Google',
         'profile' => 'Profile',
-        'read_more' => 'Read more', 
+        'read_more' => 'Read more',
         'view_more_articles' => 'View More Articles',
         'view_article' => 'View Article',
         'book_ride' => 'Book Ride',
