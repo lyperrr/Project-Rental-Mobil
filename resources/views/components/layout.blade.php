@@ -27,7 +27,6 @@
 
     {{-- Scripts --}}
     <script src="{{ asset('js/main.js') }}"></script>
-    <script src="{{ asset('js/admin/main.js') }}"></script>
     <script src="{{ asset('js/profile.js') }}"></script>
 </body>
 

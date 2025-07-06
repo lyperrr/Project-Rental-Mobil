@@ -27,6 +27,8 @@ class Car extends Model
         'year' => 'integer',
     ];
 
+    public $timestamps = false;
+
     // Optional: Accessor to get the image as base64 for display
     public function getImageBase64Attribute()
     {
@@ -35,5 +37,4 @@ class Car extends Model
         }
         return null;
     }
-    
 }

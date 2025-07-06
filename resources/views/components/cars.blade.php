@@ -14,7 +14,7 @@
                 @endif
             </a>
         </div>
-        <div class="p-4">
+        <div class="p-4 border-t border-shark-200 pt-2">
             <div class="w-fit">
                 <a href="{{ route('cars.show', $car->id) }}">
                     <h2 class="text-lg font-semibold hover:text-orange-200 transition-all duration-150 ease-linear">

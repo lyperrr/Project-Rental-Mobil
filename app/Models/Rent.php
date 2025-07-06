@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Rent extends Model
 {
@@ -18,24 +18,26 @@ class Rent extends Model
         'end_date',
         'total_price',
         'status',
+        'order_id',
     ];
 
-    protected $casts = [
-        'start_date' => 'date',
-        'end_date' => 'date',
-        'total_price' => 'decimal:2',
-        'status' => 'string',
-    ];
+    public $timestamps = false;
 
-    // Relasi dengan model User
+    // Relationship ke Car
+    public function car()
+    {
+        return $this->belongsTo(Car::class);
+    }
+
+    // Relationship ke User
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    // Relasi dengan model Car
-    public function car()
+    // Relationship ke Payment
+    public function payment()
     {
-        return $this->belongsTo(Car::class);
+        return $this->hasOne(Payment::class, 'rental_id');
     }
 }

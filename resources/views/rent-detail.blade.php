@@ -126,7 +126,7 @@
                                     <!-- Payment Form Section -->
                                     <aside class="bg-white p-5 rounded-xl shadow-lg border border-white/20 order-2 lg:order-1">
                                         <div class="flex items-center gap-3 mb-6">
-                                            <i class="bx bx-credit-card text-3xl text-orange-500"></i>
+                                            <i class="bx bx-credit-card text-3xl text-orange-200"></i>
                                             <h5 class="font-bold text-xl text-gray-800">Book Your Rental</h5>
                                         </div>
 
@@ -142,33 +142,18 @@
                                                         id="summary-start-date"></span> to <span id="summary-end-date"></span>
                                                 </p>
                                                 <p id="summary-total" class="font-semibold text-orange-600 hidden">Total: Rp
-                                                    <span id="total-amount"></span></p>
+                                                    <span id="total-amount"></span>
+                                                </p>
                                             </div>
                                         </div>
 
-                                        <form action="{{ route('cars.rent.store') }}" method="POST" class="space-y-5"
-                                            id="payment-form">
+                                        <form action="#" method="POST" class="space-y-5" id="payment-form">
                                             @csrf
                                             <input type="hidden" name="car_id" value="{{ $car->id }}">
                                             <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
                                             <input type="hidden" name="order_id" id="order_id" value="">
                                             <input type="hidden" name="payment_token" id="payment_token" value="">
-
-                                            <!-- Rental Type -->
-                                            <div>
-                                                <label for="rental_type"
-                                                    class="block text-sm font-semibold text-gray-700 mb-2">Rental Type</label>
-                                                <div class="flex flex-wrap gap-4">
-                                                    @foreach (['Hours', 'Days', 'Weeks', 'Month'] as $type)
-                                                        <label class="flex items-center space-x-2 text-sm text-gray-600">
-                                                            <input type="radio" name="rental_type"
-                                                                value="{{ strtolower($type) }}" class="accent-orange-500"
-                                                                {{ $loop->first ? 'checked' : '' }}>
-                                                            <span>{{ $type }}</span>
-                                                        </label>
-                                                    @endforeach
-                                                </div>
-                                            </div>
+                                            <input type="hidden" name="rental_type" id="rental_type" value="days">
 
                                             <!-- Pickup and Dropoff Location -->
                                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -181,17 +166,17 @@
                                             </div>
 
                                             <!-- Pickup and Dropoff Date -->
-                                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div class="grid grid-cols-1 gap-4">
                                                 <div>
                                                     <label for="pickup_date"
                                                         class="block text-sm font-semibold text-gray-700 mb-2">Pickup Date &
                                                         Time</label>
                                                     <div class="flex gap-2">
                                                         <input type="date" name="pickup_date" id="pickup_date"
-                                                            class="w-2/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent shadow-sm transition duration-200"
+                                                            class="w-2/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-300 focus:border-transparent shadow-sm transition duration-200"
                                                             required>
                                                         <input type="time" name="pickup_time" id="pickup_time"
-                                                            class="w-1/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent shadow-sm transition duration-200"
+                                                            class="w-1/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-300 focus:border-transparent shadow-sm transition duration-200"
                                                             required>
                                                     </div>
                                                 </div>
@@ -201,10 +186,10 @@
                                                         Time</label>
                                                     <div class="flex gap-2">
                                                         <input type="date" name="dropoff_date" id="dropoff_date"
-                                                            class="w-2/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent shadow-sm transition duration-200"
+                                                            class="w-2/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-300 focus:border-transparent shadow-sm transition duration-200"
                                                             required>
                                                         <input type="time" name="dropoff_time" id="dropoff_time"
-                                                            class="w-1/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent shadow-sm transition duration-200"
+                                                            class="w-1/3 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-300 focus:border-transparent shadow-sm transition duration-200"
                                                             required>
                                                     </div>
                                                 </div>
@@ -216,30 +201,175 @@
                                                     Features</label>
                                                 <label class="flex items-center space-x-2 text-sm text-gray-600">
                                                     <input type="checkbox" name="baby_seat" value="1"
-                                                        class="accent-orange-500">
+                                                        class="accent-orange-300">
                                                     <span>Baby Seat - Rp 150,000</span>
                                                 </label>
                                             </div>
 
-                                            <!-- Submit Button -->
-                                            <button type="submit" id="pay-button"
-                                                class="btn-primary w-full md:text-lg mt-4 py-3">
-                                                {{ __('messages.button.book_now') }}
+                                            <button type="button" id="pay-button"
+                                                class="btn-primary w-full md:text-lg mt-4 py-3 flex justify-center items-center gap-2 relative">
+                                                <svg id="pay-spinner" class="hidden animate-spin h-8 w-8 text-white"
+                                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                    <circle class="opacity-25" cx="12" cy="12" r="10"
+                                                        stroke="currentColor" stroke-width="4"></circle>
+                                                    <path class="opacity-75" fill="currentColor"
+                                                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                                                    </path>
+                                                </svg>
+                                                <span id="pay-button-text">{{ __('messages.button.book_now') }}</span>
                                             </button>
+
                                         </form>
                                     </aside>
+
+                                    <!-- Include Midtrans Snap.js -->
+                                    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
+                                        data-client-key="{{ config('midtrans.client_key') }}"></script>
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function() {
+                                            const form = document.getElementById('payment-form');
+                                            const payButton = document.getElementById('pay-button');
+                                            const pickupDateInput = document.getElementById('pickup_date');
+                                            const pickupTimeInput = document.getElementById('pickup_time');
+                                            const dropoffDateInput = document.getElementById('dropoff_date');
+                                            const dropoffTimeInput = document.getElementById('dropoff_time');
+                                            const babySeatCheckbox = document.querySelector('input[name="baby_seat"]');
+                                            const summaryPeriod = document.getElementById('summary-period');
+                                            const summaryStartDate = document.getElementById('summary-start-date');
+                                            const summaryEndDate = document.getElementById('summary-end-date');
+                                            const summaryTotal = document.getElementById('summary-total');
+                                            const totalAmount = document.getElementById('total-amount');
+                                            const paySpinner = document.getElementById('pay-spinner');
+                                            const payButtonText = document.getElementById('pay-button-text');
+
+                                            const pricePerDay = {{ $car->price_per_day }};
+                                            const babySeatPrice = 150000;
+
+                                            function updateSummary() {
+                                                if (pickupDateInput.value && dropoffDateInput.value) {
+                                                    const startDate = new Date(`${pickupDateInput.value}T${pickupTimeInput.value || '00:00'}`);
+                                                    const endDate = new Date(`${dropoffDateInput.value}T${dropoffTimeInput.value || '00:00'}`);
+
+                                                    if (endDate < startDate) {
+                                                        summaryPeriod.classList.add('hidden');
+                                                        summaryTotal.classList.add('hidden');
+                                                        alert('Waktu pengembalian tidak boleh sebelum waktu penjemputan.');
+                                                        return;
+                                                    }
+
+                                                    let diffTime = endDate - startDate;
+                                                    let diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                                                    if (diffDays <= 0) {
+                                                        diffDays = 1; // Minimal 1 hari
+                                                    }
+
+                                                    let total = pricePerDay * diffDays;
+                                                    if (babySeatCheckbox.checked) {
+                                                        total += babySeatPrice;
+                                                    }
+
+                                                    summaryPeriod.classList.remove('hidden');
+                                                    summaryStartDate.textContent = startDate.toLocaleDateString('en-GB', {
+                                                        timeZone: 'Asia/Makassar'
+                                                    });
+                                                    summaryEndDate.textContent = endDate.toLocaleDateString('en-GB', {
+                                                        timeZone: 'Asia/Makassar'
+                                                    });
+                                                    summaryTotal.classList.remove('hidden');
+                                                    totalAmount.textContent = total.toLocaleString('id-ID');
+                                                }
+                                            }
+
+                                            pickupDateInput.addEventListener('change', updateSummary);
+                                            pickupTimeInput.addEventListener('change', updateSummary);
+                                            dropoffDateInput.addEventListener('change', updateSummary);
+                                            dropoffTimeInput.addEventListener('change', updateSummary);
+                                            babySeatCheckbox.addEventListener('change', updateSummary);
+
+                                            updateSummary();
+
+                                            payButton.addEventListener('click', function(e) {
+                                                e.preventDefault();
+
+                                                const startDate = new Date(`${pickupDateInput.value}T${pickupTimeInput.value || '00:00'}`);
+                                                const endDate = new Date(`${dropoffDateInput.value}T${dropoffTimeInput.value || '00:00'}`);
+                                                if (endDate < startDate) {
+                                                    alert('Waktu pengembalian tidak boleh sebelum waktu penjemputan.');
+                                                    return;
+                                                }
+
+                                                paySpinner.classList.remove('hidden');
+                                                payButtonText.classList.add('hidden');
+                                                payButton.disabled = true;
+
+                                                const orderId = 'ORDER-' + Math.floor(Math.random() * 1000000);
+                                                document.getElementById('order_id').value = orderId;
+
+                                                const formData = new FormData(form);
+                                                formData.append('order_id', orderId);
+                                                //console.log(formData);
+                                                fetch('{{ route('cars.rent.store') }}', {
+                                                        method: 'POST',
+                                                        body: formData,
+                                                        headers: {
+                                                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                                                        }
+                                                    })
+                                                    .then(response => response.json())
+                                                    .then(data => {
+                                                        if (data.error) {
+                                                            alert(data.error);
+                                                            resetPayButton();
+                                                            return;
+                                                        }
+
+                                                        window.snap.pay(data.snap_token, {
+                                                            onSuccess: function(result) {
+                                                                document.getElementById('payment_token').value = result
+                                                                    .transaction_id;
+                                                                //form.submit();
+                                                                resetPayButton();
+                                                            },
+                                                            onPending: function(result) {
+                                                                alert('Payment is pending. Please complete the payment.');
+                                                                resetPayButton();
+                                                            },
+                                                            onError: function(result) {
+                                                                alert('Payment failed. Please try again.');
+                                                                resetPayButton();
+                                                            },
+                                                            onClose: function() {
+                                                                alert('You closed the payment popup.');
+                                                                resetPayButton();
+                                                            }
+                                                        });
+                                                    })
+                                                    .catch(error => {
+                                                        console.error('Error:', error);
+                                                        alert('An error occurred. Please try again.');
+                                                        resetPayButton();
+                                                    });
+
+                                                function resetPayButton() {
+                                                    paySpinner.classList.add('hidden');
+                                                    payButtonText.classList.remove('hidden');
+                                                    payButton.disabled = false;
+                                                }
+                                            });
+                                        });
+                                    </script>
                                 @else
                                     <!-- Original Details Section -->
                                     <aside class="bg-white p-5 rounded-xl shadow-lg border border-white/20 order-2 lg:order-1">
                                         <div class="grid grid-cols-2 gap-4 md:gap-6 *:text-center">
                                             @forelse([
-                                                ['icon' => 'bx-car', 'label' => 'Brand', 'value' => $car->brand],
-                                                ['icon' => 'bx-calendar', 'label' => 'Model Year', 'value' => $car->year],
-                                                ['icon' => 'bx-cog', 'label' => 'Transmission', 'value' => $car->transmission],
-                                                ['icon' => 'bx-gas-pump', 'label' => 'Fuel Type', 'value' => $car->fuel_type],
-                                                ['icon' => 'bx-group', 'label' => 'Seats', 'value' => $car->seats],
-                                                ['icon' => 'bx-id-card', 'label' => 'License Plate', 'value' => $car->license_plate],
-                                            ] as $item)
+                                                                                                                                        ['icon' => 'bx-car', 'label' => 'Brand', 'value' => $car->brand],
+                                                                                                                                        ['icon' => 'bx-calendar', 'label' => 'Model Year', 'value' => $car->year],
+                                                                                                                                        ['icon' => 'bx-cog', 'label' => 'Transmission', 'value' => $car->transmission],
+                                                                                                                                        ['icon' => 'bx-gas-pump', 'label' => 'Fuel Type', 'value' => $car->fuel_type],
+                                                                                                                                        ['icon' => 'bx-group', 'label' => 'Seats', 'value' => $car->seats],
+                                                                                                                                        ['icon' => 'bx-id-card', 'label' => 'License Plate', 'value' => $car->license_plate],
+                                                                                                                                    ] as $item)
                                                 <aside>
                                                     <div class="flex gap-1 items-center">
                                                         <i class='bx {{ $item['icon'] }} text-2xl text-orange-200/80'></i>
@@ -291,13 +421,13 @@
                             <aside class="bg-white p-5 rounded-xl shadow-lg border border-white/20 order-2 lg:order-1">
                                 <div class="grid grid-cols-2 gap-4 md:gap-6 *:text-center">
                                     @forelse([
-                                                                ['icon' => 'bx-car', 'label' => 'Brand', 'value' => $car->brand],
-                                                                ['icon' => 'bx-calendar', 'label' => 'Model Year', 'value' => $car->year],
-                                                                ['icon' => 'bx-cog', 'label' => 'Transmission', 'value' => $car->transmission],
-                                                                ['icon' => 'bx-gas-pump', 'label' => 'Fuel Type', 'value' => $car->fuel_type],
-                                                                ['icon' => 'bx-group', 'label' => 'Seats', 'value' => $car->seats],
-                                                                ['icon' => 'bx-id-card', 'label' => 'License Plate', 'value' => $car->license_plate],
-                                                            ] as $item)
+                                                                                                            ['icon' => 'bx-car', 'label' => 'Brand', 'value' => $car->brand],
+                                                                                                            ['icon' => 'bx-calendar', 'label' => 'Model Year', 'value' => $car->year],
+                                                                                                            ['icon' => 'bx-cog', 'label' => 'Transmission', 'value' => $car->transmission],
+                                                                                                            ['icon' => 'bx-gas-pump', 'label' => 'Fuel Type', 'value' => $car->fuel_type],
+                                                                                                            ['icon' => 'bx-group', 'label' => 'Seats', 'value' => $car->seats],
+                                                                                                            ['icon' => 'bx-id-card', 'label' => 'License Plate', 'value' => $car->license_plate],
+                                                                                                        ] as $item)
                                         <div>
                                             <div class="flex gap-1 items-center">
                                                 <i class='bx {{ $item['icon'] }} text-2xl text-orange-200/80'></i>
@@ -354,13 +484,13 @@
                         <aside class="bg-white p-5 rounded-xl shadow-lg border border-white/20">
                             <div class="grid grid-cols-2 gap-4 md:gap-6 *:text-center">
                                 @forelse([
-                                                            ['icon' => 'bx-car', 'label' => 'Brand', 'value' => $car->brand],
-                                                            ['icon' => 'bx-calendar', 'label' => 'Model Year', 'value' => $car->year],
-                                                            ['icon' => 'bx-cog', 'label' => 'Transmission', 'value' => $car->transmission],
-                                                            ['icon' => 'bx-gas-pump', 'label' => 'Fuel Type', 'value' => $car->fuel_type],
-                                                            ['icon' => 'bx-group', 'label' => 'Seats', 'value' => $car->seats],
-                                                            ['icon' => 'bx-id-card', 'label' => 'License Plate', 'value' => $car->license_plate],
-                                                        ] as $item)
+                                                                                                        ['icon' => 'bx-car', 'label' => 'Brand', 'value' => $car->brand],
+                                                                                                        ['icon' => 'bx-calendar', 'label' => 'Model Year', 'value' => $car->year],
+                                                                                                        ['icon' => 'bx-cog', 'label' => 'Transmission', 'value' => $car->transmission],
+                                                                                                        ['icon' => 'bx-gas-pump', 'label' => 'Fuel Type', 'value' => $car->fuel_type],
+                                                                                                        ['icon' => 'bx-group', 'label' => 'Seats', 'value' => $car->seats],
+                                                                                                        ['icon' => 'bx-id-card', 'label' => 'License Plate', 'value' => $car->license_plate],
+                                                                                                    ] as $item)
                                     <div>
                                         <div class="flex gap-1 items-center">
                                             <i class='bx {{ $item['icon'] }} text-2xl text-orange-200/80'></i>
@@ -454,7 +584,7 @@
                     <div class="text-center mb-6">
                         <div class="relative inline-block">
                             <div
-                                class="bg-gradient-to-br from-orange-500 to-orange-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg pulse-ring">
+                                class="bg-gradient-to-br from-orange-300 to-orange-600 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg pulse-ring">
                                 <i class="bx bx-lock-alt text-white text-3xl"></i>
                             </div>
                             <div
@@ -472,7 +602,7 @@
                     <div
                         class="bg-gradient-to-r from-orange-50 to-orange-100/50 rounded-xl p-4 mb-6 border border-orange-200/50">
                         <h5 class="font-semibold text-shark-800 mb-3 flex items-center">
-                            <i class="bx bx-star text-orange-500 mr-2"></i>
+                            <i class="bx bx-star text-orange-300 mr-2"></i>
                             Member Benefits
                         </h5>
                         <div class="grid grid-cols-2 gap-3 text-sm">

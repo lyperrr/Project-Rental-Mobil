@@ -40,7 +40,7 @@
                 </div>
             </div>
         </section>
-        {{-- End Hero Section --}} 
+        {{-- End Hero Section --}}
     </main>
 
     <!-- Start Car Grid -->
@@ -82,13 +82,15 @@
                             </h4>
                             <div class="space-y-3">
                                 <div>
-                                    <label class="text-sm text-shark-600">{{ __('messages.sections.rent_page.filter_section.price_range.min') }}</label>
+                                    <label
+                                        class="text-sm text-shark-600">{{ __('messages.sections.rent_page.filter_section.price_range.min') }}</label>
                                     <input type="number" min="0"
                                         class="w-full mt-1 px-3 py-2 border-1 border-orange-300/60 rounded-lg focus:ring-1 focus:outline-none focus:ring-orange-200 focus:border-orange-200"
                                         placeholder="100,000">
                                 </div>
                                 <div>
-                                    <label class="text-sm text-shark-600">{{ __('messages.sections.rent_page.filter_section.price_range.max') }}</label>
+                                    <label
+                                        class="text-sm text-shark-600">{{ __('messages.sections.rent_page.filter_section.price_range.max') }}</label>
                                     <input type="number" min="0"
                                         class="w-full mt-1 px-3 py-2 border-1 border-orange-300/60 rounded-lg focus:ring-1 focus:outline-none focus:ring-orange-200 focus:border-orange-200"
                                         placeholder="1,000,000">
@@ -143,17 +145,20 @@
                                 <label class="flex items-center">
                                     <input type="radio" name="transmission"
                                         class="w-4 h-4 text-orange-200 border-shark-300 focus:ring-orange-200 accent-orange-300">
-                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.transmission.options.manual') }}</span>
+                                    <span
+                                        class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.transmission.options.manual') }}</span>
                                 </label>
                                 <label class="flex items-center">
                                     <input type="radio" name="transmission"
                                         class="w-4 h-4 text-orange-200 border-shark-300 focus:ring-orange-200 accent-orange-300">
-                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.transmission.options.automatic') }}</span>
+                                    <span
+                                        class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.transmission.options.automatic') }}</span>
                                 </label>
                                 <label class="flex items-center">
                                     <input type="radio" name="transmission"
                                         class="w-4 h-4 text-orange-200 border-shark-300 focus:ring-orange-200 accent-orange-300">
-                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.transmission.options.all') }}</span>
+                                    <span
+                                        class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.transmission.options.all') }}</span>
                                 </label>
                             </div>
                         </div>
@@ -162,29 +167,33 @@
                         <div
                             class="border border-shark-100 shadow p-4 rounded-lg col-span-2 sm:col-span-1 text-lg lg:text-base">
                             <h4 class="font-semibold mb-3 flex items-center gap-2">
-                                <i class='bx bx-group text-2xl'></i> 
+                                <i class='bx bx-group text-2xl'></i>
                                 {{ __('messages.sections.rent_page.filter_section.passenger_capacity.title') }}
                             </h4>
                             <div class="space-y-2">
                                 <label class="flex items-center">
                                     <input type="checkbox"
                                         class="w-4 h-4 text-orange-200 border-shark-300 rounded focus:ring-orange-200 accent-orange-300">
-                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.passenger_capacity.options.2_people') }}</span>
+                                    <span
+                                        class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.passenger_capacity.options.2_people') }}</span>
                                 </label>
                                 <label class="flex items-center">
                                     <input type="checkbox"
                                         class="w-4 h-4 text-orange-200 border-shark-300 rounded focus:ring-orange-200 accent-orange-300">
-                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.passenger_capacity.options.4_people') }}</span>
+                                    <span
+                                        class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.passenger_capacity.options.4_people') }}</span>
                                 </label>
                                 <label class="flex items-center">
                                     <input type="checkbox"
                                         class="w-4 h-4 text-orange-200 border-shark-300 rounded focus:ring-orange-200 accent-orange-300">
-                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.passenger_capacity.options.6_people') }}</span>
+                                    <span
+                                        class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.passenger_capacity.options.6_people') }}</span>
                                 </label>
                                 <label class="flex items-center">
                                     <input type="checkbox"
                                         class="w-4 h-4 text-orange-200 border-shark-300 rounded focus:ring-orange-200 accent-orange-300">
-                                    <span class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.passenger_capacity.options.8_people') }}</span>
+                                    <span
+                                        class="ml-2 text-sm text-shark-700 md:text-base xl:text-sm">{{ __('messages.sections.rent_page.filter_section.passenger_capacity.options.8_people') }}</span>
                                 </label>
                             </div>
                         </div>
@@ -198,10 +207,13 @@
                             </h4>
                             <div class="space-y-3">
                                 <div>
-                                    <label class="text-sm text-shark-600">{{ __('messages.sections.rent_page.filter_section.year.from') }}</label>
+                                    <label
+                                        class="text-sm text-shark-600">{{ __('messages.sections.rent_page.filter_section.year.from') }}</label>
                                     <select
                                         class="w-full mt-1 px-3 py-2 border-1 border-orange-300/60 rounded-lg focus:ring-1 focus:outline-none focus:ring-orange-200 focus:border-orange-200">
-                                        <option value="">{{ __('messages.sections.rent_page.filter_section.year.placeholder') }}</option>
+                                        <option value="">
+                                            {{ __('messages.sections.rent_page.filter_section.year.placeholder') }}
+                                        </option>
                                         <option value="2024">2024</option>
                                         <option value="2023">2023</option>
                                         <option value="2022">2022</option>
@@ -211,10 +223,13 @@
                                     </select>
                                 </div>
                                 <div>
-                                    <label class="text-sm text-shark-600">{{ __('messages.sections.rent_page.filter_section.year.to') }}</label>
+                                    <label
+                                        class="text-sm text-shark-600">{{ __('messages.sections.rent_page.filter_section.year.to') }}</label>
                                     <select
                                         class="w-full mt-1 px-3 py-2 border-1 border-orange-300/60 rounded-lg focus:ring-1 focus:outline-none focus:ring-orange-200 focus:border-orange-200">
-                                        <option value="">{{ __('messages.sections.rent_page.filter_section.year.placeholder') }}</option>
+                                        <option value="">
+                                            {{ __('messages.sections.rent_page.filter_section.year.placeholder') }}
+                                        </option>
                                         <option value="2024">2024</option>
                                         <option value="2023">2023</option>
                                         <option value="2022">2022</option>
@@ -278,8 +293,11 @@
                 <div class="col-span-9 pt-10 xl:pt-0">
                     {{-- Card Rent --}}
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-
                         <x-cars :cars=$cars />
+                    </div>
+                    <!-- Tailwind-styled pagination -->
+                    <div class="mt-6">
+                        {{ $cars->links('vendor.pagination.tailwind') }}
                     </div>
                 </div>
             </div>

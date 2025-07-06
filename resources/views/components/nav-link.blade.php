@@ -1,6 +1,6 @@
 <li class="overflow-hidden">
     <a {{ $attributes }}
-        class="{{ request()->fullUrlIs(url($href)) ? 'bg-shark-50 sm:bg-transparent lg:bg-transparent text-orange-100' : 'hover:text-orange-100 text-shark-950 lg:text-white' }}  relative px-4 py-3 rounded-md transition-all duration-200 ease-linear lg:bg-transparent lg:p-0 group lg:rounded-none sm:justify-center flex items-center gap-1.5 sm:gap-2 lg:gap-0 sm:py-5">
+        class="{{ request()->is(ltrim($href, '/')) ? 'bg-shark-100 sm:bg-transparent lg:bg-transparent text-orange-100' : 'hover:text-orange-100 text-shark-950 lg:text-white' }}  relative px-4 py-3 rounded-md transition-all duration-200 ease-linear lg:bg-transparent lg:p-0 group lg:rounded-none sm:justify-center flex items-center gap-1.5 sm:gap-2 lg:gap-0 sm:py-5">
         <span class="
         {{-- {{ $slot }}  --}}
         lg:hidden flex items-center justify-center">
