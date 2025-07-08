@@ -36,9 +36,9 @@
                                             <img src="{{ $userProfile->photo_profile }}" alt="Profile"
                                                 class="w-full h-full object-cover">
                                         @else
-                                            <div
-                                                class="w-full h-full flex items-center justify-center">
-                                                <img src="{{ asset('img/profile.jpeg') }}" alt="{{ $user->username }}" title="{{ $user->username }}">
+                                            <div class="w-full h-full flex items-center justify-center">
+                                                <img src="{{ asset('img/profile.jpeg') }}" alt="{{ $user->username }}"
+                                                    title="{{ $user->username }}">
                                             </div>
                                         @endif
                                     </div>
@@ -228,6 +228,126 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Rental History Card -->
+                        <div class="bg-white rounded-xl shadow-sm border border-shark-100 overflow-hidden">
+                            <div
+                                class="px-6 py-5 border-b border-shark-100 flex items-center sm:justify-between flex-wrap">
+                                <h2 class="text-lg font-semibold text-shark-900 inline-flex items-center">
+                                    <i class="bx bx-history text-orange-100 text-2xl mr-2"></i> Rental History
+                                </h2>
+
+                                <!-- Search Input + Button -->
+                                <div class="relative w-full sm:w-auto mt-4 sm:mt-0 flex gap-2">
+                                    <input type="text" id="searchInput"
+                                        class="w-full sm:w-72 px-4 py-2 border border-shark-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-500 text-sm text-shark-800"
+                                        placeholder="Search order ID, model, or license plate..."
+                                        value="{{ request('search') }}">
+                                    <button id="searchButton"
+                                        class="px-4 py-2 bg-orange-500 text-white text-sm rounded-lg hover:bg-orange-600 transition">
+                                        Search
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="p-6">
+                                @if ($rentalHistory->isEmpty())
+                                    <div class="text-center text-shark-500 py-6">
+                                        <i class="bx bx-info-circle text-4xl mb-2"></i>
+                                        <p>No rental history found.</p>
+                                    </div>
+                                @else
+                                    <div class="overflow-x-auto" id="rentalTableWrapper">
+                                        <table class="min-w-full text-left text-sm whitespace-nowrap">
+                                            <thead>
+                                                <tr class="text-shark-600 border-b border-shark-100">
+                                                    <th class="px-4 py-2">Order ID</th>
+                                                    <th class="px-4 py-2">License Plate</th>
+                                                    <th class="px-4 py-2">Car</th>
+                                                    <th class="px-4 py-2">Rental Period</th>
+                                                    <th class="px-4 py-2">Total Price</th>
+                                                    <th class="px-4 py-2">Status</th>
+                                                    <th class="px-4 py-2">Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($rentalHistory as $rental)
+                                                    <tr
+                                                        class="odd:bg-white even:bg-shark-50 hover:bg-shark-100 border-b border-shark-50">
+                                                        <td class="px-4 py-3 font-medium">{{ $rental->order_id }}</td>
+                                                        <td class="px-4 py-3 font-medium">
+                                                            {{ $rental->car->license_plate }}</td>
+                                                        <td class="px-4 py-3">{{ $rental->car->model ?? '-' }}</td>
+                                                        <td class="px-4 py-3">
+                                                            {{ \Carbon\Carbon::parse($rental->start_date)->format('d M Y') }}
+                                                            -
+                                                            {{ \Carbon\Carbon::parse($rental->end_date)->format('d M Y') }}
+                                                        </td>
+                                                        <td class="px-4 py-3">Rp
+                                                            {{ number_format($rental->total_price, 0, ',', '.') }}</td>
+                                                        <td class="px-4 py-3">
+                                                            <span
+                                                                class="px-3 py-1 rounded-full text-xs font-medium
+                                                                @switch($rental->status)
+                                                                    @case('pending') bg-orange-100 text-orange-800 @break
+                                                                    @case('confirmed') bg-blue-100 text-blue-800 @break
+                                                                    @case('completed') bg-green-100 text-green-800 @break
+                                                                    @case('cancelled') bg-red-100 text-red-800 @break
+                                                                    @default bg-gray-100 text-gray-800
+                                                                @endswitch">
+                                                                {{ ucfirst($rental->status) }}
+                                                            </span>
+                                                        </td>
+                                                        <td class="px-4 py-3">
+                                                            {{ \Carbon\Carbon::parse($rental->created_at)->format('d M Y') }}
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+
+
+                                    </div>
+
+                                @endif
+                                <!-- Pagination -->
+                                <div class="mt-4">
+                                    {{ $rentalHistory->links('pagination::tailwind') }}
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            $('#searchButton').on('click', function() {
+                                const query = $('#searchInput').val();
+
+                                $.ajax({
+                                    url: "{{ route('profile') }}",
+                                    type: 'GET',
+                                    data: {
+                                        search: query
+                                    },
+                                    beforeSend: function() {
+                                        $('#rentalTableWrapper').html(
+                                            '<p class="text-center text-gray-500 py-6">Loading...</p>');
+                                    },
+                                    success: function(response) {
+                                        const html = $(response).find('#rentalTableWrapper').html();
+                                        $('#rentalTableWrapper').html(html);
+                                    },
+                                    error: function() {
+                                        $('#rentalTableWrapper').html(
+                                            '<p class="text-center text-red-500 py-6">Error loading data.</p>');
+                                    }
+                                });
+                            });
+
+                            $('#searchInput').on('keypress', function(e) {
+                                if (e.which === 13) {
+                                    $('#searchButton').click();
+                                }
+                            });
+                        </script>
+
                     </div>
                 </div>
             </div>
