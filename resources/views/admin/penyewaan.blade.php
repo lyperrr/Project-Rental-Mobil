@@ -9,7 +9,7 @@
   {{-- Header --}}
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h1 class="h3 text-gray-800 font-weight-bold">Data Penyewaan</h1>
-    <a href="#" class="btn btn-primary">
+    <a href="{{ route('admin.rentals.create') }}" class="btn btn-primary">
       <i class="fas fa-plus"></i> Tambah Penyewaan
     </a>
   </div>
@@ -31,33 +31,45 @@
           </tr>
         </thead>
         <tbody>
+          @forelse ($rentals as $rental)
           <tr>
-            <td>1</td>
-            <td>Andi</td>
-            <td>Toyota Avanza</td>
-            <td>2025-06-20</td>
-            <td>2025-06-23</td>
-            <td><span class="badge badge-warning">Berlangsung</span></td>
-            <td>Rp1.500.000</td>
+            <td>{{ $loop->iteration }}</td>
+            <td>{{ $rental->user->name ?? '-' }}</td>
+            <td>{{ $rental->car->brand ?? '-' }} {{ $rental->car->model ?? '' }}</td>
+            <td>{{ $rental->start_date }}</td>
+            <td>{{ $rental->end_date }}</td>
             <td>
-              <a href="#" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
-              <a href="#" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+              @php
+                $statusBadge = [
+                  'pending' => 'badge badge-secondary',
+                  'confirmed' => 'badge badge-primary',
+                  'cancelled' => 'badge badge-danger',
+                  'completed' => 'badge badge-success',
+                ];
+              @endphp
+              <span class="{{ $statusBadge[$rental->status] ?? 'badge badge-light' }}">
+                {{ ucfirst($rental->status) }}
+              </span>
+            </td>
+            <td>Rp{{ number_format($rental->total_price, 0, ',', '.') }}</td>
+            <td>
+              <a href="{{ route('admin.rentals.edit', $rental->id) }}" class="btn btn-sm btn-warning">
+                <i class="fas fa-edit"></i>
+              </a>
+              <form action="{{ route('admin.rentals.destroy', $rental->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin hapus penyewaan ini?')">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-sm btn-danger">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </form>
             </td>
           </tr>
+          @empty
           <tr>
-            <td>2</td>
-            <td>Sri</td>
-            <td>Honda Brio</td>
-            <td>2025-06-18</td>
-            <td>2025-06-21</td>
-            <td><span class="badge badge-success">Selesai</span></td>
-            <td>Rp1.800.000</td>
-            <td>
-              <a href="#" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
-              <a href="#" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
-            </td>
+            <td colspan="8" class="text-center">Belum ada data penyewaan.</td>
           </tr>
-          {{-- Tambahkan baris lain di sini --}}
+          @endforelse
         </tbody>
       </table>
     </div>

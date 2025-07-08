@@ -18,6 +18,8 @@ class Rent extends Model
         'end_date',
         'total_price',
         'status',
+        'snap_token',
+        'transaction_id',
     ];
 
     protected $casts = [
@@ -27,13 +29,11 @@ class Rent extends Model
         'status' => 'string',
     ];
 
-    // Relasi dengan model User
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    // Relasi dengan model Car
     public function car()
     {
         return $this->belongsTo(Car::class);

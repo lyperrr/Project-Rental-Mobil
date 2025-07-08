@@ -12,7 +12,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Auth\SignupController;
-
+use App\Http\Controllers\Admin\AdminBlogController;
+use App\Http\Controllers\Admin\RentalController;
 
 // Test route
 Route::get('/test', fn() => view('test'));
@@ -26,14 +27,6 @@ Route::get('/locale/{lang}', function ($lang) {
 
     return Redirect::back();
 });
-
-//route admin
-// Route::get('/admin/dashboard', function () {
-//     return view('admin.dashboard');
-// });
-
-
-
 
 // Group middleware SetLocale
 Route::middleware([\App\Http\Middleware\SetLocale::class])->group(function () {
@@ -52,38 +45,57 @@ Route::middleware([\App\Http\Middleware\SetLocale::class])->group(function () {
         Route::get('/auth/google/callback', 'handleGoogleCallback');
     });
 
-
     // Halaman statis
     Route::view('/about', 'about', ['title' => __('messages.navbar.about')])->name('about');
+    
     // Blog routes
-    // Route blog yang dinamis dari database
     Route::get('/blog', [BlogController::class, 'index'])->name('blog');
     Route::get('/blog/{id}', [BlogController::class, 'show'])->name('blog.show');
-    // Route show untuk blog menggunakan BlogController method showDetail
     Route::get('/show/{id}', [BlogController::class, 'showDetail'])->name('show');
     Route::get('/blog/image/{id}', [BlogController::class, 'showImage'])->name('blog.image');
-
 
     Route::view('/contact', 'contact', ['title' => __('messages.navbar.contact')])->name('contact');
 
     // Route admin
-        Route::prefix('admin')->name('admin.')->group(function () {
+    Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
         Route::get('/mobil', [AdminController::class, 'mobil'])->name('mobil');
         Route::get('/laporan', [AdminController::class, 'laporan'])->name('laporan');
         Route::get('/pelanggan', [AdminController::class, 'pelanggan'])->name('pelanggan');
-        Route::get('/penyewaan', [AdminController::class, 'penyewaan'])->name('penyewaan');
         Route::get('/blog', [AdminController::class, 'blog'])->name('admin.blog');
 
+        // Blog CRUD routes
+        Route::prefix('blogs')->name('blogs.')->group(function () {
+            Route::get('/', [AdminBlogController::class, 'index'])->name('index');
+            Route::get('/create', [AdminBlogController::class, 'create'])->name('create');
+            Route::post('/', [AdminBlogController::class, 'store'])->name('store');
+            Route::get('/{id}', [AdminBlogController::class, 'show'])->name('show');
+            Route::get('/{id}/edit', [AdminBlogController::class, 'edit'])->name('edit');
+            Route::put('/{id}', [AdminBlogController::class, 'update'])->name('update');
+            Route::delete('/{id}', [AdminBlogController::class, 'destroy'])->name('destroy');
+        });
+
+        // Rental CRUD routes - DIPERBAIKI
+        Route::prefix('rentals')->name('rentals.')->group(function () {
+            Route::get('/', [RentalController::class, 'index'])->name('index');
+            Route::get('/create', [RentalController::class, 'create'])->name('create');
+            Route::post('/', [RentalController::class, 'store'])->name('store');
+            Route::get('/{rental}', [RentalController::class, 'show'])->name('show');
+            Route::get('/{rental}/edit', [RentalController::class, 'edit'])->name('edit');
+            Route::put('/{rental}', [RentalController::class, 'update'])->name('update');
+            Route::delete('/{rental}', [RentalController::class, 'destroy'])->name('destroy');
+            // PERBAIKAN: Tambahkan nama route yang konsisten
+            Route::patch('/{rental}/status', [RentalController::class, 'updateStatus'])->name('status');
+        });
+
+        // Rental statistics route
+        Route::get('/rentals-statistics', [RentalController::class, 'statistics'])->name('rentals.statistics');
+        
+        // Route alias untuk penyewaan (redirect ke rentals)
+        Route::get('/penyewaan', function() {
+            return redirect()->route('admin.rentals.index');
+        })->name('penyewaan');
     });
-
-
-    // Route::name('admin.')->group(function () {
-    //     Route::get('/admin/dashboard')->name('admin.dashboard');
-    //     Route::get('/admin/mobil')->name('admin.cars');
-    // });
-    // Route::get('/dashboard', fn() => view('admin.dashboard'))->middleware('auth')->name('dashboard');
-
 
     // Cars routes
     Route::name('cars.')->group(function () {
@@ -98,9 +110,6 @@ Route::middleware([\App\Http\Middleware\SetLocale::class])->group(function () {
         Route::controller(ProfileController::class)->group(function () {
             Route::get('/profile', 'index')->name('profile');
             Route::put('/profile', 'update')->name('profile.update');
-            // Route::post('/reviews', [ReviewController::class, 'store'])->name('reviews.store');
         });
-
-        // Route::get('/all-reviews', [ReviewController::class, 'index'])->name('reviews.index');
     });
 });
